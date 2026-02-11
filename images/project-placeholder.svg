@@ -1,0 +1,16 @@
+<svg width="1280" height="800" viewBox="0 0 1280 800" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect width="1280" height="800" rx="24" fill="#EEECE9"/>
+  <rect x="58" y="52" width="1164" height="696" rx="18" fill="#FAF8F6" stroke="#D7D2CC" stroke-width="4"/>
+  <rect x="96" y="98" width="320" height="22" rx="11" fill="#C9C1B7"/>
+  <rect x="96" y="144" width="760" height="16" rx="8" fill="#E6E2DD"/>
+  <rect x="96" y="176" width="620" height="16" rx="8" fill="#E6E2DD"/>
+  <rect x="96" y="232" width="520" height="300" rx="14" fill="#F1EEEA" stroke="#D7D2CC" stroke-width="3"/>
+  <rect x="640" y="232" width="542" height="122" rx="14" fill="#F1EEEA" stroke="#D7D2CC" stroke-width="3"/>
+  <rect x="640" y="374" width="542" height="158" rx="14" fill="#F1EEEA" stroke="#D7D2CC" stroke-width="3"/>
+  <rect x="96" y="562" width="1086" height="18" rx="9" fill="#E6E2DD"/>
+  <rect x="96" y="596" width="910" height="18" rx="9" fill="#E6E2DD"/>
+  <rect x="96" y="660" width="174" height="50" rx="25" fill="#6B5D51"/>
+  <text x="640" y="740" text-anchor="middle" fill="#81776E" font-family="Arial, sans-serif" font-size="26" font-weight="700" letter-spacing="2">
+    PROJECT PREVIEW
+  </text>
+</svg>

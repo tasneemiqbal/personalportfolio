@@ -1,0 +1,39 @@
+# Profile Picture Instructions
+
+## How to Add Your Photo:
+
+1. **Take or choose a professional photo**
+   - Headshot or casual professional photo works best
+   - Good lighting, clear face
+   - Neutral or solid color background recommended
+   - Square ratio preferred (will be cropped to square)
+
+2. **Name your photo:**
+   - Rename it to: `profile.jpg` or `profile.png`
+   
+3. **Place it in this folder:**
+   - Put your `profile.jpg` in the `images/` folder
+   - Replace the placeholder
+
+4. **Size recommendations:**
+   - At least 500x500 pixels
+   - Under 2MB file size for fast loading
+
+## If you don't have a photo yet:
+- A placeholder will show until you add your photo
+- The site will still work perfectly!
+- You can add it later anytime
+
+## Tips for best results:
+- Smile! It makes you approachable
+- Professional but friendly
+- Make sure your face is well-lit
+- Avoid busy backgrounds
+
+---
+
+Your photo will appear in the "About" section with:
+- Rounded corners
+- A subtle shadow
+- Hover animation
+- "Available for hire" badge
