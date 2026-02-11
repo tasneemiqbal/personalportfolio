@@ -1,4 +1,4 @@
-# Tasneem Iqbal - Product Manager Portfolio
+# Tasneem Iqbal - Portfolio
 
 A modern, responsive portfolio website showcasing my journey from Computer Science student to Aspiring Product Manager. Built with clean HTML, CSS, and JavaScript.
 
