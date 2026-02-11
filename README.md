@@ -1,12 +1,12 @@
 # Tasneem Iqbal - Product Manager Portfolio
 
-A modern, responsive portfolio website showcasing my journey from Computer Science student to Product Manager. Built with clean HTML, CSS, and JavaScript.
+A modern, responsive portfolio website showcasing my journey from Computer Science student to Aspiring Product Manager. Built with clean HTML, CSS, and JavaScript.
 
-## 🚀 Live Demo
+## Live Demo
 
-[View Live Site](#) *(Add your deployed URL here)*
+https://tasneemiqbal.github.io/personalportfolio/
 
-## ✨ Features
+##Features
 
 - **Responsive Design** - Works perfectly on desktop, tablet, and mobile
 - **Smooth Animations** - Engaging micro-interactions and scroll effects
@@ -14,14 +14,14 @@ A modern, responsive portfolio website showcasing my journey from Computer Scien
 - **Fast Performance** - Optimized for speed with no heavy frameworks
 - **SEO Friendly** - Proper meta tags and semantic HTML
 
-## 🛠️ Technologies Used
+## Technologies Used
 
 - HTML5
 - CSS3 (Custom animations, Flexbox, Grid)
 - Vanilla JavaScript (ES6+)
 - Google Fonts (Inter)
 
-## 📁 Project Structure
+##Project Structure
 
 ```
 portfolio-website/
@@ -34,7 +34,7 @@ portfolio-website/
 └── README.md           # Project documentation
 ```
 
-## 🚀 Getting Started
+##  Getting Started
 
 ### Option 1: Local Development
 
@@ -136,17 +136,17 @@ None currently! If you find any, please open an issue.
 
 This project is open source and available under the [MIT License](LICENSE).
 
-## 🤝 Contributing
+## Contributing
 
 Found a bug or want to suggest an improvement? Feel free to open an issue or submit a pull request!
 
-## 📧 Contact
+## Contact
 
 **Tasneem Iqbal**
 - Email: tasneemiqbal417@gmail.com
-- LinkedIn: [linkedin.com/in/tasneem-iqbal](https://linkedin.com/in/tasneem-iqbal)
+- LinkedIn: https://linkedin.com/in/tasneemiqbal89
 - Location: Long Beach, CA
 
 ---
 
-Built with ❤️ and ☕ by Tasneem Iqbal
+Built with love by Tasneem Iqbal
