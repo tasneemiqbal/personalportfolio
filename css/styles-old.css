@@ -236,7 +236,7 @@ body {
 }
 
 [data-theme="dark"] .theme-icon {
-    content: "☀️";
+    content: "";
 }
 
 /* Hero Section */

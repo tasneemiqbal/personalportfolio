@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description"
+        content="DIG Magazine case study by Tasneem Iqbal - leading the redesign of a student magazine site with simpler navigation and a bold, color-forward visual direction.">
+    <title>DIG Magazine Case Study · Tasneem Iqbal</title>
+    <link rel="icon" type="image/svg+xml" href="favicon.svg?v=3">
+    <link rel="icon" type="image/png" sizes="32x32" href="favicon-32.png?v=3">
+    <link rel="icon" type="image/png" sizes="16x16" href="favicon-16.png?v=3">
+    <link rel="icon" type="image/x-icon" href="favicon.ico?v=3">
+    <link rel="apple-touch-icon" href="apple-touch-icon.png?v=3">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Manrope:wght@300;400;500;600;700;800&family=Cormorant+Garamond:wght@400;500;600;700&family=Pixelify+Sans:wght@400;500;600;700&display=swap"
+        rel="stylesheet">
+
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="css/case-study.css">
+    <link rel="stylesheet" href="css/xp-theme.css">
+</head>
+
+<body>
+
+    <!-- Retro posterize filter for photos -->
+    <svg width="0" height="0" style="position:absolute" aria-hidden="true">
+        <filter id="retroFilter" color-interpolation-filters="sRGB">
+            <feComponentTransfer>
+                <feFuncR type="discrete" tableValues="0 0.22 0.44 0.66 0.88 1"/>
+                <feFuncG type="discrete" tableValues="0 0.22 0.44 0.66 0.88 1"/>
+                <feFuncB type="discrete" tableValues="0 0.25 0.5 0.75 1"/>
+            </feComponentTransfer>
+        </filter>
+    </svg>
+
+    <!-- Navigation -->
+    <nav class="nav" id="nav">
+        <div class="container">
+            <div class="nav-content">
+                <a class="logo" href="index.html" style="text-decoration:none;">
+                    <span>Tasneem Iqbal</span>
+                </a>
+                <div class="nav-links">
+                    <a class="nav-link" href="index.html#projects">projects</a>
+                    <a class="nav-link" href="index.html#contact">contact</a>
+                    <button class="theme-toggle" id="themeToggle" onclick="toggleTheme()" title="Toggle theme">
+                        <span class="theme-icon">Dark</span>
+                    </button>
+                    <a class="chat-btn" href="index.html#contact" style="text-decoration:none;">Let's Chat</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <main class="cs-main">
+        <!-- Hero -->
+        <header class="cs-hero">
+            <div class="container">
+                <a class="cs-back" href="index.html#projects">← Back to projects</a>
+                <div class="cs-eyebrow">Case Study · Web Redesign</div>
+                <h1 class="cs-title">DIG Magazine</h1>
+                <p class="cs-lede">
+                    Leading the redesign of CSULB's student magazine site, making content faster to reach and giving it
+                    a bold, color-forward identity that matches how its readers actually want to read.
+                </p>
+
+                <div class="cs-meta">
+                    <div class="cs-meta-item">
+                        <span class="cs-meta-label">My Role</span>
+                        <span class="cs-meta-value">Lead engineer</span>
+                    </div>
+                    <div class="cs-meta-item">
+                        <span class="cs-meta-label">Team</span>
+                        <span class="cs-meta-value">4-person design &amp; faculty advisory</span>
+                    </div>
+                    <div class="cs-meta-item">
+                        <span class="cs-meta-label">Timeline</span>
+                        <span class="cs-meta-value">Jun 2026 - Present</span>
+                    </div>
+                    <div class="cs-meta-item">
+                        <span class="cs-meta-label">Tools</span>
+                        <span class="cs-meta-value">Figma, HTML, CSS</span>
+                    </div>
+                    <div class="cs-meta-item">
+                        <span class="cs-meta-label">Context</span>
+                        <span class="cs-meta-value">Beach Media, CSULB</span>
+                    </div>
+                </div>
+
+                <div class="cs-links">
+                    <a class="btn btn-primary" href="https://www.digmaglb.com/" target="_blank"
+                        rel="noopener noreferrer">Visit the live site</a>
+                </div>
+            </div>
+        </header>
+
+        <div class="cs-body">
+            <!-- Overview -->
+            <section class="cs-section">
+                <div class="cs-kicker">Overview</div>
+                <h2 class="cs-h2">A redesign for readers, not just editors</h2>
+                <p class="cs-text">
+                    DIG is a student-run magazine at CSULB. As <strong>lead engineer on the redesign</strong>, I
+                    reworked how readers move through the site and am building the approved Figma design into a
+                    responsive site.
+                </p>
+            </section>
+
+            <!-- Problem -->
+            <section class="cs-section">
+                <div class="cs-kicker">The Problem</div>
+                <h2 class="cs-h2">Good stories, buried too deep</h2>
+                <p class="cs-text">
+                    The old site made readers work to find content.
+                </p>
+                <div class="cs-cards">
+                    <div class="cs-card">
+                        <div class="cs-card-title">Deep navigation</div>
+                        <p class="cs-card-text">Key content sat up to three clicks away.</p>
+                    </div>
+                    <div class="cs-card">
+                        <div class="cs-card-title">Cognitive load</div>
+                        <p class="cs-card-text">Unclear structure made the site hard to scan.</p>
+                    </div>
+                    <div class="cs-card">
+                        <div class="cs-card-title">Muted identity</div>
+                        <p class="cs-card-text">The look didn't match readers' taste for bold storytelling.</p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Approach -->
+            <section class="cs-section">
+                <div class="cs-kicker">Approach</div>
+                <h2 class="cs-h2">Fewer clicks, louder personality</h2>
+                <p class="cs-text">
+                    I led the navigation rework, <strong>cutting key content from three clicks to one across six of
+                    eight sections</strong>.
+                </p>
+                <p class="cs-text">
+                    With a four-person design and faculty team, I helped define a <strong>maximalist, color-forward
+                    direction</strong>, grounded in readers' preference for bold storytelling over a safe, minimal look.
+                </p>
+            </section>
+
+            <!-- Outcome -->
+            <section class="cs-section">
+                <div class="cs-kicker">Outcome</div>
+                <h2 class="cs-h2">Where it stands</h2>
+                <div class="cs-stats">
+                    <div class="cs-stat">
+                        <div class="cs-stat-figure">3 → 1</div>
+                        <div class="cs-stat-label">Clicks to reach key content</div>
+                    </div>
+                    <div class="cs-stat">
+                        <div class="cs-stat-figure">6 / 8</div>
+                        <div class="cs-stat-label">Sections with a shortened path</div>
+                    </div>
+                    <div class="cs-stat">
+                        <div class="cs-stat-figure">4</div>
+                        <div class="cs-stat-label">Person design &amp; advisory team</div>
+                    </div>
+                </div>
+                <p class="cs-text" style="margin-top:1.5rem;">
+                    Build in progress. See the current state at
+                    <a href="https://www.digmaglb.com/" target="_blank" rel="noopener noreferrer">digmaglb.com</a>.
+                </p>
+            </section>
+        </div>
+
+        <!-- Footer nav -->
+        <footer class="cs-foot">
+            <div class="container">
+                <div class="cs-foot-inner">
+                    <span class="cs-foot-text">More product thinking next door.</span>
+                    <div class="cs-links">
+                        <a class="btn btn-secondary" href="schedaddle.html">Next: Schedaddle →</a>
+                        <a class="btn btn-primary" href="index.html#projects">Back to projects</a>
+                    </div>
+                </div>
+            </div>
+        </footer>
+    </main>
+
+    <script src="js/script.js"></script>
+</body>
+
+</html>

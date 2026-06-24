@@ -9,7 +9,11 @@
     <meta name="keywords" content="Product Manager, APM, Computer Science, Platform Management, CSULB">
     <meta name="author" content="Tasneem Iqbal">
     <title>Tasneem Iqbal </title>
-    <link rel="icon" type="image/x-icon" href="favicon.ico?v=2" />
+    <link rel="icon" type="image/svg+xml" href="favicon.svg?v=3">
+    <link rel="icon" type="image/png" sizes="32x32" href="favicon-32.png?v=3">
+    <link rel="icon" type="image/png" sizes="16x16" href="favicon-16.png?v=3">
+    <link rel="icon" type="image/x-icon" href="favicon.ico?v=3">
+    <link rel="apple-touch-icon" href="apple-touch-icon.png?v=3">
 
 
     <!-- Fonts -->
@@ -17,15 +21,30 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <!-- <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet"> -->
     <link
-        href="https://fonts.googleapis.com/css2?family=Manrope:wght@300;400;500;600;700;800&family=Cormorant+Garamond:wght@400;500;600;700&display=swap"
+        href="https://fonts.googleapis.com/css2?family=Manrope:wght@300;400;500;600;700;800&family=Cormorant+Garamond:wght@400;500;600;700&family=Pixelify+Sans:wght@400;500;600;700&display=swap"
         rel="stylesheet">
 
 
     <!-- Stylesheets -->
     <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="css/xp-theme.css">
 </head>
 
 <body>
+    <!-- Interactive three.js background (sits behind the hero, reacts to the cursor) -->
+    <canvas id="bg-canvas" aria-hidden="true"></canvas>
+
+    <!-- Retro posterize filter for photos -->
+    <svg width="0" height="0" style="position:absolute" aria-hidden="true">
+        <filter id="retroFilter" color-interpolation-filters="sRGB">
+            <feComponentTransfer>
+                <feFuncR type="discrete" tableValues="0 0.22 0.44 0.66 0.88 1"/>
+                <feFuncG type="discrete" tableValues="0 0.22 0.44 0.66 0.88 1"/>
+                <feFuncB type="discrete" tableValues="0 0.25 0.5 0.75 1"/>
+            </feComponentTransfer>
+        </filter>
+    </svg>
+
     <!-- Navigation -->
     <nav class="nav" id="nav">
         <div class="container">
@@ -38,9 +57,10 @@
                     <a class="nav-link" onclick="scrollToSection('about')">about</a>
                     <a class="nav-link" onclick="scrollToSection('experience')">experience</a>
                     <a class="nav-link" onclick="scrollToSection('projects')">projects</a>
+                    <a class="nav-link" onclick="scrollToSection('skills')">skills</a>
                     <a class="nav-link" onclick="scrollToSection('contact')">contact</a>
                     <button class="theme-toggle" id="themeToggle" onclick="toggleTheme()" title="Toggle theme">
-                        <span class="theme-icon">🌙</span>
+                        <span class="theme-icon">Dark</span>
                     </button>
                     <button class="chat-btn" onclick="scrollToSection('contact')">Let's Chat</button>
                 </div>
@@ -63,15 +83,20 @@
                 </h1>
 
                 <p class="hero-subtitle fade-in-up delay-2">
-                    A developer who enjoys mixing creativity, problem solving, and a lot of curiosity into everything I
-                    make.
+                    A CS senior pivoting into product. I pair engineering fluency with user research to scope smart
+                    decisions and ship improvements people actually feel.
                 </p>
 
                 <p class="rotating-quote fade-in-up delay-3" id="rotatingQuote">
 
                 </p>
 
-
+                <div class="cta-group fade-in-up delay-4">
+                    <a class="btn btn-primary" href="Tasneem_Iqbal_Resume.pdf" download="Tasneem_Iqbal_Resume.pdf">
+                        Download Résumé
+                    </a>
+                    <a class="btn btn-secondary" onclick="scrollToSection('projects')">View My Work</a>
+                </div>
 
             </div>
         </div>
@@ -90,41 +115,45 @@
             </p>
 
             <div class="about-grid">
-                <div>
-                    <div class="profile-section">
-                        <div class="profile-image-container">
-                            <img src="images/mypic3.jpg" alt="Tasneem Iqbal" class="profile-image"
-                                onerror="this.src='images/mypic3.jpg'">
-                            <div class="profile-status">
-                                <span class="status-dot"></span>
+                <div class="profile-section">
+                    <div class="profile-image-container xp-window">
+                        <div class="xp-titlebar">
+                            <span class="xp-titlebar-name">tasneem.bmp</span>
+                            <span class="xp-titlebar-btns"><i>_</i><i>□</i><i>X</i></span>
+                        </div>
+                        <img src="images/mypic3.jpg" alt="Tasneem Iqbal" class="profile-image retro-img"
+                            onerror="this.src='images/mypic3.jpg'">
+                        <div class="profile-status">
+                            <span class="status-dot"></span>
 
+                        </div>
+                    </div>
+                    <div class="profile-quick-facts">
+                        <div class="quick-fact">
+                            <span class="fact-icon"></span>
+                            <div>
+                                <strong>Education</strong>
+                                <p>B.S. CS @ CSULB · GPA 3.6 · Grad Dec 2026</p>
                             </div>
                         </div>
-                        <div class="profile-quick-facts">
-                            <div class="quick-fact">
-                                <span class="fact-icon"></span>
-                                <div>
-                                    <strong>Education</strong>
-                                    <p>CS @ CSULB</p>
-                                </div>
+                        <div class="quick-fact">
+                            <span class="fact-icon"></span>
+                            <div>
+                                <strong>Location</strong>
+                                <p>Long Beach, CA</p>
                             </div>
-                            <div class="quick-fact">
-                                <span class="fact-icon"></span>
-                                <div>
-                                    <strong>Location</strong>
-                                    <p>Long Beach, CA</p>
-                                </div>
-                            </div>
-                            <div class="quick-fact">
-                                <span class="fact-icon"></span>
-                                <div>
-                                    <strong>Seeking</strong>
-                                    <p>APM/PM Roles</p>
-                                </div>
+                        </div>
+                        <div class="quick-fact">
+                            <span class="fact-icon"></span>
+                            <div>
+                                <strong>Seeking</strong>
+                                <p>APM/PM Roles</p>
                             </div>
                         </div>
                     </div>
+                </div>
 
+                <div class="about-copy">
                     <p class="about-text">
                         My <span class="highlight-text">CS background</span> helps me understand technical tradeoffs,
                         scope work realistically, and communicate clearly with engineering teams.
@@ -138,33 +167,6 @@
                         enjoy using.
                     </p>
                 </div>
-
-                <div class="superpowers-grid">
-                    <div class="superpower-card">
-                        <div class="superpower-icon"></div>
-                        <h3 class="superpower-title">Clear Communicator</h3>
-                        <p class="superpower-desc">I align engineers, creatives, and stakeholders around clear goals and
-                            decisions.</p>
-                    </div>
-                    <div class="superpower-card">
-                        <div class="superpower-icon"></div>
-                        <h3 class="superpower-title">Execution Driven</h3>
-                        <p class="superpower-desc">I turn ambiguous ideas into scoped tasks, shipped features, and
-                            reliable follow-through.</p>
-                    </div>
-                    <div class="superpower-card">
-                        <div class="superpower-icon"></div>
-                        <h3 class="superpower-title">Strong Coordinator</h3>
-                        <p class="superpower-desc">I keep timelines, priorities, and contributors organized so projects
-                            keep moving.</p>
-                    </div>
-                    <div class="superpower-card">
-                        <div class="superpower-icon"></div>
-                        <h3 class="superpower-title">Cross-Team Partner</h3>
-                        <p class="superpower-desc">I build trust across functions and keep product, technical, and user
-                            needs in sync.</p>
-                    </div>
-                </div>
             </div>
 
         </div>
@@ -176,195 +178,112 @@
             <div class="section-label">MY JOURNEY</div>
             <h2 class="section-title">Professional Experience</h2>
 
-            <div class="timeline">
-                <!-- Experience 1 -->
-                <div class="timeline-item">
-                    <div class="timeline-marker"></div>
-                    <div class="timeline-content">
-                        <div class="timeline-header">
-                            <div class="timeline-left">
-                                <span class="timeline-period">Dec 2025 — Present</span>
-                                <h3 class="timeline-role">Web Platform Manager</h3>
-                                <p class="timeline-company">Beach Media, CSULB</p>
+            <div class="exp-tabs" role="tablist">
+                <button class="exp-tab active" data-company="beach" role="tab" aria-selected="true">
+                    <span class="exp-tab-logo">BM</span>
+                    <span class="exp-tab-info">
+                        <span class="exp-tab-name">Beach Media</span>
+                        <span class="exp-tab-meta">CSULB · 2 roles</span>
+                    </span>
+                </button>
+                <button class="exp-tab" data-company="teals" role="tab" aria-selected="false">
+                    <span class="exp-tab-logo">MS</span>
+                    <span class="exp-tab-info">
+                        <span class="exp-tab-name">Microsoft TEALS</span>
+                        <span class="exp-tab-meta">Teaching Assistant</span>
+                    </span>
+                </button>
+            </div>
+
+            <div class="exp-stage">
+                <!-- Beach Media -->
+                <div class="exp-panel active" data-company="beach">
+                    <article class="exp-role">
+                        <div class="exp-role-head">
+                            <div>
+                                <span class="exp-period">Dec 2025 - Present</span>
+                                <h3 class="exp-role-title">Web Platform Manager</h3>
+                                <p class="exp-company">Beach Media · CSULB</p>
                             </div>
-                            <div class="timeline-badge">Current Role</div>
+                            <span class="exp-badge">Current</span>
                         </div>
-                        <p class="timeline-description">
-                            Promoted to lead the product and platform direction for student-facing digital publications,
-                            balancing technical execution with editorial and audience goals.
-                        </p>
-                        <div class="timeline-highlights">
-                            <div class="highlight">
-                                <span class="highlight-icon"></span>
-                                <span class="highlight-text">Lead cross-functional teams across Creative, Editorial, and
-                                    Technical departments</span>
-                            </div>
-                            <div class="highlight">
-                                <span class="highlight-icon"></span>
-                                <span class="highlight-text">Analyze user behavior and site performance to drive product
-                                    decisions</span>
-                            </div>
-                            <div class="highlight">
-                                <span class="highlight-icon"></span>
-                                <span class="highlight-text">Support platform enhancement projects with structured
-                                    methodologies</span>
-                            </div>
-                            <div class="highlight">
-                                <span class="highlight-icon"></span>
-                                <span class="highlight-text">Improved reliability and adoption across multiple partner
-                                    publications</span>
-                            </div>
+                        <div class="exp-stat">
+                            <span class="exp-stat-figure">Promoted to Manager</span>
+                            <span class="exp-stat-label">Earned ownership of the full publication portfolio</span>
                         </div>
-                        <div class="timeline-skills">
-                            <span class="skill-pill">Product Management</span>
+                        <ul class="exp-bullets">
+                            <li>Own Beach Media's full portfolio of publication websites</li>
+                            <li>Coordinate with editorial and design teams to scope and ship site changes while keeping
+                                platforms stable and online</li>
+                            <li>Safeguard platform security by managing user access, resetting credentials, and patching
+                                vulnerabilities across all sites</li>
+                        </ul>
+                        <div class="exp-skills">
                             <span class="skill-pill">Stakeholder Alignment</span>
-                            <span class="skill-pill">Performance Analytics</span>
+                            <span class="skill-pill">Scope &amp; Ship</span>
+                            <span class="skill-pill">Platform Security</span>
                             <span class="skill-pill">Cross-functional Leadership</span>
                         </div>
-                    </div>
-                </div>
+                    </article>
 
-                <!-- Experience 2 -->
-                <div class="timeline-item">
-                    <div class="timeline-marker"></div>
-                    <div class="timeline-content">
-                        <div class="timeline-header">
-                            <div class="timeline-left">
-                                <span class="timeline-period">Aug 2025 — Dec 2025</span>
-                                <h3 class="timeline-role">Web Platform Coordinator</h3>
-                                <p class="timeline-company">Beach Media, CSULB</p>
+                    <article class="exp-role">
+                        <div class="exp-role-head">
+                            <div>
+                                <span class="exp-period">Aug 2025 - Dec 2025</span>
+                                <h3 class="exp-role-title">Web Platform Coordinator</h3>
+                                <p class="exp-company">Beach Media · CSULB</p>
                             </div>
                         </div>
-                        <p class="timeline-description">
-                            Owned day-to-day platform operations and shipped measurable UX and performance improvements
-                            across high-traffic publication sites.
-                        </p>
-                        <div class="timeline-highlights">
-                            <div class="highlight">
-                                <span class="highlight-icon"></span>
-                                <span class="highlight-text">Reduced platform load times by over 60% through
-                                    optimization</span>
-                            </div>
-                            <div class="highlight">
-                                <span class="highlight-icon"></span>
-                                <span class="highlight-text">Led complete website redesign for DIG Magazine from concept
-                                    to launch</span>
-                            </div>
-                            <div class="highlight">
-                                <span class="highlight-icon"></span>
-                                <span class="highlight-text">Improved UX through structured testing and quality
-                                    assurance</span>
-                            </div>
-                            <div class="highlight">
-                                <span class="highlight-icon"></span>
-                                <span class="highlight-text">Documented platform changes and enhancement
-                                    opportunities</span>
-                            </div>
+                        <div class="exp-stat">
+                            <span class="exp-stat-figure">LCP 2.1s · CLS 0</span>
+                            <span class="exp-stat-label">passed Core Web Vitals on LBCurrent</span>
                         </div>
-                        <div class="timeline-skills">
-                            <span class="skill-pill">WordPress</span>
-                            <span class="skill-pill">Squarespace</span>
+                        <ul class="exp-bullets">
+                            <li>Optimized front-end performance through code refactoring and asset compression, helping
+                                publications pass Core Web Vitals</li>
+                            <li>Built and maintained responsive HTML/CSS components across multiple publication sites to
+                                improve mobile consistency</li>
+                            <li>Debugged production issues to keep sites reliable and online</li>
+                        </ul>
+                        <div class="exp-skills">
+                            <span class="skill-pill">Core Web Vitals</span>
                             <span class="skill-pill">HTML</span>
                             <span class="skill-pill">CSS</span>
-                            <span class="skill-pill">PHP</span>
-                            <span class="skill-pill">UX Optimization</span>
-                            <span class="skill-pill">Project Coordination</span>
-                   
+                            <span class="skill-pill">WordPress</span>
+                            <span class="skill-pill">Squarespace</span>
+                            <span class="skill-pill">Performance Optimization</span>
                         </div>
-                    </div>
+                    </article>
                 </div>
 
-                <!-- Experience 3 -->
-                <div class="timeline-item">
-                    <div class="timeline-marker"></div>
-                    <div class="timeline-content">
-                        <div class="timeline-header">
-                            <div class="timeline-left">
-                                <span class="timeline-period">Jun 2023 — Jun 2024</span>
-                                <h3 class="timeline-role">Computer Science Teaching Assistant</h3>
-                                <p class="timeline-company">Microsoft TEALS</p>
+                <!-- Microsoft TEALS -->
+                <div class="exp-panel" data-company="teals">
+                    <article class="exp-role">
+                        <div class="exp-role-head">
+                            <div>
+                                <span class="exp-period">Jun 2023 - Jun 2024</span>
+                                <h3 class="exp-role-title">Computer Science Teaching Assistant</h3>
+                                <p class="exp-company">Microsoft TEALS</p>
                             </div>
                         </div>
-                        <p class="timeline-description">
-                            Supported classroom delivery by simplifying technical topics, improving learning materials,
-                            and helping students build confidence in core CS concepts.
-                        </p>
-                        <div class="timeline-highlights">
-                            <div class="highlight">
-                                <span class="highlight-icon"></span>
-                                <span class="highlight-text">Developed educational materials and prepared slides for CS
-                                    programs</span>
-                            </div>
-                            <div class="highlight">
-                                <span class="highlight-icon"></span>
-                                <span class="highlight-text">Translated complex technical concepts into accessible
-                                    explanations</span>
-                            </div>
-                            <div class="highlight">
-                                <span class="highlight-icon"></span>
-                                <span class="highlight-text">Coordinated timelines and feedback across multiple
-                                    stakeholders</span>
-                            </div>
-                            <div class="highlight">
-                                <span class="highlight-icon"></span>
-                                <span class="highlight-text">Demonstrated structured problem-solving and independent
-                                    execution</span>
-                            </div>
+                        <div class="exp-stat">
+                            <span class="exp-stat-figure">1 year mentoring</span>
+                            <span class="exp-stat-label">high-school students in intro computer science</span>
                         </div>
-                        <div class="timeline-skills">
+                        <ul class="exp-bullets">
+                            <li>Tutored high-school students in introductory computer science to reinforce core
+                                programming concepts</li>
+                            <li>Reviewed and debugged student Python assignments to help them resolve errors and complete
+                                coursework</li>
+                            <li>Translated complex technical concepts into accessible explanations</li>
+                        </ul>
+                        <div class="exp-skills">
                             <span class="skill-pill">Python</span>
                             <span class="skill-pill">Communication</span>
-                            <span class="skill-pill">Curriculum Design</span>
-                            <span class="skill-pill">PowerPoint</span>
+                            <span class="skill-pill">Mentorship</span>
+                            <span class="skill-pill">Debugging</span>
                         </div>
-                    </div>
-                </div>
-
-                <!-- Experience 4 -->
-                <div class="timeline-item">
-                    <div class="timeline-marker"></div>
-                    <div class="timeline-content">
-                        <div class="timeline-header">
-                            <div class="timeline-left">
-                                <span class="timeline-period">Aug 2022 — Oct 2022</span>
-                                <h3 class="timeline-role">Program Coordinator</h3>
-                                <p class="timeline-company">Girls Who Code</p>
-                            </div>
-                        </div>
-                        <p class="timeline-description">
-                            Coordinated community coding sessions and volunteer workflows to create structured,
-                            welcoming pathways into technical learning for young students.
-                        </p>
-                        <div class="timeline-highlights">
-                            <div class="highlight">
-                                <span class="highlight-icon"></span>
-                                <span class="highlight-text">Organized and facilitated bi-weekly coding workshops for
-                                    10+ students</span>
-                            </div>
-                            <div class="highlight">
-                                <span class="highlight-icon"></span>
-                                <span class="highlight-text">Led volunteer team in planning hands-on learning
-                                    activities</span>
-                            </div>
-                            <div class="highlight">
-                                <span class="highlight-icon"></span>
-                                <span class="highlight-text">Designed workshop content aligned with participant skill
-                                    levels</span>
-                            </div>
-                            <div class="highlight">
-                                <span class="highlight-icon"></span>
-                                <span class="highlight-text">Demonstrated collaborative skills and service-oriented
-                                    mindset</span>
-                            </div>
-                        </div>
-                        <div class="timeline-skills">
-                            <span class="skill-pill">C++</span>
-                            <span class="skill-pill">Program Coordination</span>
-                            <span class="skill-pill">Team Leadership</span>
-                            <span class="skill-pill">Workshop Design</span>
-                            <span class="skill-pill">Community Building</span>
-                        </div>
-                    </div>
+                    </article>
                 </div>
             </div>
         </div>
@@ -382,29 +301,71 @@
             
 
             <div class="projects-grid">
-                <a class="project-card" href="https://www.digmaglb.com/" target="_blank" rel="noopener noreferrer"
-                    aria-label="DIG Magazine project">
-                    <figure class="project-preview">
-                        <img src="images/digmag.png" alt="Project preview for DIG Magazine" class="project-image">
-                        <figcaption class="project-caption">Project Screen Preview</figcaption>
+                <a class="project-card project-card--case" href="schedaddle.html"
+                    aria-label="Read the Schedaddle case study">
+                    <span class="project-ribbon">Case Study</span>
+                    <figure class="project-preview xp-window">
+                        <div class="xp-titlebar">
+                            <span class="xp-titlebar-name">schedaddle.png</span>
+                            <span class="xp-titlebar-btns"><i>_</i><i>□</i><i>X</i></span>
+                        </div>
+                        <img src="images/schedaddle.png" alt="Schedaddle prototype preview"
+                            class="project-image retro-img">
+                        <figcaption class="project-caption">Figma Prototype Preview</figcaption>
                     </figure>
-                    <span class="project-date">Aug 2025 - Present</span>
-                    <h3 class="project-name">DIG Magazine</h3>
+                    <span class="project-date">Jan 2026 - Present</span>
+                    <h3 class="project-name">Schedaddle</h3>
                     <p class="project-display">
-                        <strong>Display:</strong> Ongoing redesign of the DIG Magazine Website
+                        <strong>Display:</strong> A platform unifying availability polling, scheduling, and
+                        announcements. Ran 3 user interviews to define requirements, co-authored a product spec of 5
+                        core modules, and drove a 15-screen interactive Figma prototype, cutting scope by replacing
+                        real-time messaging with Partiful-style admin announcements.
                     </p>
                     <div class="project-tech">
-                        <span class="project-tech-pill">Squarespace</span>
+                        <span class="project-tech-pill">User Research</span>
+                        <span class="project-tech-pill">Product Spec</span>
+                        <span class="project-tech-pill">Figma</span>
+                        <span class="project-tech-pill">MVP Scoping</span>
+                    </div>
+                    <span class="project-cta">Read case study →</span>
+                </a>
+
+                <a class="project-card project-card--case" href="dig.html"
+                    aria-label="Read the DIG Magazine case study">
+                    <span class="project-ribbon">Case Study</span>
+                    <figure class="project-preview xp-window">
+                        <div class="xp-titlebar">
+                            <span class="xp-titlebar-name">digmag.png</span>
+                            <span class="xp-titlebar-btns"><i>_</i><i>□</i><i>X</i></span>
+                        </div>
+                        <img src="images/digmag.png" alt="Project preview for DIG Magazine"
+                            class="project-image retro-img">
+                        <figcaption class="project-caption">Project Screen Preview</figcaption>
+                    </figure>
+                    <span class="project-date">Jun 2026 - Present</span>
+                    <h3 class="project-name">DIG Magazine</h3>
+                    <p class="project-display">
+                        <strong>Display:</strong> Lead engineer on the DIG Magazine redesign, cutting the path to key
+                        content from 3 clicks to 1 across 6 of 8 sections, and am translating the approved Figma
+                        design into a responsive, production-ready site.
+                    </p>
+                    <div class="project-tech">
+                        <span class="project-tech-pill">Figma</span>
                         <span class="project-tech-pill">HTML</span>
                         <span class="project-tech-pill">CSS</span>
                     </div>
+                    <span class="project-cta">Read case study →</span>
                 </a>
 
                 <a class="project-card" href="https://github.com/tasneemiqbal/PennyPal/tree/main" target="_blank" rel="noopener noreferrer"
                     aria-label="Open Project Name">
-                    <figure class="project-preview">
+                    <figure class="project-preview xp-window">
+                        <div class="xp-titlebar">
+                            <span class="xp-titlebar-name">pennypal.png</span>
+                            <span class="xp-titlebar-btns"><i>_</i><i>□</i><i>X</i></span>
+                        </div>
                         <img src="images/pennypal.png" alt="Project preview for PennyPal"
-                            class="project-image">
+                            class="project-image retro-img">
                         <figcaption class="project-caption">Project Screen Preview</figcaption>
                     </figure>
                     <span class="project-date">May 2025</span>
@@ -429,6 +390,58 @@
         </div>
     </section>
 
+    <!-- Skills Section -->
+    <section id="skills" class="skills-section">
+        <div class="container">
+            <div class="section-label">WHAT I WORK WITH</div>
+            <h2 class="section-title">Skills &amp; Tools</h2>
+            <p class="section-subtitle">
+                A toolkit spanning product thinking and hands-on engineering. Tap a category to explore.
+            </p>
+
+            <div class="skills-tabs" role="tablist">
+                <button class="skills-tab active" data-category="product" role="tab" aria-selected="true">
+                    <span class="skills-tab-dot"></span> Product
+                </button>
+                <button class="skills-tab" data-category="programming" role="tab" aria-selected="false">
+                    <span class="skills-tab-dot"></span> Programming
+                </button>
+                <button class="skills-tab" data-category="tools" role="tab" aria-selected="false">
+                    <span class="skills-tab-dot"></span> Tools
+                </button>
+            </div>
+
+            <div class="skills-stage">
+                <div class="skills-panel active" data-category="product">
+                    <span class="skill-chip">User Interviews</span>
+                    <span class="skill-chip">Product Specs / PRDs</span>
+                    <span class="skill-chip">Wireframing</span>
+                    <span class="skill-chip">Information Architecture</span>
+                    <span class="skill-chip">Competitive Analysis</span>
+                    <span class="skill-chip">MVP Scoping</span>
+                </div>
+                <div class="skills-panel" data-category="programming">
+                    <span class="skill-chip">Python</span>
+                    <span class="skill-chip">JavaScript</span>
+                    <span class="skill-chip">C++</span>
+                    <span class="skill-chip">Kotlin</span>
+                    <span class="skill-chip">HTML</span>
+                    <span class="skill-chip">CSS</span>
+                </div>
+                <div class="skills-panel" data-category="tools">
+                    <span class="skill-chip">Figma</span>
+                    <span class="skill-chip">Git / GitHub</span>
+                    <span class="skill-chip">Firebase</span>
+                    <span class="skill-chip">Chart.js</span>
+                    <span class="skill-chip">WordPress</span>
+                    <span class="skill-chip">Squarespace</span>
+                    <span class="skill-chip">VS Code</span>
+                    <span class="skill-chip">Android Studio</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
     <!-- Contact Section -->
     <section id="contact" class="contact-section">
         <div class="container">
@@ -440,16 +453,23 @@
 
             <div class="contact-grid">
                 <a href="mailto:tasneemiqbal417@gmail.com" class="contact-card">
-                    <div class="contact-icon">✉️</div>
+                    <div class="contact-icon">@</div>
                     <div class="contact-label">Email</div>
                     <div class="contact-value">tasneemiqbal417@gmail.com</div>
                 </a>
 
                 <a href="https://linkedin.com/in/tasneemiqbal89" class="contact-card" target="_blank"
                     rel="noopener noreferrer">
-                    <div class="contact-icon">💼</div>
+                    <div class="contact-icon">in</div>
                     <div class="contact-label">LinkedIn</div>
                     <div class="contact-value">/in/tasneemiqbal89</div>
+                </a>
+
+                <a href="https://github.com/tasneemiqbal" class="contact-card" target="_blank"
+                    rel="noopener noreferrer">
+                    <div class="contact-icon">GH</div>
+                    <div class="contact-label">GitHub</div>
+                    <div class="contact-value">/tasneemiqbal</div>
                 </a>
 
             </div>
@@ -462,7 +482,7 @@
             <div class="footer-content">
                 <h3 class="footer-title">Thanks for stopping by</h3>
                 <p class="footer-text">
-                    Built with care, way too much coffee, and a genuine love for making things that work.
+                    This portfolio has finished loading. Press any key to continue<span class="xp-cursor">_</span>
                 </p>
                 <p class="footer-text">
                     © 2026 Tasneem Iqbal. All rights reserved.
@@ -473,6 +493,9 @@
             </div>
         </div>
     </footer>
+    <!-- three.js (interactive background) -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+    <script src="js/background.js"></script>
     <script src="js/script.js"></script>
 
 </body>

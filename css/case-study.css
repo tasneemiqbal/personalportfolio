@@ -1,0 +1,473 @@
+/* ==========================================
+   CASE STUDY PAGES (Schedaddle, DIG Magazine)
+   Inherits theme tokens from styles.css
+   ========================================== */
+
+.cs-main {
+    padding-top: 5rem;
+}
+
+/* Hero */
+.cs-hero {
+    position: relative;
+    overflow: hidden;
+    padding: 4rem 0 3.5rem;
+    background:
+        radial-gradient(circle at 80% 10%, rgba(132, 94, 247, 0.12), transparent 45%),
+        radial-gradient(circle at 10% 90%, rgba(34, 184, 207, 0.10), transparent 45%),
+        var(--bg-secondary);
+    border-bottom: 1px solid var(--border-color);
+}
+
+.cs-back {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.45rem;
+    font-size: 0.9rem;
+    font-weight: 600;
+    color: var(--text-tertiary);
+    text-decoration: none;
+    margin-bottom: 2rem;
+    transition: gap 0.25s ease, color 0.25s ease;
+}
+
+.cs-back:hover {
+    color: var(--accent);
+    gap: 0.8rem;
+}
+
+.cs-eyebrow {
+    font-size: 0.8125rem;
+    font-weight: 700;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    background: var(--vibrant-gradient);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    width: fit-content;
+    margin-bottom: 1rem;
+}
+
+.cs-title {
+    font-family: 'Cormorant Garamond', Georgia, 'Times New Roman', serif;
+    font-size: 4.25rem;
+    font-weight: 600;
+    line-height: 1.05;
+    letter-spacing: -0.02em;
+    color: var(--text-primary);
+    margin-bottom: 1.25rem;
+}
+
+.cs-lede {
+    font-size: 1.4rem;
+    line-height: 1.5;
+    color: var(--text-tertiary);
+    max-width: 720px;
+    margin-bottom: 2.5rem;
+}
+
+.cs-meta {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    gap: 1.25rem 2rem;
+    padding: 1.75rem;
+    background: var(--bg-primary);
+    border: 1px solid var(--border-color);
+    border-radius: 18px;
+    margin-bottom: 2rem;
+}
+
+.cs-meta-item {
+    display: flex;
+    flex-direction: column;
+    gap: 0.35rem;
+}
+
+.cs-meta-label {
+    font-size: 0.72rem;
+    font-weight: 700;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--accent);
+}
+
+.cs-meta-value {
+    font-size: 0.95rem;
+    color: var(--text-secondary);
+    font-weight: 500;
+    line-height: 1.4;
+}
+
+.cs-links {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+}
+
+/* Body */
+.cs-body {
+    max-width: 840px;
+    margin: 0 auto;
+    padding: 4.5rem 3rem 5rem;
+}
+
+.cs-figure {
+    margin: 0 0 1rem;
+}
+
+.cs-figure img {
+    width: 100%;
+    display: block;
+    border-radius: 16px;
+    border: 1px solid var(--border-color);
+    box-shadow: 0 14px 40px var(--shadow);
+}
+
+.cs-figure figcaption {
+    margin-top: 0.7rem;
+    font-size: 0.8rem;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    color: var(--text-muted);
+    text-align: center;
+}
+
+.cs-section {
+    margin-bottom: 3.5rem;
+}
+
+.cs-section:last-child {
+    margin-bottom: 0;
+}
+
+.cs-kicker {
+    font-size: 0.78rem;
+    font-weight: 700;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--accent);
+    margin-bottom: 0.75rem;
+}
+
+.cs-h2 {
+    font-family: 'Cormorant Garamond', Georgia, 'Times New Roman', serif;
+    font-size: 2.4rem;
+    font-weight: 600;
+    line-height: 1.15;
+    color: var(--text-primary);
+    margin-bottom: 1.25rem;
+}
+
+.cs-text {
+    font-size: 1.0625rem;
+    line-height: 1.8;
+    color: var(--text-secondary);
+    margin-bottom: 1.25rem;
+}
+
+.cs-text:last-child {
+    margin-bottom: 0;
+}
+
+.cs-text strong {
+    color: var(--text-primary);
+}
+
+/* Pain points / insight cards */
+.cs-cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 1rem;
+    margin-top: 1.5rem;
+}
+
+.cs-card {
+    background: var(--bg-secondary);
+    border: 1px solid var(--border-color);
+    border-radius: 16px;
+    padding: 1.5rem;
+    transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
+}
+
+.cs-card:hover {
+    transform: translateY(-4px);
+    border-color: var(--accent);
+    box-shadow: 0 10px 24px var(--shadow);
+}
+
+.cs-card-icon {
+    font-size: 1.6rem;
+    margin-bottom: 0.6rem;
+    display: block;
+}
+
+.cs-card-title {
+    font-size: 1.02rem;
+    font-weight: 700;
+    color: var(--text-primary);
+    margin-bottom: 0.4rem;
+}
+
+.cs-card-text {
+    font-size: 0.92rem;
+    line-height: 1.55;
+    color: var(--text-tertiary);
+}
+
+/* Core module cards */
+.cs-modules {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 1.25rem;
+    margin-top: 1.5rem;
+}
+
+.module-card {
+    position: relative;
+    background: var(--bg-secondary);
+    border: 1px solid var(--border-color);
+    border-radius: 18px;
+    padding: 1.75rem 1.75rem 1.75rem 2rem;
+    overflow: hidden;
+    transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
+}
+
+.module-card::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    width: 4px;
+    background: var(--vibrant-gradient);
+}
+
+.module-card:hover {
+    transform: translateY(-5px);
+    border-color: var(--accent);
+    box-shadow: 0 14px 30px var(--shadow-lg);
+}
+
+.module-num {
+    font-size: 0.78rem;
+    font-weight: 800;
+    letter-spacing: 0.1em;
+    color: var(--vibrant-3);
+    margin-bottom: 0.4rem;
+}
+
+.module-title {
+    font-size: 1.25rem;
+    font-weight: 700;
+    color: var(--text-primary);
+    margin-bottom: 0.2rem;
+}
+
+.module-sub {
+    font-size: 0.88rem;
+    color: var(--text-muted);
+    margin-bottom: 1rem;
+}
+
+.module-features {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    margin-bottom: 1rem;
+}
+
+.module-features li {
+    position: relative;
+    padding-left: 1.35rem;
+    font-size: 0.9rem;
+    color: var(--text-secondary);
+    line-height: 1.5;
+}
+
+.module-features li::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0.5rem;
+    width: 7px;
+    height: 7px;
+    border-radius: 50%;
+    background: var(--vibrant-4);
+}
+
+.module-rationale {
+    font-size: 0.88rem;
+    line-height: 1.55;
+    color: var(--text-tertiary);
+    border-top: 1px dashed var(--border-subtle);
+    padding-top: 0.85rem;
+}
+
+.module-rationale strong {
+    color: var(--accent);
+}
+
+/* Comparison table */
+.cs-table-wrap {
+    margin-top: 1.5rem;
+    border: 1px solid var(--border-color);
+    border-radius: 16px;
+    overflow: hidden;
+}
+
+.cs-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 0.92rem;
+}
+
+.cs-table th,
+.cs-table td {
+    text-align: left;
+    padding: 1rem 1.15rem;
+    vertical-align: top;
+    border-bottom: 1px solid var(--border-color);
+}
+
+.cs-table thead th {
+    background: var(--accent-lighter);
+    color: var(--text-primary);
+    font-weight: 700;
+    font-size: 0.8rem;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+}
+
+.cs-table tbody tr:last-child td {
+    border-bottom: none;
+}
+
+.cs-table td:first-child {
+    font-weight: 700;
+    color: var(--text-primary);
+    white-space: nowrap;
+}
+
+.cs-table .col-now {
+    color: var(--text-tertiary);
+}
+
+.cs-table .col-solution {
+    color: var(--text-secondary);
+}
+
+/* Key decision callout */
+.cs-callout {
+    position: relative;
+    background:
+        radial-gradient(circle at 0% 0%, rgba(132, 94, 247, 0.1), transparent 55%),
+        var(--vibrant-soft);
+    border: 1px solid var(--border-subtle);
+    border-radius: 18px;
+    padding: 2rem 2rem 2rem 2.25rem;
+    overflow: hidden;
+}
+
+.cs-callout::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    width: 5px;
+    background: var(--vibrant-gradient);
+}
+
+.cs-callout-label {
+    font-size: 0.75rem;
+    font-weight: 800;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    background: var(--vibrant-gradient);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    width: fit-content;
+    margin-bottom: 0.75rem;
+}
+
+.cs-callout-text {
+    font-size: 1.15rem;
+    line-height: 1.65;
+    color: var(--text-primary);
+    font-weight: 500;
+}
+
+/* Outcome metric row */
+.cs-stats {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    gap: 1rem;
+    margin-top: 1.5rem;
+}
+
+.cs-stat {
+    background: var(--bg-secondary);
+    border: 1px solid var(--border-color);
+    border-radius: 16px;
+    padding: 1.5rem;
+    text-align: center;
+}
+
+.cs-stat-figure {
+    font-size: 2.2rem;
+    font-weight: 800;
+    line-height: 1;
+    background: var(--vibrant-gradient);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    margin-bottom: 0.5rem;
+}
+
+.cs-stat-label {
+    font-size: 0.85rem;
+    color: var(--text-tertiary);
+    line-height: 1.4;
+}
+
+/* Footer nav between case studies */
+.cs-foot {
+    border-top: 1px solid var(--border-color);
+    background: var(--bg-secondary);
+    padding: 3rem 0;
+}
+
+.cs-foot-inner {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.cs-foot-text {
+    font-size: 1rem;
+    color: var(--text-tertiary);
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .cs-title { font-size: 2.6rem; }
+    .cs-lede { font-size: 1.15rem; }
+    .cs-h2 { font-size: 1.9rem; }
+    .cs-body { padding: 3rem 1.5rem 4rem; }
+    .cs-table { font-size: 0.82rem; }
+    .cs-table th, .cs-table td { padding: 0.75rem 0.7rem; }
+}
+
+/* Screens gallery */
+.cs-gallery {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 1.25rem;
+    margin-top: 1.5rem;
+    align-items: start;
+}

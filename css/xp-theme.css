@@ -1,0 +1,560 @@
+/* ==========================================
+   WINDOWS XP - FLAVORED SKIN
+   Layered on top of styles.css / case-study.css.
+   Keeps the existing layout; reskins type, color, chrome.
+   Toggle the page background with --xp-desktop below.
+   ========================================== */
+
+:root,
+[data-theme="light"] {
+    /* ----- flip this one line to compare backgrounds ----- */
+    --xp-desktop: #ECE9D8;          /* XP system gray  (try #ffffff for pure white) */
+
+    --bg-primary: var(--xp-desktop);
+    --bg-secondary: #ffffff;        /* white "window" panels */
+    --bg-tertiary: #f3f2ec;
+    --text-primary: #1a1a1a;
+    --text-secondary: #2b2b2b;
+    --text-tertiary: #444444;
+    --text-muted: #6a6a6a;
+    --border-color: #919b9c;
+    --border-subtle: #b6bcc2;
+    --accent: #1c4fd6;
+    --accent-hover: #0a3d91;
+    --accent-light: #dce6ff;
+    --accent-lighter: #eaf0ff;
+    --pill-border: #9aa3ab;
+    --timeline-border: #919b9c;
+    --timeline-badge-border: #9aa3ab;
+    --shadow: rgba(0, 0, 0, 0.18);
+    --shadow-lg: rgba(0, 0, 0, 0.28);
+
+    /* Vibrant gradient becomes the XP title-bar blue */
+    --vibrant-gradient: linear-gradient(180deg, #4f9bf5 0%, #1c5fd6 100%);
+    --vibrant-soft: #eaf0ff;
+    --vibrant-3: #1c5fd6;
+    --vibrant-4: #1c5fd6;
+}
+
+/* ---------- Type: Tahoma body, pixel display ---------- */
+body,
+button,
+input,
+.btn,
+.skill-pill,
+.project-tech-pill {
+    font-family: Tahoma, Verdana, Geneva, "Segoe UI", sans-serif !important;
+    letter-spacing: 0 !important;
+}
+
+.hero-title,
+.section-title,
+.hero-gradient-text,
+.timeline-role,
+.exp-role-title,
+.project-name,
+.contact-title,
+.cs-title,
+.cs-h2,
+.module-title,
+.footer-title,
+.logo {
+    font-family: "Pixelify Sans", Tahoma, sans-serif !important;
+    letter-spacing: 0.01em !important;
+}
+
+/* ---------- Kill the modern flourishes (keep the canvas, retro-themed) ---------- */
+.hero-bg {
+    display: none !important;
+}
+
+.about-section,
+.projects-section,
+.footer {
+    background: #ffffff !important;
+}
+
+.experience-section,
+.skills-section,
+.contact-section {
+    background: var(--bg-primary) !important;
+}
+
+/* Square everything off (XP is boxy) */
+.btn,
+.chat-btn,
+.theme-toggle,
+.skills-tab,
+.exp-tab,
+.exp-tab-logo,
+.project-tech-pill,
+.skill-pill,
+.skill-chip,
+.timeline-badge,
+.exp-badge,
+.project-ribbon,
+.hero-badge,
+.quick-fact,
+.project-card,
+.contact-card,
+.contact-icon,
+.exp-role,
+.module-card,
+.cs-card,
+.cs-meta,
+.cs-stat,
+.cs-callout,
+.cs-figure img,
+.profile-image,
+.project-image,
+.exp-stat,
+.cs-table-wrap {
+    border-radius: 2px !important;
+}
+
+/* ---------- Navigation = XP title bar ---------- */
+.nav,
+.nav.scrolled {
+    background: linear-gradient(180deg, #0a5bd6 0%, #003fb0 100%) !important;
+    backdrop-filter: none !important;
+    box-shadow: 0 2px 0 rgba(0, 0, 0, 0.3) !important;
+    border-bottom: 1px solid #001f6b !important;
+    padding: 0.55rem 0 !important;
+}
+
+.logo,
+.logo span {
+    color: #ffffff !important;
+    text-shadow: 1px 1px 0 rgba(0, 0, 0, 0.35);
+}
+
+.nav-link {
+    color: #dbe7ff !important;
+}
+
+.nav-link:hover,
+.nav-link.active {
+    color: #ffffff !important;
+    transform: none !important;
+}
+
+.nav .chat-btn {
+    background: #ECE9D8 !important;
+    color: #0a3d91 !important;
+    border: 1px solid #002b6b !important;
+    box-shadow: inset 1px 1px 0 #ffffff, inset -1px -1px 0 #aca899 !important;
+}
+
+/* ---------- Beveled buttons (the XP signature) ---------- */
+.btn,
+.chat-btn,
+.theme-toggle,
+.skills-tab,
+.exp-tab {
+    background: #ECE9D8 !important;
+    color: #1a1a1a !important;
+    border: 1px solid #003c74 !important;
+    box-shadow: inset 1px 1px 0 #ffffff, inset -1px -1px 0 #aca899 !important;
+    font-weight: 700 !important;
+    transition: none !important;
+}
+
+.theme-toggle {
+    width: auto !important;
+    height: auto !important;
+    padding: 0.5rem 0.9rem !important;
+    font-size: 0.78rem !important;
+}
+
+.btn:hover,
+.chat-btn:hover,
+.theme-toggle:hover,
+.skills-tab:hover,
+.exp-tab:hover {
+    transform: none !important;
+    background: #e3f0ff !important;
+    border-color: #0a3d91 !important;
+}
+
+.btn:active,
+.chat-btn:active {
+    box-shadow: inset -1px -1px 0 #ffffff, inset 1px 1px 0 #808080 !important;
+}
+
+/* Primary + active tabs = blue title-bar fill */
+.btn-primary,
+.skills-tab.active,
+.exp-tab.active {
+    background: linear-gradient(180deg, #4f9bf5 0%, #1c5fd6 100%) !important;
+    color: #ffffff !important;
+    border: 1px solid #0a3d91 !important;
+    box-shadow: inset 1px 1px 0 rgba(255, 255, 255, 0.45) !important;
+}
+
+.skills-tab.active *,
+.exp-tab.active * {
+    color: #ffffff !important;
+}
+
+.exp-tab.active .exp-tab-logo {
+    background: rgba(255, 255, 255, 0.25) !important;
+    border-color: rgba(255, 255, 255, 0.6) !important;
+}
+
+/* ---------- Window-panel cards ---------- */
+.project-card,
+.contact-card,
+.quick-fact,
+.exp-role,
+.module-card,
+.cs-card,
+.cs-meta,
+.cs-stat,
+.cs-callout,
+.hero-badge,
+.skills-stage,
+.profile-status {
+    background: #ffffff !important;
+    border: 1px solid #919b9c !important;
+    box-shadow: inset 1px 1px 0 #ffffff, 2px 2px 5px rgba(0, 0, 0, 0.16) !important;
+}
+
+.project-card:hover,
+.contact-card:hover,
+.quick-fact:hover,
+.exp-role:hover,
+.module-card:hover,
+.cs-card:hover {
+    transform: none !important;
+    border-color: #1c5fd6 !important;
+    box-shadow: 0 0 0 1px #1c5fd6 inset, 2px 2px 5px rgba(0, 0, 0, 0.22) !important;
+}
+
+/* Accent bars on cards -> XP blue (already via --vibrant-gradient) */
+.exp-role::before,
+.module-card::before,
+.cs-callout::before {
+    width: 4px !important;
+}
+
+/* Pills / chips: light beveled tags */
+.skill-pill,
+.project-tech-pill,
+.skill-chip,
+.timeline-badge,
+.exp-badge {
+    background: #f0efe8 !important;
+    color: #1a1a1a !important;
+    border: 1px solid #9aa3ab !important;
+    box-shadow: inset 1px 1px 0 #ffffff !important;
+}
+
+.skill-chip:hover,
+.skill-pill:hover {
+    transform: none !important;
+    background: #e3f0ff !important;
+    border-color: #1c5fd6 !important;
+    color: #0a3d91 !important;
+    box-shadow: inset 1px 1px 0 #ffffff !important;
+}
+
+/* Contact monogram icons as little blue tiles */
+.contact-icon {
+    background: linear-gradient(180deg, #4f9bf5 0%, #1c5fd6 100%) !important;
+    color: #ffffff !important;
+    border: 1px solid #0a3d91 !important;
+    font-weight: 700;
+}
+
+/* Profile + project images get a beveled frame */
+.profile-image,
+.project-image,
+.cs-figure img {
+    border: 1px solid #919b9c !important;
+    box-shadow: inset 1px 1px 0 #ffffff, 2px 2px 5px rgba(0, 0, 0, 0.16) !important;
+}
+
+/* Comparison table chrome */
+.cs-table thead th {
+    background: linear-gradient(180deg, #4f9bf5 0%, #1c5fd6 100%) !important;
+    color: #ffffff !important;
+}
+
+/* Status dot stays green (XP "online" vibe is fine) */
+
+/* Reduce the floaty timeline-style animation feel left anywhere */
+.exp-panel.active {
+    animation: none !important;
+}
+
+/* ==========================================
+   XP DARK MODE ("Windows Classic" dark / high-contrast)
+   Activated by [data-theme="dark"]; higher specificity than
+   the light hard-coded rules above, so these win.
+   ========================================== */
+[data-theme="dark"] {
+    --xp-desktop: #1f2228;
+    --bg-primary: #1f2228;
+    --bg-secondary: #2e323a;
+    --bg-tertiary: #3a3f47;
+    --text-primary: #f1f1f1;
+    --text-secondary: #d7dae0;
+    --text-tertiary: #b4b9c1;
+    --text-muted: #8b919b;
+    --border-color: #565c66;
+    --border-subtle: #474d56;
+    --accent: #5ea0ff;
+    --accent-hover: #8bbcff;
+    --accent-light: #2a3344;
+    --accent-lighter: #243047;
+    --pill-border: #565c66;
+    --timeline-border: #565c66;
+    --timeline-badge-border: #565c66;
+    --shadow: rgba(0, 0, 0, 0.55);
+    --shadow-lg: rgba(0, 0, 0, 0.65);
+    --vibrant-gradient: linear-gradient(180deg, #5ea0ff 0%, #2f6fe0 100%);
+    --vibrant-soft: #243047;
+    --vibrant-3: #5ea0ff;
+    --vibrant-4: #5ea0ff;
+}
+
+[data-theme="dark"] .about-section,
+[data-theme="dark"] .projects-section,
+[data-theme="dark"] .footer,
+[data-theme="dark"] .experience-section,
+[data-theme="dark"] .skills-section,
+[data-theme="dark"] .contact-section {
+    background: #1f2228 !important;
+}
+
+[data-theme="dark"] .cs-hero {
+    background: #26292f !important;
+    border-bottom: 1px solid #565c66 !important;
+}
+
+/* Title-bar nav: deeper navy in dark */
+[data-theme="dark"] .nav,
+[data-theme="dark"] .nav.scrolled {
+    background: linear-gradient(180deg, #0a4fb0 0%, #002b78 100%) !important;
+    border-bottom: 1px solid #001233 !important;
+}
+
+/* Window-panel cards */
+[data-theme="dark"] .project-card,
+[data-theme="dark"] .contact-card,
+[data-theme="dark"] .quick-fact,
+[data-theme="dark"] .exp-role,
+[data-theme="dark"] .module-card,
+[data-theme="dark"] .cs-card,
+[data-theme="dark"] .cs-meta,
+[data-theme="dark"] .cs-stat,
+[data-theme="dark"] .cs-callout,
+[data-theme="dark"] .hero-badge,
+[data-theme="dark"] .skills-stage,
+[data-theme="dark"] .profile-status {
+    background: #2e323a !important;
+    border: 1px solid #565c66 !important;
+    box-shadow: inset 1px 1px 0 rgba(255, 255, 255, 0.06), 2px 2px 5px rgba(0, 0, 0, 0.5) !important;
+}
+
+[data-theme="dark"] .project-card:hover,
+[data-theme="dark"] .contact-card:hover,
+[data-theme="dark"] .quick-fact:hover,
+[data-theme="dark"] .exp-role:hover,
+[data-theme="dark"] .module-card:hover,
+[data-theme="dark"] .cs-card:hover {
+    border-color: #5ea0ff !important;
+    box-shadow: 0 0 0 1px #5ea0ff inset, 2px 2px 5px rgba(0, 0, 0, 0.6) !important;
+}
+
+/* Beveled buttons (dark bevel) */
+[data-theme="dark"] .btn,
+[data-theme="dark"] .chat-btn,
+[data-theme="dark"] .theme-toggle,
+[data-theme="dark"] .skills-tab,
+[data-theme="dark"] .exp-tab {
+    background: #454a52 !important;
+    color: #f1f1f1 !important;
+    border: 1px solid #14171b !important;
+    box-shadow: inset 1px 1px 0 #5e646d, inset -1px -1px 0 #25282d !important;
+}
+
+[data-theme="dark"] .btn:hover,
+[data-theme="dark"] .chat-btn:hover,
+[data-theme="dark"] .theme-toggle:hover,
+[data-theme="dark"] .skills-tab:hover,
+[data-theme="dark"] .exp-tab:hover {
+    background: #535963 !important;
+    border-color: #5ea0ff !important;
+}
+
+/* Primary + active tabs keep the blue title-bar fill */
+[data-theme="dark"] .btn-primary,
+[data-theme="dark"] .skills-tab.active,
+[data-theme="dark"] .exp-tab.active {
+    background: linear-gradient(180deg, #5ea0ff 0%, #2f6fe0 100%) !important;
+    color: #ffffff !important;
+    border: 1px solid #0a3d91 !important;
+    box-shadow: inset 1px 1px 0 rgba(255, 255, 255, 0.4) !important;
+}
+
+[data-theme="dark"] .nav .chat-btn {
+    background: #454a52 !important;
+    color: #dce8ff !important;
+    border: 1px solid #14171b !important;
+}
+
+/* Tags / pills */
+[data-theme="dark"] .skill-pill,
+[data-theme="dark"] .project-tech-pill,
+[data-theme="dark"] .skill-chip,
+[data-theme="dark"] .timeline-badge,
+[data-theme="dark"] .exp-badge {
+    background: #3a3f47 !important;
+    color: #e6e6e6 !important;
+    border: 1px solid #565c66 !important;
+    box-shadow: inset 1px 1px 0 rgba(255, 255, 255, 0.05) !important;
+}
+
+[data-theme="dark"] .skill-chip:hover,
+[data-theme="dark"] .skill-pill:hover {
+    background: #2a3344 !important;
+    color: #cfe0ff !important;
+    border-color: #5ea0ff !important;
+}
+
+/* Image frames */
+[data-theme="dark"] .profile-image,
+[data-theme="dark"] .project-image,
+[data-theme="dark"] .cs-figure img {
+    border: 1px solid #565c66 !important;
+    box-shadow: inset 1px 1px 0 rgba(255, 255, 255, 0.06), 2px 2px 5px rgba(0, 0, 0, 0.5) !important;
+}
+
+[data-theme="dark"] .cs-table tbody td {
+    border-color: #565c66 !important;
+}
+
+/* ==========================================
+   PHOTO-VIEWER WINDOWS + RETRO IMAGE FILTER
+   ========================================== */
+.xp-window {
+    background: #ffffff !important;
+    border: 1px solid #003c74 !important;
+    box-shadow: inset 1px 1px 0 #ffffff, 2px 2px 6px rgba(0, 0, 0, 0.25) !important;
+    border-radius: 2px !important;
+    overflow: hidden;
+    padding: 0 !important;
+}
+
+.xp-titlebar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 0.5rem;
+    background: linear-gradient(180deg, #0a5bd6 0%, #003fb0 100%);
+    color: #ffffff;
+    padding: 0.32rem 0.5rem;
+    font-family: Tahoma, Verdana, sans-serif;
+    font-size: 0.72rem;
+    font-weight: 700;
+}
+
+.xp-titlebar-name {
+    display: flex;
+    align-items: center;
+    gap: 0.4rem;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    text-shadow: 1px 1px 0 rgba(0, 0, 0, 0.3);
+}
+
+.xp-titlebar-btns {
+    display: flex;
+    gap: 3px;
+    flex-shrink: 0;
+}
+
+.xp-titlebar-btns i {
+    width: 16px;
+    height: 14px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #ECE9D8;
+    color: #000000;
+    font-style: normal;
+    font-size: 0.55rem;
+    font-weight: 700;
+    line-height: 1;
+    border: 1px solid #003c74;
+    box-shadow: inset 1px 1px 0 #ffffff;
+}
+
+.xp-window img {
+    display: block;
+    width: 100%;
+    margin: 0;
+    border: 0 !important;
+    border-radius: 0 !important;
+    box-shadow: none !important;
+}
+
+.xp-window .project-caption {
+    padding: 0.4rem 0.6rem;
+    margin: 0;
+    border-top: 1px solid #b6bcc2;
+}
+
+/* Posterized, cool-tinted "retro BMP" look */
+.retro-img {
+    filter: url(#retroFilter) saturate(0.92) contrast(1.05);
+}
+
+/* Profile photo window sizing */
+.profile-image-container.xp-window {
+    height: auto !important;
+}
+
+.profile-image-container.xp-window .profile-image {
+    height: auto !important;
+    aspect-ratio: 1 / 1;
+    object-fit: cover;
+}
+
+/* Dark-mode window chrome */
+[data-theme="dark"] .xp-window {
+    background: #2e323a !important;
+    border-color: #0a3d91 !important;
+    box-shadow: inset 1px 1px 0 rgba(255, 255, 255, 0.06), 2px 2px 6px rgba(0, 0, 0, 0.5) !important;
+}
+
+[data-theme="dark"] .xp-titlebar {
+    background: linear-gradient(180deg, #0a4fb0 0%, #002b78 100%);
+}
+
+[data-theme="dark"] .xp-titlebar-btns i {
+    background: #454a52;
+    color: #f1f1f1;
+    border-color: #14171b;
+    box-shadow: inset 1px 1px 0 #5e646d;
+}
+
+[data-theme="dark"] .xp-window .project-caption {
+    border-top-color: #565c66;
+}
+
+/* Blinking retro cursor in the footer */
+.xp-cursor {
+    display: inline-block;
+    margin-left: 2px;
+    font-weight: 700;
+    color: var(--accent);
+    animation: xpBlink 1s steps(1) infinite;
+}
+
+@keyframes xpBlink {
+    0%, 50% { opacity: 1; }
+    50.01%, 100% { opacity: 0; }
+}

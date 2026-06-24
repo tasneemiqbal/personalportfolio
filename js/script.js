@@ -14,7 +14,7 @@ function toggleTheme() {
     // Update icon
     const themeIcon = document.querySelector('.theme-icon');
     if (themeIcon) {
-        themeIcon.textContent = newTheme === 'dark' ? '☀️' : '🌙';
+        themeIcon.textContent = newTheme === 'dark' ? 'Light' : 'Dark';
     }
     
     // Add transition effect
@@ -28,7 +28,7 @@ document.addEventListener('DOMContentLoaded', function() {
     
     const themeIcon = document.querySelector('.theme-icon');
     if (themeIcon) {
-        themeIcon.textContent = savedTheme === 'dark' ? '☀️' : '🌙';
+        themeIcon.textContent = savedTheme === 'dark' ? 'Light' : 'Dark';
     }
 });
 
@@ -52,12 +52,12 @@ window.addEventListener('scroll', function() {
 
 // Rotating quotes
 /*const quotes = [
-    "Turning bugs into features and chaos into strategy ✨",
-    "CS student by day, product thinker by night 🚀",
-    "Building platforms that people actually want to use 💡",
-    "Where code meets creativity meets collaboration 🎯",
-    "Making tech accessible, one explanation at a time 📊",
-    "Your friendly neighborhood platform builder 👋"
+    "Turning bugs into features and chaos into strategy ",
+    "CS student by day, product thinker by night ",
+    "Building platforms that people actually want to use ",
+    "Where code meets creativity meets collaboration ",
+    "Making tech accessible, one explanation at a time ",
+    "Your friendly neighborhood platform builder "
 ];
 
 let quoteIndex = 0;
@@ -82,8 +82,66 @@ function rotateQuote() {
 setInterval(rotateQuote, 4000);*/
 
 
+// Skills section: animated category tabs
+document.addEventListener('DOMContentLoaded', function () {
+    const tabs = document.querySelectorAll('.skills-tab');
+    const panels = document.querySelectorAll('.skills-panel');
+
+    function activateCategory(category) {
+        tabs.forEach(tab => {
+            const isActive = tab.dataset.category === category;
+            tab.classList.toggle('active', isActive);
+            tab.setAttribute('aria-selected', isActive ? 'true' : 'false');
+        });
+
+        panels.forEach(panel => {
+            if (panel.dataset.category === category) {
+                // Restart the staggered chip animation each time a tab is selected
+                panel.classList.remove('active');
+                // Force reflow so the animation can replay
+                void panel.offsetWidth;
+                panel.classList.add('active');
+            } else {
+                panel.classList.remove('active');
+            }
+        });
+    }
+
+    tabs.forEach(tab => {
+        tab.addEventListener('click', () => activateCategory(tab.dataset.category));
+    });
+});
+
+// Experience section: tabbed company switcher
+document.addEventListener('DOMContentLoaded', function () {
+    const expTabs = document.querySelectorAll('.exp-tab');
+    const expPanels = document.querySelectorAll('.exp-panel');
+
+    function activateCompany(company) {
+        expTabs.forEach(tab => {
+            const isActive = tab.dataset.company === company;
+            tab.classList.toggle('active', isActive);
+            tab.setAttribute('aria-selected', isActive ? 'true' : 'false');
+        });
+
+        expPanels.forEach(panel => {
+            const isActive = panel.dataset.company === company;
+            panel.classList.remove('active');
+            if (isActive) {
+                // Force reflow so the fade animation replays on each switch
+                void panel.offsetWidth;
+                panel.classList.add('active');
+            }
+        });
+    }
+
+    expTabs.forEach(tab => {
+        tab.addEventListener('click', () => activateCompany(tab.dataset.company));
+    });
+});
+
 // Active section detection on scroll
-const sections = ['hero', 'about', 'experience', 'contact'];
+const sections = ['hero', 'about', 'experience', 'projects', 'skills', 'contact'];
 
 window.addEventListener('scroll', function() {
     sections.forEach(sectionId => {
@@ -129,9 +187,9 @@ document.addEventListener('DOMContentLoaded', function() {
     animatedElements.forEach(el => observer.observe(el));
     
     // Log that site is loaded (for debugging)
-    console.log('✨ Portfolio loaded successfully!');
-    console.log('👋 Hi there! Thanks for checking out the code.');
-    console.log('📧 Reach out: tasneemiqbal417@gmail.com');
+    console.log('Portfolio loaded successfully.');
+    console.log('Hi there! Thanks for checking out the code.');
+    console.log('Reach out: tasneemiqbal417@gmail.com');
 });
 
 // Handle button clicks with smooth animations
@@ -155,7 +213,7 @@ document.addEventListener('keydown', function(e) {
     if (konamiCode.join(',') === konamiSequence.join(',')) {
         // Easter egg activated!
         document.body.style.animation = 'wiggle 0.5s ease';
-        alert('🎮 Konami code activated! You found the easter egg! 🎉\n\nYou must be a developer too. Let\'s connect!');
+        alert('Konami code activated! You found the easter egg!\n\nYou must be a developer too. Let\'s connect!');
         setTimeout(() => {
             document.body.style.animation = '';
         }, 500);

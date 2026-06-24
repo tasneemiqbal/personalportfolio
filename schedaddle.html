@@ -1,0 +1,367 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description"
+        content="Schedaddle case study by Tasneem Iqbal - a centralized scheduling platform that unifies availability polling, scheduling, and announcements for small teams.">
+    <title>Schedaddle Case Study · Tasneem Iqbal</title>
+    <link rel="icon" type="image/svg+xml" href="favicon.svg?v=3">
+    <link rel="icon" type="image/png" sizes="32x32" href="favicon-32.png?v=3">
+    <link rel="icon" type="image/png" sizes="16x16" href="favicon-16.png?v=3">
+    <link rel="icon" type="image/x-icon" href="favicon.ico?v=3">
+    <link rel="apple-touch-icon" href="apple-touch-icon.png?v=3">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Manrope:wght@300;400;500;600;700;800&family=Cormorant+Garamond:wght@400;500;600;700&family=Pixelify+Sans:wght@400;500;600;700&display=swap"
+        rel="stylesheet">
+
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="css/case-study.css">
+    <link rel="stylesheet" href="css/xp-theme.css">
+</head>
+
+<body>
+
+    <!-- Retro posterize filter for photos -->
+    <svg width="0" height="0" style="position:absolute" aria-hidden="true">
+        <filter id="retroFilter" color-interpolation-filters="sRGB">
+            <feComponentTransfer>
+                <feFuncR type="discrete" tableValues="0 0.22 0.44 0.66 0.88 1"/>
+                <feFuncG type="discrete" tableValues="0 0.22 0.44 0.66 0.88 1"/>
+                <feFuncB type="discrete" tableValues="0 0.25 0.5 0.75 1"/>
+            </feComponentTransfer>
+        </filter>
+    </svg>
+
+    <!-- Navigation -->
+    <nav class="nav" id="nav">
+        <div class="container">
+            <div class="nav-content">
+                <a class="logo" href="index.html" style="text-decoration:none;">
+                    <span>Tasneem Iqbal</span>
+                </a>
+                <div class="nav-links">
+                    <a class="nav-link" href="index.html#projects">projects</a>
+                    <a class="nav-link" href="index.html#contact">contact</a>
+                    <button class="theme-toggle" id="themeToggle" onclick="toggleTheme()" title="Toggle theme">
+                        <span class="theme-icon">Dark</span>
+                    </button>
+                    <a class="chat-btn" href="index.html#contact" style="text-decoration:none;">Let's Chat</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <main class="cs-main">
+        <!-- Hero -->
+        <header class="cs-hero">
+            <div class="container">
+                <a class="cs-back" href="index.html#projects">← Back to projects</a>
+                <div class="cs-eyebrow">Case Study · Senior Project</div>
+                <h1 class="cs-title">Schedaddle</h1>
+                <p class="cs-lede">
+                    One lightweight platform that unifies availability polling, scheduling, and announcements, so small
+                    teams stop juggling three tools to plan one week.
+                </p>
+
+                <div class="cs-meta">
+                    <div class="cs-meta-item">
+                        <span class="cs-meta-label">My Role</span>
+                        <span class="cs-meta-value">User research, product spec, prototype</span>
+                    </div>
+                    <div class="cs-meta-item">
+                        <span class="cs-meta-label">Team</span>
+                        <span class="cs-meta-value">Team of 5</span>
+                    </div>
+                    <div class="cs-meta-item">
+                        <span class="cs-meta-label">Timeline</span>
+                        <span class="cs-meta-value">Jan 2026 - Present</span>
+                    </div>
+                    <div class="cs-meta-item">
+                        <span class="cs-meta-label">Tools</span>
+                        <span class="cs-meta-value">Figma, User Interviews</span>
+                    </div>
+                    <div class="cs-meta-item">
+                        <span class="cs-meta-label">Context</span>
+                        <span class="cs-meta-value">CS Senior Project, CSULB</span>
+                    </div>
+                </div>
+
+                <div class="cs-links">
+                    <a class="btn btn-primary"
+                        href="https://www.figma.com/design/fGiV23UznJOeMfHrsKR7J2/Schedaddle---Web-App-Design?node-id=1-2&t=vpP9H1s8e4xnplIQ-0"
+                        target="_blank" rel="noopener noreferrer">View Figma Prototype</a>
+                    <a class="btn btn-secondary" href="Schedaddle_Product_Spec.pdf" target="_blank"
+                        rel="noopener noreferrer">Read the Product Spec</a>
+                </div>
+            </div>
+        </header>
+
+        <div class="cs-body">
+            <figure class="cs-figure xp-window">
+                <div class="xp-titlebar">
+                    <span class="xp-titlebar-name">schedaddle_prototype.png</span>
+                    <span class="xp-titlebar-btns"><i>_</i><i>□</i><i>X</i></span>
+                </div>
+                <img src="images/schedaddle.png" alt="Schedaddle Figma prototype screens" class="retro-img">
+                <figcaption>Selected screens from the interactive Figma prototype</figcaption>
+            </figure>
+
+            <!-- Overview -->
+            <section class="cs-section">
+                <div class="cs-kicker">Overview</div>
+                <h2 class="cs-h2">Coordination shouldn't take three apps</h2>
+                <p class="cs-text">
+                    A lightweight scheduling tool for small teams. It combines availability polling, shift scheduling,
+                    and announcements in one place, replacing the patchwork of When2Meet, Sheets, and group chats.
+                </p>
+                <p class="cs-text">
+                    On a team of 5, I <strong>ran user interviews, co-authored the spec, and drove the Figma
+                    prototype</strong>.
+                </p>
+            </section>
+
+            <!-- Problem -->
+            <section class="cs-section">
+                <div class="cs-kicker">The Problem</div>
+                <h2 class="cs-h2">Where scheduling breaks down</h2>
+                <p class="cs-text">
+                    Scheduling pain rarely comes from a lack of tools. It comes from tools that are disconnected.
+                </p>
+                <div class="cs-cards">
+                    <div class="cs-card">
+                        <div class="cs-card-title">Constant changes</div>
+                        <p class="cs-card-text">Every change means another round of manual updates.</p>
+                    </div>
+                    <div class="cs-card">
+                        <div class="cs-card-title">Fragmented tools</div>
+                        <p class="cs-card-text">Availability in When2Meet, schedules in Sheets, updates in Discord.</p>
+                    </div>
+                    <div class="cs-card">
+                        <div class="cs-card-title">Manual comms</div>
+                        <p class="cs-card-text">Updates get buried in message threads.</p>
+                    </div>
+                    <div class="cs-card">
+                        <div class="cs-card-title">Simple and low-cost</div>
+                        <p class="cs-card-text">Teams want affordable, not enterprise.</p>
+                    </div>
+                </div>
+                <p class="cs-text" style="margin-top:1.5rem;">
+                    Market research confirmed the gap: tools are <strong>either too simple or too complex</strong>, and
+                    none combine scheduling, communication, and coordination. The direction: <strong>one lightweight
+                    system that automates communication and cuts fragmentation.</strong>
+                </p>
+            </section>
+
+            <!-- Solution -->
+            <section class="cs-section">
+                <div class="cs-kicker">The Solution</div>
+                <h2 class="cs-h2">Five core modules, one source of truth</h2>
+                <p class="cs-text">
+                    Each module maps back to a research insight.
+                </p>
+                <div class="cs-modules">
+                    <article class="module-card">
+                        <div class="module-num">01</div>
+                        <h3 class="module-title">Dashboard</h3>
+                        <p class="module-sub">Central hub for all activity</p>
+                        <ul class="module-features">
+                            <li>Announcements</li>
+                            <li>Polls</li>
+                            <li>Schedule updates</li>
+                        </ul>
+                        <p class="module-rationale"><strong>Why:</strong> Key info gets lost in chats; the dashboard
+                            keeps it visible.</p>
+                    </article>
+                    <article class="module-card">
+                        <div class="module-num">02</div>
+                        <h3 class="module-title">Availability Poll</h3>
+                        <p class="module-sub">Collect team availability efficiently</p>
+                        <ul class="module-features">
+                            <li>Click or drag selection</li>
+                            <li>Prioritize specific people</li>
+                            <li>Remove participants</li>
+                            <li>Highlight best times visually</li>
+                        </ul>
+                        <p class="module-rationale"><strong>Why:</strong> Fixes When2Meet's poor contrast, clumsy
+                            selection, and lack of prioritization.</p>
+                    </article>
+                    <article class="module-card">
+                        <div class="module-num">03</div>
+                        <h3 class="module-title">Announcements</h3>
+                        <p class="module-sub">Structured communication channel</p>
+                        <ul class="module-features">
+                            <li>Group-specific messages</li>
+                            <li>Persistent, organized posts</li>
+                            <li>Reaches everyone on the team</li>
+                        </ul>
+                        <p class="module-rationale"><strong>Why:</strong> Replaces group chats where updates get
+                            buried.</p>
+                    </article>
+                    <article class="module-card">
+                        <div class="module-num">04</div>
+                        <h3 class="module-title">Shift Schedule</h3>
+                        <p class="module-sub">Real-time scheduling system</p>
+                        <ul class="module-features">
+                            <li>Live calendar updates</li>
+                            <li>Notifications for changes</li>
+                            <li>Shift swap functionality</li>
+                            <li>Auto-fill for call-outs</li>
+                        </ul>
+                        <p class="module-rationale"><strong>Why:</strong> Addresses schedule volatility and manual
+                            coordination.</p>
+                    </article>
+                    <article class="module-card">
+                        <div class="module-num">05</div>
+                        <h3 class="module-title">Create Team</h3>
+                        <p class="module-sub">Manage team structure</p>
+                        <ul class="module-features">
+                            <li>Group organization</li>
+                            <li>Targeted communication</li>
+                        </ul>
+                        <p class="module-rationale"><strong>Why:</strong> Replaces group chats scattered across
+                            platforms.</p>
+                    </article>
+                </div>
+            </section>
+
+            <!-- Gallery -->
+            <section class="cs-section">
+                <div class="cs-kicker">Screens</div>
+                <h2 class="cs-h2">A look at the prototype</h2>
+                <div class="cs-gallery">
+                    <figure class="xp-window">
+                        <div class="xp-titlebar">
+                            <span class="xp-titlebar-name">marketing_landing.png</span>
+                            <span class="xp-titlebar-btns"><i>_</i><i>□</i><i>X</i></span>
+                        </div>
+                        <img src="images/marketing-landing.png" alt="Marketing landing page" class="retro-img">
+                        <figcaption class="project-caption">Marketing landing page</figcaption>
+                    </figure>
+                    <figure class="xp-window">
+                        <div class="xp-titlebar">
+                            <span class="xp-titlebar-name">schedule.png</span>
+                            <span class="xp-titlebar-btns"><i>_</i><i>□</i><i>X</i></span>
+                        </div>
+                        <img src="images/schedule.png" alt="Shift schedule screen" class="retro-img">
+                        <figcaption class="project-caption">Shift schedule view</figcaption>
+                    </figure>
+                </div>
+            </section>
+
+            <!-- Comparison -->
+            <section class="cs-section">
+                <div class="cs-kicker">Old vs. New</div>
+                <h2 class="cs-h2">Consolidating the workflow</h2>
+                <p class="cs-text">
+                    Schedaddle pulls every job into one system.
+                </p>
+                <div class="cs-table-wrap">
+                    <table class="cs-table">
+                        <thead>
+                            <tr>
+                                <th>Feature</th>
+                                <th>Current workflow</th>
+                                <th>Our solution</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>Dashboard</td>
+                                <td class="col-now">Multiple tools (Sheets, When2Meet, Teams, Discord)</td>
+                                <td class="col-solution">Announcements, schedules, and to-dos in one place</td>
+                            </tr>
+                            <tr>
+                                <td>Availability Poll</td>
+                                <td class="col-now">When2Meet: limited dragging, hard to prioritize or remove people</td>
+                                <td class="col-solution">Repeatable drag selection and the ability to prioritize specific
+                                    people</td>
+                            </tr>
+                            <tr>
+                                <td>Announcements</td>
+                                <td class="col-now">Easily missed or lost in message threads</td>
+                                <td class="col-solution">Centralized and organized, recent updates clearly visible</td>
+                            </tr>
+                            <tr>
+                                <td>Shift Scheduling</td>
+                                <td class="col-now">Manually notify people and find replacements</td>
+                                <td class="col-solution">App identifies the gap and notifies others to fill in</td>
+                            </tr>
+                            <tr>
+                                <td>Creating Teams</td>
+                                <td class="col-now">Teams created across different messaging platforms</td>
+                                <td class="col-solution">Team creation and management inside one app</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </section>
+
+            <!-- Key decision -->
+            <section class="cs-section">
+                <div class="cs-kicker">My Key Decision</div>
+                <h2 class="cs-h2">Cutting scope to protect focus</h2>
+                <div class="cs-callout">
+                    <div class="cs-callout-label">Scope cut</div>
+                    <p class="cs-callout-text">
+                        I replaced real-time messaging with Partiful-style announcements, cutting a redundant channel
+                        and its encryption overhead to keep the MVP focused on coordination, not rebuilding chat.
+                    </p>
+                </div>
+                <p class="cs-text" style="margin-top:1.5rem;">
+                    Teams already have chat. What they lacked was one place to keep decisions, availability, and
+                    schedules visible.
+                </p>
+            </section>
+
+            <!-- Outcome -->
+            <section class="cs-section">
+                <div class="cs-kicker">Outcome</div>
+                <h2 class="cs-h2">From research to a working prototype</h2>
+                <div class="cs-stats">
+                    <div class="cs-stat">
+                        <div class="cs-stat-figure">3</div>
+                        <div class="cs-stat-label">User interviews driving requirements</div>
+                    </div>
+                    <div class="cs-stat">
+                        <div class="cs-stat-figure">5</div>
+                        <div class="cs-stat-label">Core modules defined in the spec</div>
+                    </div>
+                    <div class="cs-stat">
+                        <div class="cs-stat-figure">15</div>
+                        <div class="cs-stat-label">Screens in the interactive Figma prototype</div>
+                    </div>
+                    <div class="cs-stat">
+                        <div class="cs-stat-figure">1</div>
+                        <div class="cs-stat-label">Unified platform replacing 3+ tools</div>
+                    </div>
+                </div>
+                <p class="cs-text" style="margin-top:1.5rem;">
+                    We carried research through to a clickable prototype that validates the core flows. Next: usability
+                    testing and a higher-fidelity pass.
+                </p>
+            </section>
+        </div>
+
+        <!-- Footer nav -->
+        <footer class="cs-foot">
+            <div class="container">
+                <div class="cs-foot-inner">
+                    <span class="cs-foot-text">Want the deeper version? Read the full product spec.</span>
+                    <div class="cs-links">
+                        <a class="btn btn-secondary" href="dig.html">Next: DIG Magazine →</a>
+                        <a class="btn btn-primary" href="index.html#projects">Back to projects</a>
+                    </div>
+                </div>
+            </div>
+        </footer>
+    </main>
+
+    <script src="js/script.js"></script>
+</body>
+
+</html>
