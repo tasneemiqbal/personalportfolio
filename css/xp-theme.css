@@ -212,8 +212,7 @@ input,
 .cs-stat,
 .cs-callout,
 .hero-badge,
-.skills-stage,
-.profile-status {
+.skills-stage {
     background: #ffffff !important;
     border: 1px solid #919b9c !important;
     box-shadow: inset 1px 1px 0 #ffffff, 2px 2px 5px rgba(0, 0, 0, 0.16) !important;
@@ -279,8 +278,6 @@ input,
     background: linear-gradient(180deg, #4f9bf5 0%, #1c5fd6 100%) !important;
     color: #ffffff !important;
 }
-
-/* Status dot stays green (XP "online" vibe is fine) */
 
 /* Reduce the floaty timeline-style animation feel left anywhere */
 .exp-panel.active {
@@ -350,8 +347,7 @@ input,
 [data-theme="dark"] .cs-stat,
 [data-theme="dark"] .cs-callout,
 [data-theme="dark"] .hero-badge,
-[data-theme="dark"] .skills-stage,
-[data-theme="dark"] .profile-status {
+[data-theme="dark"] .skills-stage {
     background: #2e323a !important;
     border: 1px solid #565c66 !important;
     box-shadow: inset 1px 1px 0 rgba(255, 255, 255, 0.06), 2px 2px 5px rgba(0, 0, 0, 0.5) !important;
