@@ -55,7 +55,7 @@
 
 .cs-meta {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(min(150px, 100%), 1fr));
     gap: 1.25rem 2rem;
     padding: 1.75rem;
     background: var(--bg-primary);
@@ -153,7 +153,7 @@
 /* Pain points / insight cards */
 .cs-cards {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(min(220px, 100%), 1fr));
     gap: 1rem;
     margin-top: 1.5rem;
 }
@@ -189,7 +189,7 @@
 /* Core module cards */
 .cs-modules {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(min(260px, 100%), 1fr));
     gap: 1.25rem;
     margin-top: 1.5rem;
 }
@@ -369,7 +369,7 @@
 /* Outcome metric row */
 .cs-stats {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(min(150px, 100%), 1fr));
     gap: 1rem;
     margin-top: 1.5rem;
 }
@@ -429,7 +429,7 @@
 /* Screens gallery */
 .cs-gallery {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(min(280px, 100%), 1fr));
     gap: 1.25rem;
     margin-top: 1.5rem;
     align-items: start;

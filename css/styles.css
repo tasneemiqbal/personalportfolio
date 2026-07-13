@@ -243,7 +243,14 @@ body {
     padding: 8rem 0 4rem;
     position: relative;
     overflow: hidden;
-   
+}
+
+/* As a flex item the container defaults to min-width:auto, so it refuses to
+   shrink below the min-content width of the proof grid and the hero's
+   overflow:hidden silently crops the right edge on phones. */
+.hero > .container {
+    min-width: 0;
+    width: 100%;
 }
 
 .hero-content {
@@ -364,7 +371,8 @@ body {
 
 .profile-image-container {
     position: relative;
-    width: 280px;
+    width: 100%;
+    max-width: 280px;
     height: 280px;
     margin: 0 auto 2rem;
 }
@@ -947,7 +955,7 @@ body {
 
 .contact-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(240px, 280px));
+    grid-template-columns: repeat(auto-fit, minmax(min(240px, 100%), 280px));
     justify-content: center;
     gap: 1.5rem;
     max-width: 900px;
@@ -1034,9 +1042,30 @@ body {
     }
 }
 
+/* The five section links plus the toggle and the Contact button stop fitting
+   alongside the logo well before the phone breakpoint. */
+@media (max-width: 940px) {
+    .nav-links {
+        gap: 1.25rem;
+    }
+}
+
 @media (max-width: 768px) {
     .container {
         padding: 0 1.5rem;
+    }
+
+    /* Desktop's 8rem section rhythm is most of a phone screen in dead space. */
+    .about-section,
+    .projects-section,
+    .skills-section,
+    .contact-section {
+        padding: 4.5rem 0;
+    }
+
+    .hero {
+        padding: 6.5rem 0 3.5rem;
+        min-height: auto;
     }
 
     .hero-title {
@@ -1051,12 +1080,27 @@ body {
         font-size: 2rem;
     }
 
+    .section-subtitle {
+        font-size: 1.125rem;
+        margin-bottom: 2.5rem;
+    }
+
+    .about-grid {
+        gap: 2.5rem;
+        margin-bottom: 2.5rem;
+    }
+
     .contact-title {
         font-size: 2.5rem;
     }
 
     .contact-subtitle {
         font-size: 1.125rem;
+        margin-bottom: 2rem;
+    }
+
+    .footer {
+        padding: 3rem 0;
     }
 
     .nav-links {
@@ -1066,5 +1110,32 @@ body {
     .nav-link {
         display: none;
     }
+}
 
+@media (max-width: 480px) {
+    .container {
+        padding: 0 1.125rem;
+    }
+
+    .hero-title {
+        font-size: 2.25rem;
+    }
+
+    .hero-subtitle {
+        font-size: 1.0625rem;
+    }
+
+    .section-title {
+        font-size: 1.75rem;
+    }
+
+    .contact-title {
+        font-size: 2rem;
+    }
+
+    /* Side-by-side these wrap to two cramped lines; full width they read as one. */
+    .cta-group .btn {
+        flex: 1 1 100%;
+        justify-content: center;
+    }
 }
