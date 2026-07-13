@@ -16,7 +16,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link
-        href="https://fonts.googleapis.com/css2?family=Manrope:wght@300;400;500;600;700;800&family=Cormorant+Garamond:wght@400;500;600;700&family=Pixelify+Sans:wght@400;500;600;700&display=swap"
+        href="https://fonts.googleapis.com/css2?family=Pixelify+Sans:wght@400;500;600;700&display=swap"
         rel="stylesheet">
 
     <link rel="stylesheet" href="css/styles.css">
@@ -61,7 +61,7 @@
         <header class="cs-hero">
             <div class="container">
                 <a class="cs-back" href="index.html#projects">← Back to projects</a>
-                <div class="cs-eyebrow">Case Study · Senior Project</div>
+                <p class="cs-meta-line">Case Study · Senior Project</p>
                 <h1 class="cs-title">Schedaddle</h1>
                 <p class="cs-lede">
                     One lightweight platform that unifies availability polling, scheduling, and announcements, so small
@@ -113,7 +113,6 @@
 
             <!-- Overview -->
             <section class="cs-section">
-                <div class="cs-kicker">Overview</div>
                 <h2 class="cs-h2">Coordination shouldn't take three apps</h2>
                 <p class="cs-text">
                     A lightweight scheduling tool for small teams. It combines availability polling, shift scheduling,
@@ -127,10 +126,10 @@
 
             <!-- Problem -->
             <section class="cs-section">
-                <div class="cs-kicker">The Problem</div>
-                <h2 class="cs-h2">Where scheduling breaks down</h2>
+                <h2 class="cs-h2">What the interviews told us</h2>
                 <p class="cs-text">
-                    Scheduling pain rarely comes from a lack of tools. It comes from tools that are disconnected.
+                    We talked to three people who run recurring schedules for small teams. The tools they needed all
+                    existed. None of them talked to each other.
                 </p>
                 <div class="cs-cards">
                     <div class="cs-card">
@@ -146,27 +145,30 @@
                         <p class="cs-card-text">Updates get buried in message threads.</p>
                     </div>
                     <div class="cs-card">
-                        <div class="cs-card-title">Simple and low-cost</div>
-                        <p class="cs-card-text">Teams want affordable, not enterprise.</p>
+                        <div class="cs-card-title">Priced for teams of five</div>
+                        <p class="cs-card-text">Every option they'd tried was built for a company, not a club.</p>
                     </div>
                 </div>
                 <p class="cs-text" style="margin-top:1.5rem;">
-                    Market research confirmed the gap: tools are <strong>either too simple or too complex</strong>, and
-                    none combine scheduling, communication, and coordination. The direction: <strong>one lightweight
-                    system that automates communication and cuts fragmentation.</strong>
+                    Two things surprised us. First, people cared how it <em>looked</em>. "Cute" came up unprompted, and
+                    it wasn't a throwaway. A tool you open every week has to be pleasant to open. We had assumed design
+                    was the part nobody would notice.
+                </p>
+                <p class="cs-text">
+                    Second, they wanted their calendar and their availability poll in one place, and their group text
+                    left exactly where it was. That second half is the finding that shaped the product, and it's the
+                    opposite of what we were planning to build.
                 </p>
             </section>
 
             <!-- Solution -->
             <section class="cs-section">
-                <div class="cs-kicker">The Solution</div>
                 <h2 class="cs-h2">Five core modules, one source of truth</h2>
                 <p class="cs-text">
                     Each module maps back to a research insight.
                 </p>
                 <div class="cs-modules">
                     <article class="module-card">
-                        <div class="module-num">01</div>
                         <h3 class="module-title">Dashboard</h3>
                         <p class="module-sub">Central hub for all activity</p>
                         <ul class="module-features">
@@ -178,7 +180,6 @@
                             keeps it visible.</p>
                     </article>
                     <article class="module-card">
-                        <div class="module-num">02</div>
                         <h3 class="module-title">Availability Poll</h3>
                         <p class="module-sub">Collect team availability efficiently</p>
                         <ul class="module-features">
@@ -191,7 +192,6 @@
                             selection, and lack of prioritization.</p>
                     </article>
                     <article class="module-card">
-                        <div class="module-num">03</div>
                         <h3 class="module-title">Announcements</h3>
                         <p class="module-sub">Structured communication channel</p>
                         <ul class="module-features">
@@ -199,11 +199,10 @@
                             <li>Persistent, organized posts</li>
                             <li>Reaches everyone on the team</li>
                         </ul>
-                        <p class="module-rationale"><strong>Why:</strong> Replaces group chats where updates get
-                            buried.</p>
+                        <p class="module-rationale"><strong>Why:</strong> A schedule change needs to stay findable next
+                            week. A group text doesn't. Announcements hold the things you have to look up again.</p>
                     </article>
                     <article class="module-card">
-                        <div class="module-num">04</div>
                         <h3 class="module-title">Shift Schedule</h3>
                         <p class="module-sub">Real-time scheduling system</p>
                         <ul class="module-features">
@@ -216,22 +215,20 @@
                             coordination.</p>
                     </article>
                     <article class="module-card">
-                        <div class="module-num">05</div>
                         <h3 class="module-title">Create Team</h3>
                         <p class="module-sub">Manage team structure</p>
                         <ul class="module-features">
                             <li>Group organization</li>
                             <li>Targeted communication</li>
                         </ul>
-                        <p class="module-rationale"><strong>Why:</strong> Replaces group chats scattered across
-                            platforms.</p>
+                        <p class="module-rationale"><strong>Why:</strong> Polls and announcements need an audience.
+                            The team is that audience.</p>
                     </article>
                 </div>
             </section>
 
             <!-- Gallery -->
             <section class="cs-section">
-                <div class="cs-kicker">Screens</div>
                 <h2 class="cs-h2">A look at the prototype</h2>
                 <div class="cs-gallery">
                     <figure class="xp-window">
@@ -255,7 +252,6 @@
 
             <!-- Comparison -->
             <section class="cs-section">
-                <div class="cs-kicker">Old vs. New</div>
                 <h2 class="cs-h2">Consolidating the workflow</h2>
                 <p class="cs-text">
                     Schedaddle pulls every job into one system.
@@ -303,46 +299,35 @@
 
             <!-- Key decision -->
             <section class="cs-section">
-                <div class="cs-kicker">My Key Decision</div>
-                <h2 class="cs-h2">Cutting scope to protect focus</h2>
+                <h2 class="cs-h2">We cut the chat feature we came in wanting to build</h2>
                 <div class="cs-callout">
-                    <div class="cs-callout-label">Scope cut</div>
+                    <div class="cs-callout-label">The decision</div>
                     <p class="cs-callout-text">
-                        I replaced real-time messaging with Partiful-style announcements, cutting a redundant channel
-                        and its encryption overhead to keep the MVP focused on coordination, not rebuilding chat.
+                        Real-time messaging was in our original plan. The interviews killed it: people were happy with
+                        their group text and had no interest in moving it. We shipped one-way announcements instead:
+                        Partiful-style, persistent, searchable.
                     </p>
                 </div>
                 <p class="cs-text" style="margin-top:1.5rem;">
-                    Teams already have chat. What they lacked was one place to keep decisions, availability, and
-                    schedules visible.
+                    It was also the cheap decision, which is worth being honest about: building chat would have meant
+                    encryption, moderation, and notification infrastructure we had no time for. But we didn't cut it
+                    because it was expensive. We cut it because nobody asked for it, and I'd have argued for cutting it
+                    even if it had been free.
                 </p>
             </section>
 
             <!-- Outcome -->
             <section class="cs-section">
-                <div class="cs-kicker">Outcome</div>
-                <h2 class="cs-h2">From research to a working prototype</h2>
-                <div class="cs-stats">
-                    <div class="cs-stat">
-                        <div class="cs-stat-figure">3</div>
-                        <div class="cs-stat-label">User interviews driving requirements</div>
-                    </div>
-                    <div class="cs-stat">
-                        <div class="cs-stat-figure">5</div>
-                        <div class="cs-stat-label">Core modules defined in the spec</div>
-                    </div>
-                    <div class="cs-stat">
-                        <div class="cs-stat-figure">15</div>
-                        <div class="cs-stat-label">Screens in the interactive Figma prototype</div>
-                    </div>
-                    <div class="cs-stat">
-                        <div class="cs-stat-figure">1</div>
-                        <div class="cs-stat-label">Unified platform replacing 3+ tools</div>
-                    </div>
-                </div>
-                <p class="cs-text" style="margin-top:1.5rem;">
-                    We carried research through to a clickable prototype that validates the core flows. Next: usability
-                    testing and a higher-fidelity pass.
+                <h2 class="cs-h2">Where it actually stands</h2>
+                <p class="cs-text">
+                    There is a 15-screen clickable prototype and a spec covering five modules. Our professor has walked
+                    it end to end and didn't get stuck.
+                </p>
+                <p class="cs-text">
+                    That is not validation and I'm not going to call it that. No one outside the team has used it yet.
+                    The next thing that matters is putting it in front of the people we interviewed. The availability
+                    poll is the one screen everything else depends on, and we don't yet know whether it survives contact
+                    with a real team trying to plan a real week.
                 </p>
             </section>
         </div>

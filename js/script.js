@@ -16,7 +16,13 @@ function toggleTheme() {
     if (themeIcon) {
         themeIcon.textContent = newTheme === 'dark' ? 'Light' : 'Dark';
     }
-    
+
+    const toggle = document.getElementById('themeToggle');
+    if (toggle) {
+        toggle.setAttribute('aria-pressed', newTheme === 'dark' ? 'true' : 'false');
+        toggle.setAttribute('aria-label', newTheme === 'dark' ? 'Switch to light theme' : 'Switch to dark theme');
+    }
+
     // Add transition effect
     document.body.style.transition = 'background 0.3s ease, color 0.3s ease';
 }
@@ -30,15 +36,13 @@ document.addEventListener('DOMContentLoaded', function() {
     if (themeIcon) {
         themeIcon.textContent = savedTheme === 'dark' ? 'Light' : 'Dark';
     }
-});
 
-// Smooth scrolling function
-function scrollToSection(id) {
-    const element = document.getElementById(id);
-    if (element) {
-        element.scrollIntoView({ behavior: 'smooth' });
+    const toggle = document.getElementById('themeToggle');
+    if (toggle) {
+        toggle.setAttribute('aria-pressed', savedTheme === 'dark' ? 'true' : 'false');
+        toggle.setAttribute('aria-label', savedTheme === 'dark' ? 'Switch to light theme' : 'Switch to dark theme');
     }
-}
+});
 
 // Scroll detection for navigation
 window.addEventListener('scroll', function() {
@@ -50,94 +54,60 @@ window.addEventListener('scroll', function() {
     }
 });
 
-// Rotating quotes
-/*const quotes = [
-    "Turning bugs into features and chaos into strategy ",
-    "CS student by day, product thinker by night ",
-    "Building platforms that people actually want to use ",
-    "Where code meets creativity meets collaboration ",
-    "Making tech accessible, one explanation at a time ",
-    "Your friendly neighborhood platform builder "
-];
+/*
+ * Both tab groups (skills categories, experience employers) share this one
+ * implementation. It follows the ARIA tabs pattern: a roving tabindex so the
+ * group is a single tab stop, and arrow/Home/End keys to move between tabs.
+ * `key` is the data-attribute the tabs and panels are matched on.
+ */
+function initTabs({ tabSelector, panelSelector, key }) {
+    const tabs = Array.from(document.querySelectorAll(tabSelector));
+    const panels = Array.from(document.querySelectorAll(panelSelector));
+    if (!tabs.length) return;
 
-let quoteIndex = 0;
-
-function rotateQuote() {
-    quoteIndex = (quoteIndex + 1) % quotes.length;
-    const quoteElement = document.getElementById('rotatingQuote');
-    
-    if (quoteElement) {
-        // Fade out
-        quoteElement.style.animation = 'none';
-        
-        // Change text and fade in
-        setTimeout(() => {
-            quoteElement.textContent = quotes[quoteIndex];
-            quoteElement.style.animation = 'slide-in 0.5s ease-out';
-        }, 50);
-    }
-}
-
-// Start rotating quotes every 4 seconds
-setInterval(rotateQuote, 4000);*/
-
-
-// Skills section: animated category tabs
-document.addEventListener('DOMContentLoaded', function () {
-    const tabs = document.querySelectorAll('.skills-tab');
-    const panels = document.querySelectorAll('.skills-panel');
-
-    function activateCategory(category) {
+    function activate(value, { focusTab = false } = {}) {
         tabs.forEach(tab => {
-            const isActive = tab.dataset.category === category;
+            const isActive = tab.dataset[key] === value;
             tab.classList.toggle('active', isActive);
             tab.setAttribute('aria-selected', isActive ? 'true' : 'false');
+            // Roving tabindex: only the selected tab is reachable via Tab.
+            tab.tabIndex = isActive ? 0 : -1;
+            if (isActive && focusTab) tab.focus();
         });
 
         panels.forEach(panel => {
-            if (panel.dataset.category === category) {
-                // Restart the staggered chip animation each time a tab is selected
-                panel.classList.remove('active');
-                // Force reflow so the animation can replay
-                void panel.offsetWidth;
-                panel.classList.add('active');
-            } else {
-                panel.classList.remove('active');
-            }
-        });
-    }
-
-    tabs.forEach(tab => {
-        tab.addEventListener('click', () => activateCategory(tab.dataset.category));
-    });
-});
-
-// Experience section: tabbed company switcher
-document.addEventListener('DOMContentLoaded', function () {
-    const expTabs = document.querySelectorAll('.exp-tab');
-    const expPanels = document.querySelectorAll('.exp-panel');
-
-    function activateCompany(company) {
-        expTabs.forEach(tab => {
-            const isActive = tab.dataset.company === company;
-            tab.classList.toggle('active', isActive);
-            tab.setAttribute('aria-selected', isActive ? 'true' : 'false');
-        });
-
-        expPanels.forEach(panel => {
-            const isActive = panel.dataset.company === company;
+            const isActive = panel.dataset[key] === value;
             panel.classList.remove('active');
             if (isActive) {
-                // Force reflow so the fade animation replays on each switch
+                // Force reflow so the entrance animation replays on each switch.
                 void panel.offsetWidth;
                 panel.classList.add('active');
             }
         });
     }
 
-    expTabs.forEach(tab => {
-        tab.addEventListener('click', () => activateCompany(tab.dataset.company));
+    tabs.forEach((tab, i) => {
+        tab.addEventListener('click', () => activate(tab.dataset[key]));
+
+        tab.addEventListener('keydown', e => {
+            const last = tabs.length - 1;
+            let next = null;
+
+            if (e.key === 'ArrowRight' || e.key === 'ArrowDown') next = i === last ? 0 : i + 1;
+            else if (e.key === 'ArrowLeft' || e.key === 'ArrowUp') next = i === 0 ? last : i - 1;
+            else if (e.key === 'Home') next = 0;
+            else if (e.key === 'End') next = last;
+            else return;
+
+            e.preventDefault();
+            activate(tabs[next].dataset[key], { focusTab: true });
+        });
     });
+}
+
+document.addEventListener('DOMContentLoaded', function () {
+    initTabs({ tabSelector: '.skills-tab', panelSelector: '.skills-panel', key: 'category' });
+    initTabs({ tabSelector: '.exp-tab', panelSelector: '.exp-panel', key: 'company' });
 });
 
 // Active section detection on scroll
@@ -154,7 +124,7 @@ window.addEventListener('scroll', function() {
                     link.classList.remove('active');
                 });
                 
-                const activeLink = document.querySelector(`.nav-link[onclick*="${sectionId}"]`);
+                const activeLink = document.querySelector(`.nav-link[href="#${sectionId}"]`);
                 if (activeLink) {
                     activeLink.classList.add('active');
                 }
@@ -177,29 +147,8 @@ const observer = new IntersectionObserver(function(entries) {
     });
 }, observerOptions);
 
-// Observe all animated elements on page load
 document.addEventListener('DOMContentLoaded', function() {
-    // Observe cards and sections
-    const animatedElements = document.querySelectorAll(
-        '.superpower-card, .fun-fact-item, .contact-card'
-    );
-    
-    animatedElements.forEach(el => observer.observe(el));
-    
-    // Log that site is loaded (for debugging)
-    console.log('Portfolio loaded successfully.');
-    console.log('Hi there! Thanks for checking out the code.');
-    console.log('Reach out: tasneemiqbal417@gmail.com');
-});
-
-// Handle button clicks with smooth animations
-document.addEventListener('click', function(e) {
-    if (e.target.classList.contains('btn')) {
-        e.target.style.transform = 'scale(0.95)';
-        setTimeout(() => {
-            e.target.style.transform = '';
-        }, 100);
-    }
+    document.querySelectorAll('.contact-card').forEach(el => observer.observe(el));
 });
 
 // Easter egg: Konami code
@@ -209,33 +158,8 @@ const konamiSequence = ['ArrowUp', 'ArrowUp', 'ArrowDown', 'ArrowDown', 'ArrowLe
 document.addEventListener('keydown', function(e) {
     konamiCode.push(e.key);
     konamiCode = konamiCode.slice(-10);
-    
+
     if (konamiCode.join(',') === konamiSequence.join(',')) {
-        // Easter egg activated!
-        document.body.style.animation = 'wiggle 0.5s ease';
         alert('Konami code activated! You found the easter egg!\n\nYou must be a developer too. Let\'s connect!');
-        setTimeout(() => {
-            document.body.style.animation = '';
-        }, 500);
     }
 });
-
-// Performance optimization: Debounce scroll events
-function debounce(func, wait) {
-    let timeout;
-    return function executedFunction(...args) {
-        const later = () => {
-            clearTimeout(timeout);
-            func(...args);
-        };
-        clearTimeout(timeout);
-        timeout = setTimeout(later, wait);
-    };
-}
-
-// Apply debounce to scroll handler
-const debouncedScroll = debounce(function() {
-    // Any additional scroll handling can go here
-}, 100);
-
-window.addEventListener('scroll', debouncedScroll);

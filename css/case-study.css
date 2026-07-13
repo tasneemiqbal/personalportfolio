@@ -36,21 +36,7 @@
     gap: 0.8rem;
 }
 
-.cs-eyebrow {
-    font-size: 0.8125rem;
-    font-weight: 700;
-    letter-spacing: 0.15em;
-    text-transform: uppercase;
-    background: var(--vibrant-gradient);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    background-clip: text;
-    width: fit-content;
-    margin-bottom: 1rem;
-}
-
 .cs-title {
-    font-family: 'Cormorant Garamond', Georgia, 'Times New Roman', serif;
     font-size: 4.25rem;
     font-weight: 600;
     line-height: 1.05;
@@ -85,7 +71,7 @@
 }
 
 .cs-meta-label {
-    font-size: 0.72rem;
+    font-size: 0.8125rem;
     font-weight: 700;
     letter-spacing: 0.1em;
     text-transform: uppercase;
@@ -141,17 +127,7 @@
     margin-bottom: 0;
 }
 
-.cs-kicker {
-    font-size: 0.78rem;
-    font-weight: 700;
-    letter-spacing: 0.14em;
-    text-transform: uppercase;
-    color: var(--accent);
-    margin-bottom: 0.75rem;
-}
-
 .cs-h2 {
-    font-family: 'Cormorant Garamond', Georgia, 'Times New Roman', serif;
     font-size: 2.4rem;
     font-weight: 600;
     line-height: 1.15;
@@ -196,11 +172,6 @@
     box-shadow: 0 10px 24px var(--shadow);
 }
 
-.cs-card-icon {
-    font-size: 1.6rem;
-    margin-bottom: 0.6rem;
-    display: block;
-}
 
 .cs-card-title {
     font-size: 1.02rem;
@@ -249,13 +220,6 @@
     box-shadow: 0 14px 30px var(--shadow-lg);
 }
 
-.module-num {
-    font-size: 0.78rem;
-    font-weight: 800;
-    letter-spacing: 0.1em;
-    color: var(--vibrant-3);
-    margin-bottom: 0.4rem;
-}
 
 .module-title {
     font-size: 1.25rem;
@@ -314,7 +278,12 @@
     margin-top: 1.5rem;
     border: 1px solid var(--border-color);
     border-radius: 16px;
-    overflow: hidden;
+    overflow-x: auto;
+}
+
+.cs-table-wrap th,
+.cs-table-wrap td {
+    padding: 0.75rem 1rem;
 }
 
 .cs-table {
@@ -385,10 +354,7 @@
     font-weight: 800;
     letter-spacing: 0.12em;
     text-transform: uppercase;
-    background: var(--vibrant-gradient);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    background-clip: text;
+    color: var(--accent);
     width: fit-content;
     margin-bottom: 0.75rem;
 }
@@ -420,10 +386,7 @@
     font-size: 2.2rem;
     font-weight: 800;
     line-height: 1;
-    background: var(--vibrant-gradient);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    background-clip: text;
+    color: var(--accent);
     margin-bottom: 0.5rem;
 }
 
@@ -470,4 +433,14 @@
     gap: 1.25rem;
     margin-top: 1.5rem;
     align-items: start;
+}
+
+/* Replaces the tracked-caps eyebrow chip that used to sit above the h1.
+   Sentence case, normal tracking: reads as a breadcrumb, not a SaaS hero kicker. */
+.cs-meta-line {
+    font-size: 0.9375rem;
+    color: var(--text-tertiary);
+    margin: 0 0 0.75rem;
+    letter-spacing: 0;
+    text-transform: none;
 }

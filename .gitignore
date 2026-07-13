@@ -31,6 +31,10 @@ build/
 .env
 .env.local
 
+# Local tooling and its state (not part of the site)
+.claude/
+.impeccable/
+
 # Original source uploads (clean-named copies are what the site uses)
 TasneemIqbal_Resume_June copy.pdf
 Product Spec for Schedaddle.pdf

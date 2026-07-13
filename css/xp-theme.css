@@ -16,7 +16,8 @@
     --text-primary: #1a1a1a;
     --text-secondary: #2b2b2b;
     --text-tertiary: #444444;
-    --text-muted: #6a6a6a;
+    /* #6a6a6a fell to 4.43:1 on the XP button face; this clears AA on both. */
+    --text-muted: #5f5f5f;
     --border-color: #919b9c;
     --border-subtle: #b6bcc2;
     --accent: #1c4fd6;
@@ -30,7 +31,7 @@
     --shadow-lg: rgba(0, 0, 0, 0.28);
 
     /* Vibrant gradient becomes the XP title-bar blue */
-    --vibrant-gradient: linear-gradient(180deg, #4f9bf5 0%, #1c5fd6 100%);
+    --vibrant-gradient: linear-gradient(180deg, #2f6fe0 0%, #1741a6 100%);
     --vibrant-soft: #eaf0ff;
     --vibrant-3: #1c5fd6;
     --vibrant-4: #1c5fd6;
@@ -49,8 +50,7 @@ input,
 
 .hero-title,
 .section-title,
-.hero-gradient-text,
-.timeline-role,
+.hero-name,
 .exp-role-title,
 .project-name,
 .contact-title,
@@ -61,11 +61,6 @@ input,
 .logo {
     font-family: "Pixelify Sans", Tahoma, sans-serif !important;
     letter-spacing: 0.01em !important;
-}
-
-/* ---------- Kill the modern flourishes (keep the canvas, retro-themed) ---------- */
-.hero-bg {
-    display: none !important;
 }
 
 .about-section,
@@ -90,11 +85,8 @@ input,
 .project-tech-pill,
 .skill-pill,
 .skill-chip,
-.timeline-badge,
 .exp-badge,
 .project-ribbon,
-.hero-badge,
-.quick-fact,
 .project-card,
 .contact-card,
 .contact-icon,
@@ -185,7 +177,7 @@ input,
 .btn-primary,
 .skills-tab.active,
 .exp-tab.active {
-    background: linear-gradient(180deg, #4f9bf5 0%, #1c5fd6 100%) !important;
+    background: linear-gradient(180deg, #2f6fe0 0%, #1741a6 100%) !important;
     color: #ffffff !important;
     border: 1px solid #0a3d91 !important;
     box-shadow: inset 1px 1px 0 rgba(255, 255, 255, 0.45) !important;
@@ -204,14 +196,12 @@ input,
 /* ---------- Window-panel cards ---------- */
 .project-card,
 .contact-card,
-.quick-fact,
 .exp-role,
 .module-card,
 .cs-card,
 .cs-meta,
 .cs-stat,
 .cs-callout,
-.hero-badge,
 .skills-stage {
     background: #ffffff !important;
     border: 1px solid #919b9c !important;
@@ -220,7 +210,6 @@ input,
 
 .project-card:hover,
 .contact-card:hover,
-.quick-fact:hover,
 .exp-role:hover,
 .module-card:hover,
 .cs-card:hover {
@@ -240,7 +229,6 @@ input,
 .skill-pill,
 .project-tech-pill,
 .skill-chip,
-.timeline-badge,
 .exp-badge {
     background: #f0efe8 !important;
     color: #1a1a1a !important;
@@ -259,7 +247,7 @@ input,
 
 /* Contact monogram icons as little blue tiles */
 .contact-icon {
-    background: linear-gradient(180deg, #4f9bf5 0%, #1c5fd6 100%) !important;
+    background: linear-gradient(180deg, #2f6fe0 0%, #1741a6 100%) !important;
     color: #ffffff !important;
     border: 1px solid #0a3d91 !important;
     font-weight: 700;
@@ -275,7 +263,7 @@ input,
 
 /* Comparison table chrome */
 .cs-table thead th {
-    background: linear-gradient(180deg, #4f9bf5 0%, #1c5fd6 100%) !important;
+    background: linear-gradient(180deg, #2f6fe0 0%, #1741a6 100%) !important;
     color: #ffffff !important;
 }
 
@@ -297,7 +285,8 @@ input,
     --text-primary: #f1f1f1;
     --text-secondary: #d7dae0;
     --text-tertiary: #b4b9c1;
-    --text-muted: #8b919b;
+    /* #8b919b was 2.81:1 on the dark button face, the worst contrast on the site. */
+    --text-muted: #a8aeb8;
     --border-color: #565c66;
     --border-subtle: #474d56;
     --accent: #5ea0ff;
@@ -309,7 +298,7 @@ input,
     --timeline-badge-border: #565c66;
     --shadow: rgba(0, 0, 0, 0.55);
     --shadow-lg: rgba(0, 0, 0, 0.65);
-    --vibrant-gradient: linear-gradient(180deg, #5ea0ff 0%, #2f6fe0 100%);
+    --vibrant-gradient: linear-gradient(180deg, #2f6fe0 0%, #1741a6 100%);
     --vibrant-soft: #243047;
     --vibrant-3: #5ea0ff;
     --vibrant-4: #5ea0ff;
@@ -339,14 +328,12 @@ input,
 /* Window-panel cards */
 [data-theme="dark"] .project-card,
 [data-theme="dark"] .contact-card,
-[data-theme="dark"] .quick-fact,
 [data-theme="dark"] .exp-role,
 [data-theme="dark"] .module-card,
 [data-theme="dark"] .cs-card,
 [data-theme="dark"] .cs-meta,
 [data-theme="dark"] .cs-stat,
 [data-theme="dark"] .cs-callout,
-[data-theme="dark"] .hero-badge,
 [data-theme="dark"] .skills-stage {
     background: #2e323a !important;
     border: 1px solid #565c66 !important;
@@ -355,7 +342,6 @@ input,
 
 [data-theme="dark"] .project-card:hover,
 [data-theme="dark"] .contact-card:hover,
-[data-theme="dark"] .quick-fact:hover,
 [data-theme="dark"] .exp-role:hover,
 [data-theme="dark"] .module-card:hover,
 [data-theme="dark"] .cs-card:hover {
@@ -388,7 +374,7 @@ input,
 [data-theme="dark"] .btn-primary,
 [data-theme="dark"] .skills-tab.active,
 [data-theme="dark"] .exp-tab.active {
-    background: linear-gradient(180deg, #5ea0ff 0%, #2f6fe0 100%) !important;
+    background: linear-gradient(180deg, #2f6fe0 0%, #1741a6 100%) !important;
     color: #ffffff !important;
     border: 1px solid #0a3d91 !important;
     box-shadow: inset 1px 1px 0 rgba(255, 255, 255, 0.4) !important;
@@ -404,7 +390,6 @@ input,
 [data-theme="dark"] .skill-pill,
 [data-theme="dark"] .project-tech-pill,
 [data-theme="dark"] .skill-chip,
-[data-theme="dark"] .timeline-badge,
 [data-theme="dark"] .exp-badge {
     background: #3a3f47 !important;
     color: #e6e6e6 !important;
@@ -553,4 +538,211 @@ input,
 @keyframes xpBlink {
     0%, 50% { opacity: 1; }
     50.01%, 100% { opacity: 0; }
+}
+
+/* The three publications are the site's only first-party proof, so they read as
+   links in body copy: XP-blue and underlined, the way a 2001 hyperlink looked. */
+.pub-link {
+    color: var(--accent);
+    text-decoration: underline;
+    text-underline-offset: 2px;
+    font-weight: 600;
+}
+
+.pub-link:hover {
+    color: var(--accent-hover);
+    background: var(--accent-lighter);
+}
+
+/* XP's own focus indicator was a 1px dotted marquee. The accessible choice and
+   the period-correct one are the same choice. */
+.pub-link:focus-visible {
+    outline: 1px dotted currentColor;
+    outline-offset: 2px;
+    background: var(--accent-lighter);
+}
+
+/* Photo window: file-properties pane in place of the old fact cards.
+   Values are a fixed 1fr column so labels and values line up like Explorer's
+   details view; below 480px the two-column grid would crush the value text. */
+.xp-props {
+    margin: 0;
+    padding: 0.75rem 0.875rem 0.875rem;
+    border-top: 1px solid var(--border-color);
+    background: var(--bg-tertiary);
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    font-size: 0.875rem;
+}
+
+.xp-prop {
+    display: grid;
+    grid-template-columns: 5.5rem 1fr;
+    gap: 0.75rem;
+    align-items: baseline;
+}
+
+.xp-prop dt {
+    color: var(--text-tertiary);
+    font-weight: 600;
+}
+
+.xp-prop dd {
+    margin: 0;
+    color: var(--text-primary);
+    line-height: 1.45;
+}
+
+/* The tab meta line is the one place muted text sits on the raised button face,
+   which is too light in dark mode for the muted end of the ramp (4.0:1). Tertiary
+   clears AA on both themes without flattening the muted scale everywhere else. */
+.exp-tab-meta {
+    color: var(--text-tertiary) !important;
+}
+
+/* ==========================================================================
+   Keyboard access
+   ========================================================================== */
+
+/* XP's focus indicator was a 1px dotted marquee, so the accessible choice and
+   the period-correct one are the same choice. Applied to everything focusable
+   rather than per-component, because the previous build had no focus styles at
+   all and a missed selector is an unreachable control. */
+a:focus-visible,
+button:focus-visible,
+[tabindex]:focus-visible {
+    outline: 1px dotted var(--text-primary);
+    outline-offset: 2px;
+}
+
+/* On the blue title bar, a dark dotted outline disappears. */
+.nav-link:focus-visible,
+.logo:focus-visible,
+.chat-btn:focus-visible,
+.btn-primary:focus-visible,
+.skills-tab.active:focus-visible,
+.exp-tab.active:focus-visible {
+    outline: 2px solid #ffffff;
+    outline-offset: 1px;
+}
+
+.skip-link {
+    position: absolute;
+    left: 0.5rem;
+    top: -3rem;
+    z-index: 100;
+    padding: 0.5rem 1rem;
+    background: #ffffff;
+    color: var(--text-primary);
+    border: 1px solid #0a3d91;
+    box-shadow: 2px 2px 5px var(--shadow-lg);
+    text-decoration: none;
+    font-weight: 700;
+    transition: top 0.15s ease-out;
+}
+
+.skip-link:focus {
+    top: 0.5rem;
+}
+
+/* The logo and the Contact button became real anchors so they can be reached by
+   keyboard; these keep them looking like what they were. */
+.logo {
+    text-decoration: none !important;
+}
+
+.chat-btn {
+    display: inline-flex !important;
+    align-items: center !important;
+    text-decoration: none !important;
+}
+
+/* ==========================================================================
+   Hero proof: the three live publications
+   ========================================================================== */
+
+.hero-proof {
+    list-style: none;
+    margin: 0 0 2rem;
+    padding: 0;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 0.75rem;
+    max-width: 720px;
+}
+
+.proof-window {
+    display: block;
+    height: 100%;
+    text-decoration: none;
+    color: inherit;
+    background: #ffffff;
+}
+
+[data-theme="dark"] .proof-window {
+    background: var(--bg-secondary);
+}
+
+.proof-window:hover {
+    border-color: #1c5fd6;
+    box-shadow: 0 0 0 1px #1c5fd6 inset, 2px 2px 5px var(--shadow-lg);
+}
+
+.proof-body {
+    display: block;
+    padding: 0.7rem 0.8rem 0.8rem;
+}
+
+.proof-body strong {
+    display: block;
+    font-size: 0.95rem;
+    color: var(--text-primary);
+    margin-bottom: 0.15rem;
+}
+
+.proof-role {
+    display: block;
+    font-size: 0.8125rem;
+    color: var(--text-tertiary);
+}
+
+/* ==========================================================================
+   Reduced motion
+   ========================================================================== */
+
+/* The footer caret blinked forever with no way to stop it (WCAG 2.2.2, Level A).
+   Everything animated here is decorative, so honouring the preference costs
+   nothing: the fade-ins resolve to their visible end state rather than being
+   skipped, which keeps the content on screen. */
+@media (prefers-reduced-motion: reduce) {
+
+    *,
+    *::before,
+    *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        /* The hero fade-ins are staggered up to 0.4s and start at opacity 0.
+           Without zeroing the delay, the content stays invisible for that long
+           before snapping in. */
+        animation-delay: 0s !important;
+        transition-duration: 0.01ms !important;
+        scroll-behavior: auto !important;
+    }
+
+    html {
+        scroll-behavior: auto !important;
+    }
+
+    .xp-cursor {
+        animation: none !important;
+        opacity: 1 !important;
+    }
+}
+
+@media (max-width: 480px) {
+    .xp-prop {
+        grid-template-columns: 1fr;
+        gap: 0.125rem;
+    }
 }

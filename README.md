@@ -1,55 +1,55 @@
 # Tasneem Iqbal - Portfolio
 
-A modern, responsive portfolio website showcasing my journey from Computer Science student to Aspiring Product Manager. Built with clean HTML, CSS, and JavaScript.
+A Windows XP themed portfolio for a CS senior pivoting into Product Management. Static HTML, CSS, and vanilla JavaScript. No build step, no framework.
 
 ## Live Demo
 
 https://tasneemiqbal.github.io/personalportfolio/
 
-##Features
+## Pages
 
-- **Responsive Design** - Works perfectly on desktop, tablet, and mobile
-- **Smooth Animations** - Engaging micro-interactions and scroll effects
-- **Clean Code** - Well-organized, commented, and maintainable
-- **Fast Performance** - Optimized for speed with no heavy frameworks
-- **SEO Friendly** - Proper meta tags and semantic HTML
+- `index.html` - home: hero, case studies, about, experience, skills, contact
+- `schedaddle.html` - case study: scheduling tool, user research through Figma prototype
+- `dig.html` - case study: DIG Magazine redesign
 
-## Technologies Used
-
-- HTML5
-- CSS3 (Custom animations, Flexbox, Grid)
-- Vanilla JavaScript (ES6+)
-- Google Fonts (Inter)
-
-##Project Structure
+## Structure
 
 ```
 portfolio-website/
-├── index.html          # Main HTML file
+├── index.html
+├── schedaddle.html
+├── dig.html
 ├── css/
-│   └── styles.css      # All styles and animations
+│   ├── styles.css        # layout, spacing, base components
+│   ├── xp-theme.css      # the XP skin; loads last and overrides styles.css
+│   └── case-study.css    # case study page styles
 ├── js/
-│   └── script.js       # Interactive functionality
-├── images/             # Image assets 
-└── README.md           # Project documentation
+│   ├── script.js         # theme toggle, tabs, scroll state
+│   └── background.js     # three.js hero canvas
+├── images/
+└── PRODUCT.md            # who this is for and what it has to prove
 ```
 
-## 📱 Browser Support
+`xp-theme.css` is loaded after the others and leans on `!important` to reskin
+them. If a style is not doing what you expect, check there first.
 
-- Chrome (latest)
-- Firefox (latest)
-- Safari (latest)
-- Edge (latest)
-- Mobile browsers (iOS Safari, Chrome Mobile)
+## Type
 
-## 🐛 Known Issues
+Pixelify Sans for display, Tahoma for everything else. Tahoma is a system font,
+so only Pixelify Sans is fetched from Google Fonts.
 
-None currently! If you find any, please open an issue.
+## Accessibility
 
+Targets WCAG AA: keyboard navigable throughout, visible focus, `prefers-reduced-motion`
+honored, 4.5:1 minimum on body text.
 
-## Contributing
+## Running locally
 
-Found a bug or want to suggest an improvement? Feel free to open an issue or submit a pull request!
+No build step. Serve the directory and open it:
+
+```
+python3 -m http.server 8000
+```
 
 ## Contact
 
@@ -57,7 +57,3 @@ Found a bug or want to suggest an improvement? Feel free to open an issue or sub
 - Email: tasneemiqbal417@gmail.com
 - LinkedIn: https://linkedin.com/in/tasneemiqbal89
 - Location: Long Beach, CA
-
----
-
-Built with love by Tasneem Iqbal

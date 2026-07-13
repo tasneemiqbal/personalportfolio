@@ -5,10 +5,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description"
-        content="Tasneem Iqbal - CS Senior & Product Manager seeking APM/PM roles. Specializing in product delivery, cross-functional leadership, and platform management.">
-    <meta name="keywords" content="Product Manager, APM, Computer Science, Platform Management, CSULB">
+        content="Tasneem Iqbal - CS senior at CSULB, web platform manager for Beach Media's student publications, looking for APM and PM roles.">
     <meta name="author" content="Tasneem Iqbal">
-    <title>Tasneem Iqbal </title>
+    <title>Tasneem Iqbal - APM candidate, web platform manager</title>
     <link rel="icon" type="image/svg+xml" href="favicon.svg?v=3">
     <link rel="icon" type="image/png" sizes="32x32" href="favicon-32.png?v=3">
     <link rel="icon" type="image/png" sizes="16x16" href="favicon-16.png?v=3">
@@ -19,9 +18,8 @@
     <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <!-- <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet"> -->
     <link
-        href="https://fonts.googleapis.com/css2?family=Manrope:wght@300;400;500;600;700;800&family=Cormorant+Garamond:wght@400;500;600;700&family=Pixelify+Sans:wght@400;500;600;700&display=swap"
+        href="https://fonts.googleapis.com/css2?family=Pixelify+Sans:wght@400;500;600;700&display=swap"
         rel="stylesheet">
 
 
@@ -31,6 +29,8 @@
 </head>
 
 <body>
+    <a class="skip-link" href="#hero">Skip to content</a>
+
     <!-- Interactive three.js background (sits behind the hero, reacts to the cursor) -->
     <canvas id="bg-canvas" aria-hidden="true"></canvas>
 
@@ -49,20 +49,19 @@
     <nav class="nav" id="nav">
         <div class="container">
             <div class="nav-content">
-                <div class="logo" onclick="scrollToSection('hero')">
-                    <span class="logo-emoji"></span>
+                <a class="logo" href="#hero">
                     <span>Tasneem Iqbal</span>
-                </div>
+                </a>
                 <div class="nav-links">
-                    <a class="nav-link" onclick="scrollToSection('about')">about</a>
-                    <a class="nav-link" onclick="scrollToSection('experience')">experience</a>
-                    <a class="nav-link" onclick="scrollToSection('projects')">projects</a>
-                    <a class="nav-link" onclick="scrollToSection('skills')">skills</a>
-                    <a class="nav-link" onclick="scrollToSection('contact')">contact</a>
-                    <button class="theme-toggle" id="themeToggle" onclick="toggleTheme()" title="Toggle theme">
+                    <a class="nav-link" href="#projects">work</a>
+                    <a class="nav-link" href="#about">about</a>
+                    <a class="nav-link" href="#experience">experience</a>
+                    <a class="nav-link" href="#skills">skills</a>
+                    <a class="nav-link" href="#contact">contact</a>
+                    <button class="theme-toggle" id="themeToggle" onclick="toggleTheme()" aria-pressed="false">
                         <span class="theme-icon">Dark</span>
                     </button>
-                    <button class="chat-btn" onclick="scrollToSection('contact')">Let's Chat</button>
+                    <a class="chat-btn" href="#contact">Contact</a>
                 </div>
             </div>
         </div>
@@ -70,33 +69,163 @@
 
     <!-- Hero Section -->
     <section id="hero" class="hero">
-        <div class="hero-bg"></div>
         <div class="container">
             <div class="hero-content">
-                <div class="hero-badge fade-in-up">
-                    <span class="hero-badge-emoji"></span>
-                    Aspiring PM + Coder
-                </div>
-
                 <h1 class="hero-title fade-in-up delay-1">
-                    Hi, I'm <span class="hero-gradient-text">Tasneem</span>
+                    Hi, I'm <span class="hero-name">Tasneem</span>
                 </h1>
 
                 <p class="hero-subtitle fade-in-up delay-2">
-                    A CS senior pivoting into Product Management. I pair engineering fluency with user research to scope smart
-                    decisions and ship improvements people actually feel.
+                    A CS senior pivoting into Product Management. I keep CSULB's student press online, which is
+                    where I learned that deciding what to build is harder than building it.
                 </p>
 
-                <p class="rotating-quote fade-in-up delay-3" id="rotatingQuote">
-
-                </p>
+                <!-- The three publications are the proof the whole page rests on, so they sit above the
+                     fold as real links: a recruiter can verify the claim in one click, not four. -->
+                <ul class="hero-proof fade-in-up delay-3">
+                    <li>
+                        <a class="proof-window xp-window" href="https://lbcurrent.com/" target="_blank"
+                            rel="noopener noreferrer">
+                            <span class="xp-titlebar">
+                                <span class="xp-titlebar-name">lbcurrent.com</span>
+                            </span>
+                            <span class="proof-body">
+                                <strong>Long Beach Current</strong>
+                                <span class="proof-role">Student newspaper &middot; live</span>
+                            </span>
+                        </a>
+                    </li>
+                    <li>
+                        <a class="proof-window xp-window" href="https://www.digmaglb.com/" target="_blank"
+                            rel="noopener noreferrer">
+                            <span class="xp-titlebar">
+                                <span class="xp-titlebar-name">digmaglb.com</span>
+                            </span>
+                            <span class="proof-body">
+                                <strong>DIG Magazine</strong>
+                                <span class="proof-role">Arts &amp; culture &middot; redesign in progress</span>
+                            </span>
+                        </a>
+                    </li>
+                    <li>
+                        <a class="proof-window xp-window" href="https://www.enyelb.com/" target="_blank"
+                            rel="noopener noreferrer">
+                            <span class="xp-titlebar">
+                                <span class="xp-titlebar-name">enyelb.com</span>
+                            </span>
+                            <span class="proof-body">
+                                <strong>ENYE</strong>
+                                <span class="proof-role">Bilingual magazine &middot; live</span>
+                            </span>
+                        </a>
+                    </li>
+                </ul>
 
                 <div class="cta-group fade-in-up delay-4">
                     <a class="btn btn-primary" href="Tasneem_Iqbal_Resume.pdf" download="Tasneem_Iqbal_Resume.pdf">
                         Download Resume
                     </a>
-                    <a class="btn btn-secondary" onclick="scrollToSection('projects')">View My Work</a>
+                    <a class="btn btn-secondary" href="#projects">Read a case study</a>
                 </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section id="projects" class="projects-section">
+        <div class="container">
+            <h2 class="section-title">The work</h2>
+            <p class="section-subtitle">
+                Two case studies and a side project. The case studies are where the product decisions live:
+                what I chose to build, what I chose to leave out, and what I got wrong.
+            </p>
+
+            <div class="projects-grid">
+                <a class="project-card project-card--case" href="schedaddle.html"
+                    aria-label="Read the Schedaddle case study">
+                    <span class="project-ribbon">Case Study</span>
+                    <figure class="project-preview xp-window">
+                        <div class="xp-titlebar">
+                            <span class="xp-titlebar-name">schedaddle.png</span>
+                            <span class="xp-titlebar-btns"><i>_</i><i>□</i><i>X</i></span>
+                        </div>
+                        <img src="images/schedaddle.png" alt="Schedaddle prototype preview"
+                            class="project-image retro-img">
+                        <figcaption class="project-caption">Figma Prototype Preview</figcaption>
+                    </figure>
+                    <span class="project-date">Jan 2026 - Present</span>
+                    <h3 class="project-name">Schedaddle</h3>
+                    <p class="project-display">
+                        Three interviews told us something we didn't expect: people wanted their scheduling in one
+                        place and their group chat left alone. So Schedaddle does availability polling, shift
+                        schedules, and announcements, and deliberately stops short of messaging. I ran the research,
+                        co-wrote the spec, and drove the Figma prototype.
+                    </p>
+                    <div class="project-tech">
+                        <span class="project-tech-pill">User Research</span>
+                        <span class="project-tech-pill">Product Spec</span>
+                        <span class="project-tech-pill">Figma</span>
+                        <span class="project-tech-pill">MVP Scoping</span>
+                    </div>
+                    <span class="project-cta">Read case study →</span>
+                </a>
+
+                <a class="project-card project-card--case" href="dig.html"
+                    aria-label="Read the DIG Magazine case study">
+                    <span class="project-ribbon">Case Study</span>
+                    <figure class="project-preview xp-window">
+                        <div class="xp-titlebar">
+                            <span class="xp-titlebar-name">digmag.png</span>
+                            <span class="xp-titlebar-btns"><i>_</i><i>□</i><i>X</i></span>
+                        </div>
+                        <img src="images/digmag.png" alt="Project preview for DIG Magazine"
+                            class="project-image retro-img">
+                        <figcaption class="project-caption">Project Screen Preview</figcaption>
+                    </figure>
+                    <span class="project-date">Jun 2026 - Present</span>
+                    <h3 class="project-name">DIG Magazine</h3>
+                    <p class="project-display">
+                        Lead engineer on the redesign of CSULB's arts and culture magazine. I walked the old
+                        navigation and found key content sitting three clicks deep; the new structure gets it to one
+                        across six of eight sections. Now building the approved Figma design as a responsive site.
+                    </p>
+                    <div class="project-tech">
+                        <span class="project-tech-pill">Figma</span>
+                        <span class="project-tech-pill">HTML</span>
+                        <span class="project-tech-pill">CSS</span>
+                    </div>
+                    <span class="project-cta">Read case study →</span>
+                </a>
+
+                <a class="project-card" href="https://github.com/tasneemiqbal/PennyPal/tree/main" target="_blank" rel="noopener noreferrer"
+                    aria-label="Open the PennyPal repository on GitHub">
+                    <figure class="project-preview xp-window">
+                        <div class="xp-titlebar">
+                            <span class="xp-titlebar-name">pennypal.png</span>
+                            <span class="xp-titlebar-btns"><i>_</i><i>□</i><i>X</i></span>
+                        </div>
+                        <img src="images/pennypal.png" alt="Project preview for PennyPal"
+                            class="project-image retro-img">
+                        <figcaption class="project-caption">Project Screen Preview</figcaption>
+                    </figure>
+                    <span class="project-date">May 2025</span>
+                    <h3 class="project-name">PennyPal</h3>
+                    <p class="project-display">
+                        A budgeting web app: log expenses, set limits per category, and see where the money actually
+                        went. Flask on the back, Firebase for auth, Chart.js for the breakdowns.
+                    </p>
+                    <div class="project-tech">
+                        <span class="project-tech-pill">Python</span>
+                        <span class="project-tech-pill">HTML</span>
+                        <span class="project-tech-pill">CSS</span>
+                        <span class="project-tech-pill">JavaScript</span>
+                        <span class="project-tech-pill">Flask</span>
+                        <span class="project-tech-pill">Firebase Authentication</span>
+                        <span class="project-tech-pill">Chart.js</span>
+                  
+                    </div>
+                </a>
 
             </div>
         </div>
@@ -105,13 +234,10 @@
     <!-- About Section -->
     <section id="about" class="about-section">
         <div class="container">
-            <div class="section-label">WHO I AM</div>
-            <h2 class="section-title">In a nutshell</h2>
+            <h2 class="section-title">How I ended up here</h2>
             <p class="section-subtitle">
-                I started in computer science aiming for software engineering and discovered I do my best work at the
-                intersection of technology, users, and execution.
-                Today, I build toward product roles by turning ideas into shipped improvements with cross-functional
-                teams.
+                I started CS wanting to be a software engineer. I'm finishing it wanting to be a PM, and what changed
+                my mind was a job where I had to decide what actually got built.
             </p>
 
             <div class="about-grid">
@@ -123,44 +249,43 @@
                         </div>
                         <img src="images/mypic3.jpg" alt="Tasneem Iqbal" class="profile-image retro-img"
                             onerror="this.src='images/mypic3.jpg'">
-                    </div>
-                    <div class="profile-quick-facts">
-                        <div class="quick-fact">
-                            <span class="fact-icon"></span>
-                            <div>
-                                <strong>Education</strong>
-                                <p>B.S. CS @ CSULB · GPA 3.6 · Grad Dec 2026</p>
+                        <dl class="xp-props">
+                            <div class="xp-prop">
+                                <dt>Education</dt>
+                                <dd>B.S. Computer Science, CSULB. GPA 3.6, graduating Dec 2026.</dd>
                             </div>
-                        </div>
-                        <div class="quick-fact">
-                            <span class="fact-icon"></span>
-                            <div>
-                                <strong>Location</strong>
-                                <p>Long Beach, CA</p>
+                            <div class="xp-prop">
+                                <dt>Location</dt>
+                                <dd>Long Beach, CA</dd>
                             </div>
-                        </div>
-                        <div class="quick-fact">
-                            <span class="fact-icon"></span>
-                            <div>
-                                <strong>Seeking</strong>
-                                <p>APM/PM Roles</p>
+                            <div class="xp-prop">
+                                <dt>Status</dt>
+                                <dd>Looking for APM / PM roles</dd>
                             </div>
-                        </div>
+                        </dl>
                     </div>
                 </div>
 
                 <div class="about-copy">
                     <p class="about-text">
-                        My <span class="highlight-text">CS background</span> helps me understand technical tradeoffs,
-                        scope work realistically, and communicate clearly with engineering teams.
-                        I am comfortable moving between technical details and business priorities so decisions are
-                        grounded and practical.
+                        For the last year I've run <span class="highlight-text">Beach Media's publication
+                            websites</span>:
+                        <a class="pub-link" href="https://lbcurrent.com/" target="_blank"
+                            rel="noopener noreferrer">Long Beach Current</a>,
+                        <a class="pub-link" href="https://www.digmaglb.com/" target="_blank"
+                            rel="noopener noreferrer">DIG</a>, and
+                        <a class="pub-link" href="https://www.enyelb.com/" target="_blank"
+                            rel="noopener noreferrer">ENYE</a>. I started as the coordinator and got
+                        the manager job four months later. Day to day it's less glamorous than that sounds: I decide
+                        whether an editor's request is a two-hour change or a two-month one, and I keep the sites
+                        patched and the credentials rotated.
                     </p>
                     <p class="about-text">
-                        While finishing my degree at CSULB, I manage digital platform work at Beach Media across
-                        planning, launch coordination, and performance improvement.
-                        I care about thoughtful execution, measurable outcomes, and building products people actually
-                        enjoy using.
+                        The engineering half earns its keep in scoping. I can read the codebase instead of asking
+                        someone to summarize it, size a request before I agree to it, and push back with specifics when
+                        a timeline doesn't add up. Getting LBCurrent through Core Web Vitals (2.1s LCP, zero layout
+                        shift) was mostly refactoring and compressing assets. That is the kind of unglamorous work that
+                        never gets prioritized unless someone technical is the one asking for it.
                     </p>
                 </div>
             </div>
@@ -171,18 +296,19 @@
     <!-- Experience Section -->
     <section id="experience" class="experience-section">
         <div class="container">
-            <div class="section-label">MY JOURNEY</div>
-            <h2 class="section-title">Professional Experience</h2>
+            <h2 class="section-title">Where I've worked</h2>
 
-            <div class="exp-tabs" role="tablist">
-                <button class="exp-tab active" data-company="beach" role="tab" aria-selected="true">
+            <div class="exp-tabs" role="tablist" aria-label="Employers">
+                <button class="exp-tab active" data-company="beach" role="tab" aria-selected="true"
+                    id="exptab-beach" aria-controls="exppanel-beach" tabindex="0">
                     <span class="exp-tab-logo">BM</span>
                     <span class="exp-tab-info">
                         <span class="exp-tab-name">Beach Media</span>
                         <span class="exp-tab-meta">CSULB · 2 roles</span>
                     </span>
                 </button>
-                <button class="exp-tab" data-company="teals" role="tab" aria-selected="false">
+                <button class="exp-tab" data-company="teals" role="tab" aria-selected="false"
+                    id="exptab-teals" aria-controls="exppanel-teals" tabindex="-1">
                     <span class="exp-tab-logo">MS</span>
                     <span class="exp-tab-info">
                         <span class="exp-tab-name">Microsoft TEALS</span>
@@ -193,7 +319,8 @@
 
             <div class="exp-stage">
                 <!-- Beach Media -->
-                <div class="exp-panel active" data-company="beach">
+                <div class="exp-panel active" data-company="beach" id="exppanel-beach" role="tabpanel"
+                    aria-labelledby="exptab-beach" tabindex="0">
                     <article class="exp-role">
                         <div class="exp-role-head">
                             <div>
@@ -253,7 +380,8 @@
                 </div>
 
                 <!-- Microsoft TEALS -->
-                <div class="exp-panel" data-company="teals">
+                <div class="exp-panel" data-company="teals" id="exppanel-teals" role="tabpanel"
+                    aria-labelledby="exptab-teals" tabindex="0">
                     <article class="exp-role">
                         <div class="exp-role-head">
                             <div>
@@ -285,130 +413,32 @@
         </div>
     </section>
 
-    <!-- Projects Section -->
-    <section id="projects" class="projects-section">
-        <div class="container">
-            <div class="section-label">SELECTED WORK</div>
-            <h2 class="section-title">Projects</h2>
-            <p class="section-subtitle">
-                A few projects I have built and iterated on.
-            </p>
-
-            
-
-            <div class="projects-grid">
-                <a class="project-card project-card--case" href="schedaddle.html"
-                    aria-label="Read the Schedaddle case study">
-                    <span class="project-ribbon">Case Study</span>
-                    <figure class="project-preview xp-window">
-                        <div class="xp-titlebar">
-                            <span class="xp-titlebar-name">schedaddle.png</span>
-                            <span class="xp-titlebar-btns"><i>_</i><i>□</i><i>X</i></span>
-                        </div>
-                        <img src="images/schedaddle.png" alt="Schedaddle prototype preview"
-                            class="project-image retro-img">
-                        <figcaption class="project-caption">Figma Prototype Preview</figcaption>
-                    </figure>
-                    <span class="project-date">Jan 2026 - Present</span>
-                    <h3 class="project-name">Schedaddle</h3>
-                    <p class="project-display">
-                        <strong>Display:</strong> A platform unifying availability polling, scheduling, and
-                        announcements. Ran 3 user interviews to define requirements, co-authored a product spec of 5
-                        core modules, and drove a 15-screen interactive Figma prototype, cutting scope by replacing
-                        real-time messaging with Partiful-style admin announcements.
-                    </p>
-                    <div class="project-tech">
-                        <span class="project-tech-pill">User Research</span>
-                        <span class="project-tech-pill">Product Spec</span>
-                        <span class="project-tech-pill">Figma</span>
-                        <span class="project-tech-pill">MVP Scoping</span>
-                    </div>
-                    <span class="project-cta">Read case study →</span>
-                </a>
-
-                <a class="project-card project-card--case" href="dig.html"
-                    aria-label="Read the DIG Magazine case study">
-                    <span class="project-ribbon">Case Study</span>
-                    <figure class="project-preview xp-window">
-                        <div class="xp-titlebar">
-                            <span class="xp-titlebar-name">digmag.png</span>
-                            <span class="xp-titlebar-btns"><i>_</i><i>□</i><i>X</i></span>
-                        </div>
-                        <img src="images/digmag.png" alt="Project preview for DIG Magazine"
-                            class="project-image retro-img">
-                        <figcaption class="project-caption">Project Screen Preview</figcaption>
-                    </figure>
-                    <span class="project-date">Jun 2026 - Present</span>
-                    <h3 class="project-name">DIG Magazine</h3>
-                    <p class="project-display">
-                        <strong>Display:</strong> Lead engineer on the DIG Magazine redesign, cutting the path to key
-                        content from 3 clicks to 1 across 6 of 8 sections, and am translating the approved Figma
-                        design into a responsive, production-ready site.
-                    </p>
-                    <div class="project-tech">
-                        <span class="project-tech-pill">Figma</span>
-                        <span class="project-tech-pill">HTML</span>
-                        <span class="project-tech-pill">CSS</span>
-                    </div>
-                    <span class="project-cta">Read case study →</span>
-                </a>
-
-                <a class="project-card" href="https://github.com/tasneemiqbal/PennyPal/tree/main" target="_blank" rel="noopener noreferrer"
-                    aria-label="Open Project Name">
-                    <figure class="project-preview xp-window">
-                        <div class="xp-titlebar">
-                            <span class="xp-titlebar-name">pennypal.png</span>
-                            <span class="xp-titlebar-btns"><i>_</i><i>□</i><i>X</i></span>
-                        </div>
-                        <img src="images/pennypal.png" alt="Project preview for PennyPal"
-                            class="project-image retro-img">
-                        <figcaption class="project-caption">Project Screen Preview</figcaption>
-                    </figure>
-                    <span class="project-date">May 2025</span>
-                    <h3 class="project-name">PennyPal</h3>
-                    <p class="project-display">
-                        <strong>Display:</strong> PennyPal is a web-based Personal Budget Management System that helps users track expenses, set budgets, and achieve
-                        financial goals. It offers real-time insights and alerts to ensure better control over spending.
-                    </p>
-                    <div class="project-tech">
-                        <span class="project-tech-pill">Python</span>
-                        <span class="project-tech-pill">HTML</span>
-                        <span class="project-tech-pill">CSS</span>
-                        <span class="project-tech-pill">JavaScript</span>
-                        <span class="project-tech-pill">Flask</span>
-                        <span class="project-tech-pill">Firebase Authentication</span>
-                        <span class="project-tech-pill">Chart.js</span>
-                  
-                    </div>
-                </a>
-
-            </div>
-        </div>
-    </section>
-
     <!-- Skills Section -->
     <section id="skills" class="skills-section">
         <div class="container">
-            <div class="section-label">WHAT I WORK WITH</div>
             <h2 class="section-title">Skills &amp; Tools</h2>
             <p class="section-subtitle">
                 A toolkit spanning product thinking and hands-on engineering. Tap a category to explore.
             </p>
 
-            <div class="skills-tabs" role="tablist">
-                <button class="skills-tab active" data-category="product" role="tab" aria-selected="true">
+            <div class="skills-tabs" role="tablist" aria-label="Skill categories">
+                <button class="skills-tab active" data-category="product" role="tab" aria-selected="true"
+                    id="skilltab-product" aria-controls="skillpanel-product" tabindex="0">
                     <span class="skills-tab-dot"></span> Product
                 </button>
-                <button class="skills-tab" data-category="programming" role="tab" aria-selected="false">
+                <button class="skills-tab" data-category="programming" role="tab" aria-selected="false"
+                    id="skilltab-programming" aria-controls="skillpanel-programming" tabindex="-1">
                     <span class="skills-tab-dot"></span> Programming
                 </button>
-                <button class="skills-tab" data-category="tools" role="tab" aria-selected="false">
+                <button class="skills-tab" data-category="tools" role="tab" aria-selected="false"
+                    id="skilltab-tools" aria-controls="skillpanel-tools" tabindex="-1">
                     <span class="skills-tab-dot"></span> Tools
                 </button>
             </div>
 
             <div class="skills-stage">
-                <div class="skills-panel active" data-category="product">
+                <div class="skills-panel active" data-category="product" id="skillpanel-product" role="tabpanel"
+                    aria-labelledby="skilltab-product" tabindex="0">
                     <span class="skill-chip">User Interviews</span>
                     <span class="skill-chip">Product Specs / PRDs</span>
                     <span class="skill-chip">Wireframing</span>
@@ -416,7 +446,8 @@
                     <span class="skill-chip">Competitive Analysis</span>
                     <span class="skill-chip">MVP Scoping</span>
                 </div>
-                <div class="skills-panel" data-category="programming">
+                <div class="skills-panel" data-category="programming" id="skillpanel-programming" role="tabpanel"
+                    aria-labelledby="skilltab-programming" tabindex="0">
                     <span class="skill-chip">Python</span>
                     <span class="skill-chip">JavaScript</span>
                     <span class="skill-chip">C++</span>
@@ -424,7 +455,8 @@
                     <span class="skill-chip">HTML</span>
                     <span class="skill-chip">CSS</span>
                 </div>
-                <div class="skills-panel" data-category="tools">
+                <div class="skills-panel" data-category="tools" id="skillpanel-tools" role="tabpanel"
+                    aria-labelledby="skilltab-tools" tabindex="0">
                     <span class="skill-chip">Figma</span>
                     <span class="skill-chip">Git / GitHub</span>
                     <span class="skill-chip">Firebase</span>
@@ -441,10 +473,10 @@
     <!-- Contact Section -->
     <section id="contact" class="contact-section">
         <div class="container">
-            <h2 class="contact-title">Let's Talk</h2>
+            <h2 class="contact-title">Say hi</h2>
             <p class="contact-subtitle">
-                Whether you want to talk about product, tech, or just need someone to fix your phone, I'm your person.
-                Let's chat!
+                I'm looking for APM and PM roles. Happy to talk about product, the XP revival, or why your phone is
+                like that.
             </p>
 
             <div class="contact-grid">
