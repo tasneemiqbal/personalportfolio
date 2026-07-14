@@ -40,3 +40,9 @@ TasneemIqbal_Resume_June copy.pdf
 Product Spec for Schedaddle.pdf
 images/Marketing Landing.png
 images/Schedaddle image.png
+
+# wrangler files
+.wrangler
+.dev.vars*
+!.dev.vars.example
+!.env.example
