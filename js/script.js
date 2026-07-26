@@ -107,11 +107,10 @@ function initTabs({ tabSelector, panelSelector, key }) {
 
 document.addEventListener('DOMContentLoaded', function () {
     initTabs({ tabSelector: '.skills-tab', panelSelector: '.skills-panel', key: 'category' });
-    initTabs({ tabSelector: '.exp-tab', panelSelector: '.exp-panel', key: 'company' });
 });
 
 // Active section detection on scroll
-const sections = ['hero', 'about', 'experience', 'projects', 'skills', 'contact'];
+const sections = ['hero', 'experience', 'projects', 'skills', 'contact'];
 
 window.addEventListener('scroll', function() {
     sections.forEach(sectionId => {

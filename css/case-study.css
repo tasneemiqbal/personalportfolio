@@ -199,19 +199,9 @@
     background: var(--bg-secondary);
     border: 1px solid var(--border-color);
     border-radius: 18px;
-    padding: 1.75rem 1.75rem 1.75rem 2rem;
+    padding: 1.75rem;
     overflow: hidden;
     transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
-}
-
-.module-card::before {
-    content: '';
-    position: absolute;
-    left: 0;
-    top: 0;
-    bottom: 0;
-    width: 4px;
-    background: var(--vibrant-gradient);
 }
 
 .module-card:hover {
@@ -335,18 +325,8 @@
         var(--vibrant-soft);
     border: 1px solid var(--border-subtle);
     border-radius: 18px;
-    padding: 2rem 2rem 2rem 2.25rem;
+    padding: 2rem;
     overflow: hidden;
-}
-
-.cs-callout::before {
-    content: '';
-    position: absolute;
-    left: 0;
-    top: 0;
-    bottom: 0;
-    width: 5px;
-    background: var(--vibrant-gradient);
 }
 
 .cs-callout-label {
