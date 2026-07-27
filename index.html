@@ -50,16 +50,19 @@
                 <a class="logo" href="#hero">
                     <span>Tasneem Iqbal</span>
                 </a>
-                <div class="nav-links">
+                <div class="nav-links" id="navMenu">
                     <a class="nav-link" href="#projects">work</a>
                     <a class="nav-link" href="#experience">experience</a>
                     <a class="nav-link" href="#skills">skills</a>
                     <a class="nav-link" href="#contact">contact</a>
-                    <button class="theme-toggle" id="themeToggle" onclick="toggleTheme()" aria-pressed="false">
-                        <span class="theme-icon">Dark</span>
-                    </button>
-                    <a class="chat-btn" href="#contact">Contact</a>
                 </div>
+                <button class="theme-toggle" id="themeToggle" onclick="toggleTheme()" aria-pressed="false">
+                    <span class="theme-icon">Dark</span>
+                </button>
+                <button class="nav-toggle" id="navToggle" type="button" aria-expanded="false"
+                    aria-controls="navMenu" aria-label="Open menu">
+                    <span class="nav-toggle-bars" aria-hidden="true"></span>
+                </button>
             </div>
         </div>
     </nav>

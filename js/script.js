@@ -44,6 +44,49 @@ document.addEventListener('DOMContentLoaded', function() {
     }
 });
 
+/*
+ * Mobile menu. Below 768px the section links live in a drawer under the bar,
+ * so the button owns the open state and aria-expanded drives both the CSS
+ * (bars fold into an X) and the screen-reader announcement.
+ */
+document.addEventListener('DOMContentLoaded', function () {
+    const toggle = document.getElementById('navToggle');
+    const menu = document.getElementById('navMenu');
+    if (!toggle || !menu) return;
+
+    function setOpen(open) {
+        menu.classList.toggle('open', open);
+        toggle.setAttribute('aria-expanded', open ? 'true' : 'false');
+        toggle.setAttribute('aria-label', open ? 'Close menu' : 'Open menu');
+    }
+
+    toggle.addEventListener('click', function () {
+        setOpen(toggle.getAttribute('aria-expanded') !== 'true');
+    });
+
+    // Every link jumps within the page, so the drawer has to get out of the way.
+    menu.querySelectorAll('a').forEach(link => {
+        link.addEventListener('click', () => setOpen(false));
+    });
+
+    document.addEventListener('click', function (e) {
+        if (!menu.contains(e.target) && !toggle.contains(e.target)) setOpen(false);
+    });
+
+    document.addEventListener('keydown', function (e) {
+        if (e.key === 'Escape' && toggle.getAttribute('aria-expanded') === 'true') {
+            setOpen(false);
+            toggle.focus();
+        }
+    });
+
+    // Rotating past the breakpoint would otherwise leave .open stuck on the
+    // desktop row, where it means nothing but the aria state would lie.
+    window.addEventListener('resize', function () {
+        if (window.innerWidth > 768) setOpen(false);
+    });
+});
+
 // Scroll detection for navigation
 window.addEventListener('scroll', function() {
     const nav = document.getElementById('nav');

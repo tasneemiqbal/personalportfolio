@@ -77,7 +77,6 @@ input,
 
 /* Square everything off (XP is boxy) */
 .btn,
-.chat-btn,
 .theme-toggle,
 .skills-tab,
 .exp-tab,
@@ -129,16 +128,8 @@ input,
     transform: none !important;
 }
 
-.nav .chat-btn {
-    background: #ECE9D8 !important;
-    color: #B4550A !important;
-    border: 1px solid #B85E12 !important;
-    box-shadow: inset 1px 1px 0 #ffffff, inset -1px -1px 0 #aca899 !important;
-}
-
 /* ---------- Beveled buttons (the XP signature) ---------- */
 .btn,
-.chat-btn,
 .theme-toggle,
 .skills-tab,
 .exp-tab {
@@ -158,7 +149,6 @@ input,
 }
 
 .btn:hover,
-.chat-btn:hover,
 .theme-toggle:hover,
 .skills-tab:hover,
 .exp-tab:hover {
@@ -167,8 +157,7 @@ input,
     border-color: #B4550A !important;
 }
 
-.btn:active,
-.chat-btn:active {
+.btn:active {
     box-shadow: inset -1px -1px 0 #ffffff, inset 1px 1px 0 #808080 !important;
 }
 
@@ -343,7 +332,6 @@ input,
 
 /* Beveled buttons (dark bevel) */
 [data-theme="dark"] .btn,
-[data-theme="dark"] .chat-btn,
 [data-theme="dark"] .theme-toggle,
 [data-theme="dark"] .skills-tab,
 [data-theme="dark"] .exp-tab {
@@ -354,7 +342,6 @@ input,
 }
 
 [data-theme="dark"] .btn:hover,
-[data-theme="dark"] .chat-btn:hover,
 [data-theme="dark"] .theme-toggle:hover,
 [data-theme="dark"] .skills-tab:hover,
 [data-theme="dark"] .exp-tab:hover {
@@ -370,12 +357,6 @@ input,
     color: #3a1c0b !important;
     border: 1px solid #B4550A !important;
     box-shadow: inset 1px 1px 0 rgba(255, 255, 255, 0.4) !important;
-}
-
-[data-theme="dark"] .nav .chat-btn {
-    background: #454a52 !important;
-    color: #FBB068 !important;
-    border: 1px solid #14171b !important;
 }
 
 /* Tags / pills */
@@ -610,7 +591,6 @@ button:focus-visible,
 /* On the blue title bar, a dark dotted outline disappears. */
 .nav-link:focus-visible,
 .logo:focus-visible,
-.chat-btn:focus-visible,
 .btn-primary:focus-visible,
 .skills-tab.active:focus-visible,
 .exp-tab.active:focus-visible {
@@ -640,12 +620,6 @@ button:focus-visible,
 /* The logo and the Contact button became real anchors so they can be reached by
    keyboard; these keep them looking like what they were. */
 .logo {
-    text-decoration: none !important;
-}
-
-.chat-btn {
-    display: inline-flex !important;
-    align-items: center !important;
     text-decoration: none !important;
 }
 
@@ -735,5 +709,19 @@ button:focus-visible,
     .xp-prop {
         grid-template-columns: 1fr;
         gap: 0.125rem;
+    }
+}
+
+/* The phone drawer is a window panel, not the orange titlebar, so its links
+   take body ink. The brown above is tuned for orange and goes near-invisible
+   on the dark panel. */
+@media (max-width: 768px) {
+    .nav-links .nav-link {
+        color: var(--text-primary) !important;
+    }
+
+    .nav-links .nav-link:hover,
+    .nav-links .nav-link.active {
+        color: var(--accent) !important;
     }
 }

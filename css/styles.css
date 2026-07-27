@@ -137,10 +137,13 @@ body {
     box-shadow: 0 2px 8px var(--shadow);
 }
 
+/* The theme toggle and the menu button are siblings of .nav-links, not children
+   of it, so the phone drawer can swallow the section links while those two stay
+   in the bar. The logo's auto margin does what space-between used to. */
 .nav-content {
     display: flex;
-    justify-content: space-between;
     align-items: center;
+    gap: 1.5rem;
 }
 
 .logo {
@@ -151,6 +154,7 @@ body {
     font-weight: 700;
     color: var(--text-primary);
     cursor: pointer;
+    margin-right: auto;
 }
 
 .nav-links {
@@ -178,26 +182,6 @@ body {
     font-weight: 600;
 }
 
-.chat-btn {
-    background: var(--vibrant-gradient);
-    background-size: 200% 200%;
-    color: #fff;
-    padding: 0.75rem 1.75rem;
-    border-radius: 100px;
-    font-size: 0.9375rem;
-    font-weight: 600;
-    border: none;
-    cursor: pointer;
-    transition: all 0.3s;
-    box-shadow: 0 4px 14px rgba(132, 94, 247, 0.35);
-}
-
-.chat-btn:hover {
-    transform: translateY(-2px);
-    background-position: 100% 50%;
-    box-shadow: 0 6px 22px rgba(132, 94, 247, 0.5);
-}
-
 .theme-toggle {
     background: var(--bg-tertiary);
     border: 1px solid var(--border-color);
@@ -222,6 +206,69 @@ body {
 .theme-icon {
     display: inline-block;
     transition: transform 0.3s;
+}
+
+/* Hamburger: hidden until the section links stop fitting in the bar. Square
+   corners and the sunken button face keep it in the XP vocabulary. */
+.nav-toggle {
+    display: none;
+    width: 42px;
+    height: 42px;
+    flex-shrink: 0;
+    align-items: center;
+    justify-content: center;
+    padding: 0;
+    background: var(--bg-tertiary);
+    border: 1px solid var(--border-color);
+    border-radius: 2px;
+    color: var(--text-primary);
+    cursor: pointer;
+    transition: background 0.2s, border-color 0.2s;
+}
+
+.nav-toggle:hover {
+    background: var(--accent-light);
+    border-color: var(--accent);
+}
+
+.nav-toggle-bars {
+    position: relative;
+    display: block;
+    width: 18px;
+    height: 2px;
+    background: currentColor;
+}
+
+.nav-toggle-bars::before,
+.nav-toggle-bars::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    width: 18px;
+    height: 2px;
+    background: currentColor;
+}
+
+.nav-toggle-bars::before { top: -6px; }
+.nav-toggle-bars::after { top: 6px; }
+
+.nav-toggle-bars,
+.nav-toggle-bars::before,
+.nav-toggle-bars::after {
+    transition: transform 0.25s ease, background 0.15s ease;
+}
+
+/* Open state folds the three bars into a close X. */
+.nav-toggle[aria-expanded="true"] .nav-toggle-bars {
+    background: transparent;
+}
+
+.nav-toggle[aria-expanded="true"] .nav-toggle-bars::before {
+    transform: translateY(6px) rotate(45deg);
+}
+
+.nav-toggle[aria-expanded="true"] .nav-toggle-bars::after {
+    transform: translateY(-6px) rotate(-45deg);
 }
 
 /* Hero Section */
@@ -1089,18 +1136,64 @@ body {
         padding: 3rem 0;
     }
 
-    .nav-links {
-        gap: 1rem;
+    /* The section links move into a drawer that hangs off the bottom of the bar.
+       .nav is fixed, so it is the containing block for the absolute panel. */
+    .nav-toggle {
+        display: inline-flex;
     }
 
-    .nav-link {
+    .nav-links {
         display: none;
+        position: absolute;
+        top: 100%;
+        left: 1.5rem;
+        right: 1.5rem;
+        flex-direction: column;
+        align-items: stretch;
+        gap: 0;
+        padding: 0.35rem;
+        background: var(--bg-secondary);
+        border: 1px solid #9a5a1e;
+        border-radius: 2px;
+        box-shadow: inset 1px 1px 0 rgba(255, 255, 255, 0.5), 2px 4px 10px var(--shadow-lg);
     }
+
+    .nav-links.open {
+        display: flex;
+        animation: fadeInUp 0.2s ease-out;
+    }
+
+    .nav-links .nav-link {
+        padding: 0.9rem 0.75rem;
+        font-size: 1rem;
+        color: var(--text-primary);
+    }
+
+    /* Hairlines between rows read as a menu; the desktop lift does not. */
+    .nav-links .nav-link + .nav-link {
+        border-top: 1px solid var(--border-subtle);
+    }
+
+    .nav-links .nav-link:hover {
+        transform: none;
+        color: var(--accent);
+    }
+
 }
 
 @media (max-width: 480px) {
     .container {
         padding: 0 1.125rem;
+    }
+
+    /* Keep the drawer flush with the narrower gutter. */
+    .nav-links {
+        left: 1.125rem;
+        right: 1.125rem;
+    }
+
+    .nav-content {
+        gap: 0.75rem;
     }
 
     .hero-title {

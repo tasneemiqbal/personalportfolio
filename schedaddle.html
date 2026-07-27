@@ -44,14 +44,17 @@
                 <a class="logo" href="index.html" style="text-decoration:none;">
                     <span>Tasneem Iqbal</span>
                 </a>
-                <div class="nav-links">
+                <div class="nav-links" id="navMenu">
                     <a class="nav-link" href="index.html#projects">projects</a>
                     <a class="nav-link" href="index.html#contact">contact</a>
-                    <button class="theme-toggle" id="themeToggle" onclick="toggleTheme()" title="Toggle theme">
-                        <span class="theme-icon">Dark</span>
-                    </button>
-                    <a class="chat-btn" href="index.html#contact" style="text-decoration:none;">Let's Chat</a>
                 </div>
+                <button class="theme-toggle" id="themeToggle" onclick="toggleTheme()" title="Toggle theme">
+                    <span class="theme-icon">Dark</span>
+                </button>
+                <button class="nav-toggle" id="navToggle" type="button" aria-expanded="false"
+                    aria-controls="navMenu" aria-label="Open menu">
+                    <span class="nav-toggle-bars" aria-hidden="true"></span>
+                </button>
             </div>
         </div>
     </nav>
