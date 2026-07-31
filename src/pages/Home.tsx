@@ -36,16 +36,6 @@ const projects = [
   },
 ];
 
-// Carried over from currently.txt on the archived v1 offline page, in Tasneem's
-// own words. This block only works while it is true, so it wants updating when
-// the answers change. That is the whole point of it.
-const currently = [
-  ["Listening", "ECLESIA - Album by Naika"],
-  ["Watching", "Main Hoon Na"],
-  ["Reading", "Cracking the PM Interview (No seriously)"],
-  ["Building", "My personal DJ website, somewhere to upload my mixes"],
-];
-
 const contact = [
   { label: "Email", value: "tasneemiqbal417@gmail.com", href: "mailto:tasneemiqbal417@gmail.com" },
   { label: "LinkedIn", value: "in/tasneemiqbal89 ↗", href: "https://www.linkedin.com/in/tasneemiqbal89" },
@@ -123,26 +113,6 @@ export function Home() {
             <ProjectCard key={p.id} project={p} />
           ))}
         </div>
-      </section>
-
-      {/* CURRENTLY */}
-      <section className="px-5 sm:px-8 py-20 sm:py-24 border-t border-border">
-        <p className="text-xs uppercase tracking-[0.3em] text-brand-warm mb-12" style={MONO}>
-          Currently
-        </p>
-        <dl className="border-t border-border max-w-3xl">
-          {currently.map(([label, value]) => (
-            <div key={label} className="py-4 border-b border-border flex flex-col sm:flex-row sm:gap-8">
-              <dt
-                className="text-xs uppercase tracking-[0.2em] text-brand-warm sm:w-32 shrink-0 mb-1 sm:mb-0"
-                style={MONO}
-              >
-                {label}
-              </dt>
-              <dd className="text-sm text-foreground/80">{value}</dd>
-            </div>
-          ))}
-        </dl>
       </section>
 
       {/* CONTACT */}

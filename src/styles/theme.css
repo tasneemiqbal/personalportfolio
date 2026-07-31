@@ -10,11 +10,6 @@
      Kept separate from --accent, which is near-black and used as a surface. */
   --brand: #3D5A80;
   --brand-soft: #6B8CAE;
-  /* The warm counterpart, carried over from the v1 site's orange. That original
-     (#B4550A) measures 4.24:1 here and fails small text, so it is deepened to
-     5.36:1, which passes at every size. Blue is the work, rust is the human:
-     this appears only in the Currently block, never on body copy or headings. */
-  --brand-warm: #9A4A12;
   --background: #F2EDE4;
   --foreground: #0C0B09;
   --card: #EDE7DD;
@@ -94,7 +89,6 @@
 @theme inline {
   --color-brand: var(--brand);
   --color-brand-soft: var(--brand-soft);
-  --color-brand-warm: var(--brand-warm);
   --color-background: var(--background);
   --color-foreground: var(--foreground);
   --color-card: var(--card);
