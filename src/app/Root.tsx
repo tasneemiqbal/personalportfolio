@@ -8,7 +8,7 @@ const RESUME = `${import.meta.env.BASE_URL}Tasneem_Iqbal_Resume.pdf`;
 
 const navLink = ({ isActive }: { isActive: boolean }) =>
   `text-xs tracking-[0.2em] uppercase transition-colors ${
-    isActive ? "text-foreground" : "text-foreground/60 hover:text-foreground"
+    isActive ? "text-brand" : "text-foreground/60 hover:text-brand"
   }`;
 
 export function Root() {
@@ -45,7 +45,7 @@ export function Root() {
       <header className="fixed top-0 left-0 right-0 z-50 px-5 sm:px-8 py-5 sm:py-6 flex items-center justify-between bg-background/80 backdrop-blur-sm">
         <NavLink
           to="/"
-          className="text-xs tracking-[0.2em] uppercase text-foreground/60 hover:text-foreground transition-colors"
+          className="text-xs tracking-[0.2em] uppercase text-foreground/60 hover:text-brand transition-colors"
           style={MONO}
         >
           Tasneem Iqbal
@@ -61,7 +61,7 @@ export function Root() {
             href={RESUME}
             target="_blank"
             rel="noopener noreferrer"
-            className="text-xs tracking-[0.2em] uppercase text-foreground/60 hover:text-foreground transition-colors"
+            className="text-xs tracking-[0.2em] uppercase text-foreground/60 hover:text-brand transition-colors"
             style={MONO}
           >
             Resume ↗

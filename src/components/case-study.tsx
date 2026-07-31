@@ -38,7 +38,7 @@ export function CaseStudyHero({
           {kicker}
         </p>
         <h1
-          className="text-[clamp(56px,11vw,150px)] font-black uppercase leading-[0.9] tracking-tight mb-8"
+          className="text-[clamp(56px,11vw,150px)] font-bold uppercase leading-[0.9] tracking-tight mb-8"
           style={BARLOW_CONDENSED}
         >
           {title}
@@ -70,7 +70,7 @@ export function CaseStudyHero({
               href={l.href}
               target="_blank"
               rel="noopener noreferrer"
-              className="text-xs uppercase tracking-[0.2em] text-foreground hover:text-foreground/60 transition-colors border-b border-foreground/30 pb-1"
+              className="text-xs uppercase tracking-[0.2em] text-brand hover:text-foreground transition-colors border-b border-brand/40 pb-1"
               style={MONO}
             >
               {l.label} ↗
@@ -153,7 +153,7 @@ export function Stats({ items }: { items: { figure: string; label: string }[] })
       {items.map((s) => (
         <div key={s.label} className="bg-background p-8">
           <div
-            className="text-[clamp(44px,7vw,76px)] font-black uppercase leading-none tracking-tight mb-3"
+            className="text-[clamp(44px,7vw,76px)] font-bold uppercase leading-none tracking-tight mb-3 text-brand"
             style={BARLOW_CONDENSED}
           >
             {s.figure}
@@ -204,7 +204,7 @@ export function CaseStudyFoot({
         </Link>
         <Link
           to={nextTo}
-          className="text-xs uppercase tracking-[0.2em] text-foreground hover:text-foreground/60 transition-colors border-b border-foreground/30 pb-1"
+          className="text-xs uppercase tracking-[0.2em] text-brand hover:text-foreground transition-colors border-b border-brand/40 pb-1"
           style={MONO}
         >
           {nextLabel} →

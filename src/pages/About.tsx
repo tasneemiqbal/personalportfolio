@@ -21,47 +21,6 @@ const stagger = {
 const facts = [
   ["Education", "B.S. Computer Science, CSULB. Graduating Dec 2026."],
   ["Location", "Long Beach, CA"],
-  ["Status", "Available for Associate PM roles, Spring 2027"],
-];
-
-const experience = [
-  {
-    period: "Jan 2026 to present",
-    title: "Web Product Manager",
-    company: "Beach Media · CSULB",
-    current: true,
-    bullets: [
-      "Delivered 10+ website enhancements with zero downtime across 4 editorial teams and 30k+ readers",
-      "Reprioritized homepage layout via Squarespace Analytics, lifting article click-through by 30%",
-      "Launched Mailchimp signup flows and added 250 subscribers to a 2,300+ list by tabling",
-      "Interviewed 3 editors 1:1 to scope pain points, cutting tech-request turnaround from 5 to 2 days",
-    ],
-    skills: ["User Interviews", "Product Analytics", "Lifecycle Marketing", "Cross-functional Leadership"],
-  },
-  {
-    period: "Aug 2025 to Dec 2025",
-    title: "Web Product Coordinator",
-    company: "Beach Media · CSULB",
-    stat: "LCP 2.1s · CLS 0 on LBCurrent",
-    bullets: [
-      "Wrote the performance spec that took LBCurrent to passing Core Web Vitals (LCP 2.1s, CLS 0)",
-      "Partnered with editors and designers to standardize responsive components, cutting bug reports by 10%",
-      "Improved discoverability across 5 articles by rewriting image alt text and sharpening headline clarity",
-    ],
-    skills: ["Core Web Vitals", "HTML", "CSS", "WordPress", "Squarespace", "Performance Optimization"],
-  },
-  {
-    period: "Jun 2023 to Jun 2024",
-    title: "Computer Science Teaching Assistant",
-    company: "Microsoft TEALS",
-    stat: "1 year mentoring high-school students",
-    bullets: [
-      "Ran weekly 1:1s with 15 students to surface where the curriculum lost them, feeding 2 changes weekly",
-      "Co-taught 2 sections of Intro to Python with 90% of students completing the course",
-      "Debugged student Python submissions and reframed recurring errors as concept gaps",
-    ],
-    skills: ["Python", "Communication", "Mentorship", "Debugging"],
-  },
 ];
 
 const skills = [
@@ -108,7 +67,7 @@ export function About() {
           className="mb-16"
         >
           <h1
-            className="text-[clamp(56px,10vw,130px)] font-black uppercase leading-none tracking-tight text-foreground/50"
+            className="text-[clamp(56px,10vw,130px)] font-bold uppercase leading-none tracking-tight text-foreground/50"
             style={BARLOW_CONDENSED}
           >
             About
@@ -155,7 +114,7 @@ export function About() {
               className="text-xs uppercase tracking-[0.3em] text-foreground/60 mb-8"
               style={MONO}
             >
-              Long Beach, CA · Open to Associate PM roles for Spring 2027
+              Long Beach, CA
             </motion.p>
 
             <motion.p
@@ -172,10 +131,9 @@ export function About() {
               className="text-base text-foreground/60 leading-relaxed mb-10"
               style={{ fontWeight: 300 }}
             >
-              I am a computer science senior at CSULB and the Web Product Manager at Beach Media, where I own the
-              websites behind Long Beach Current, DIG Magazine, and ENYE. The job is part product and part
-              engineering: I talk to editors about what is slowing them down, decide what is worth building, and
-              then go build it.
+              I am a CS senior at CSULB and the Web Product Manager at Beach Media, where I own the sites behind
+              Long Beach Current, DIG Magazine, and ENYE. Part product, part engineering: I find out what is
+              slowing editors down, decide what is worth building, then build it.
             </motion.p>
 
             <motion.dl variants={stagger.item} className="border-t border-border">
@@ -194,65 +152,6 @@ export function About() {
           </motion.div>
         </div>
       </div>
-
-      {/* EXPERIENCE */}
-      <section className="px-5 sm:px-8 mt-24 pt-16 border-t border-border">
-        <p className="text-xs uppercase tracking-[0.3em] text-foreground/60 mb-12" style={MONO}>
-          Where I have worked
-        </p>
-
-        <div className="flex flex-col">
-          {experience.map((role) => (
-            <article key={role.title + role.period} className="border-t border-border last:border-b py-10">
-              <div className="grid grid-cols-1 md:grid-cols-12 gap-6 md:gap-8">
-                <div className="md:col-span-4">
-                  <p className="text-xs uppercase tracking-[0.2em] text-foreground/60 mb-3" style={MONO}>
-                    {role.period}
-                    {role.current && " · Current"}
-                  </p>
-                  <h3
-                    className="text-[clamp(24px,3vw,34px)] font-bold uppercase leading-none tracking-tight mb-2"
-                    style={BARLOW_CONDENSED}
-                  >
-                    {role.title}
-                  </h3>
-                  <p className="text-sm text-foreground/60">{role.company}</p>
-                  {role.stat && (
-                    <p className="text-xs text-foreground/60 mt-3" style={MONO}>
-                      {role.stat}
-                    </p>
-                  )}
-                </div>
-
-                <div className="md:col-span-7 md:col-start-6">
-                  <ul className="flex flex-col mb-6">
-                    {role.bullets.map((b) => (
-                      <li
-                        key={b}
-                        className="py-3 border-b border-border last:border-none text-sm text-foreground/70 leading-relaxed"
-                        style={{ fontWeight: 300 }}
-                      >
-                        {b}
-                      </li>
-                    ))}
-                  </ul>
-                  <div className="flex flex-wrap gap-x-4 gap-y-2">
-                    {role.skills.map((s) => (
-                      <span
-                        key={s}
-                        className="text-xs uppercase tracking-[0.15em] text-foreground/60"
-                        style={MONO}
-                      >
-                        {s}
-                      </span>
-                    ))}
-                  </div>
-                </div>
-              </div>
-            </article>
-          ))}
-        </div>
-      </section>
 
       {/* SKILLS */}
       <section className="px-5 sm:px-8 mt-24 pt-16 border-t border-border">

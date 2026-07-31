@@ -81,7 +81,7 @@ export function Dig() {
             href="https://www.digmaglb.com/"
             target="_blank"
             rel="noopener noreferrer"
-            className="text-foreground border-b border-foreground/30 hover:border-foreground transition-colors"
+            className="text-brand border-b border-brand/40 hover:border-brand transition-colors"
           >
             digmaglb.com
           </a>
