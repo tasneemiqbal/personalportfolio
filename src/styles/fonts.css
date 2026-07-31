@@ -1,0 +1,4 @@
+/* Fonts load via <link rel="preconnect"> + <link rel="stylesheet"> in index.html
+   rather than an @import here. A CSS @import is render-blocking and costs an
+   extra round trip, which matters for the phone-first audience this site is
+   built for. Kept as the seam for self-hosted fonts later. */
