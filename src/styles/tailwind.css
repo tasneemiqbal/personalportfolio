@@ -1,4 +1,6 @@
 @import 'tailwindcss' source(none);
 @source '../**/*.{js,ts,jsx,tsx}';
 
-@import 'tw-animate-css';
+/* tw-animate-css was dropped along with the unused shadcn component kit.
+   Its only consumers were those components; the animation on this site comes
+   from motion/react instead. Re-add both if a shadcn primitive comes back. */
