@@ -112,7 +112,7 @@ export function Home() {
             Tasneem
           </h1>
           <h1
-            className="text-[clamp(64px,14vw,180px)] font-black uppercase leading-[0.9] tracking-tight text-foreground/20"
+            className="text-[clamp(64px,14vw,180px)] font-black uppercase leading-[0.9] tracking-tight text-foreground/50"
             style={BARLOW_CONDENSED}
           >
             Iqbal
@@ -120,7 +120,7 @@ export function Home() {
 
           <div className="mt-10 flex flex-col sm:flex-row sm:items-end sm:justify-between gap-6">
             <div>
-              <p className="text-xs uppercase tracking-[0.25em] text-foreground/50 mb-3" style={MONO}>
+              <p className="text-xs uppercase tracking-[0.25em] text-foreground/60 mb-3" style={MONO}>
                 Product Manager. Engineer. DJ. Reader. Avid Movie Watcher.
               </p>
               <p className="text-base text-foreground/60 max-w-md leading-relaxed" style={{ fontWeight: 300 }}>
@@ -132,7 +132,7 @@ export function Home() {
             </div>
             <Link
               to="/about"
-              className="text-xs uppercase tracking-[0.2em] text-foreground/40 hover:text-foreground transition-colors self-start sm:self-end whitespace-nowrap"
+              className="text-xs uppercase tracking-[0.2em] text-foreground/60 hover:text-foreground transition-colors self-start sm:self-end whitespace-nowrap"
               style={MONO}
             >
               About me →
@@ -141,10 +141,10 @@ export function Home() {
         </div>
 
         <div className="flex items-center justify-between border-t border-border pt-8 gap-4">
-          <span className="text-xs uppercase tracking-[0.2em] text-foreground/30" style={MONO}>
+          <span className="text-xs uppercase tracking-[0.2em] text-foreground/60" style={MONO}>
             Open to Associate PM roles for Spring 2027
           </span>
-          <span className="text-xs text-foreground/30" style={MONO}>
+          <span className="text-xs text-foreground/60" style={MONO}>
             ↓
           </span>
         </div>
@@ -153,10 +153,10 @@ export function Home() {
       {/* PUBLICATIONS */}
       <section className="px-5 sm:px-8 py-20 border-t border-border">
         <div className="mb-10 flex items-end justify-between">
-          <p className="text-xs uppercase tracking-[0.3em] text-foreground/50" style={MONO}>
+          <p className="text-xs uppercase tracking-[0.3em] text-foreground/60" style={MONO}>
             Live and shipping
           </p>
-          <p className="text-xs text-foreground/30" style={MONO}>
+          <p className="text-xs text-foreground/60" style={MONO}>
             3
           </p>
         </div>
@@ -170,7 +170,7 @@ export function Home() {
               className="group bg-background p-6 flex flex-col justify-between min-h-[132px] hover:bg-secondary transition-colors"
             >
               <div>
-                <p className="text-xs uppercase tracking-[0.2em] text-foreground/40 mb-2" style={MONO}>
+                <p className="text-xs uppercase tracking-[0.2em] text-foreground/60 mb-2" style={MONO}>
                   {pub.domain} ↗
                 </p>
                 <h3
@@ -180,7 +180,7 @@ export function Home() {
                   {pub.name}
                 </h3>
               </div>
-              <p className="text-sm text-foreground/50 mt-4" style={{ fontWeight: 300 }}>
+              <p className="text-sm text-foreground/60 mt-4" style={{ fontWeight: 300 }}>
                 {pub.role}
               </p>
             </a>
@@ -191,10 +191,10 @@ export function Home() {
       {/* CASE STUDIES */}
       <section className="px-5 sm:px-8 py-20 sm:py-24 border-t border-border">
         <div className="mb-12 flex items-end justify-between">
-          <p className="text-xs uppercase tracking-[0.3em] text-foreground/50" style={MONO}>
+          <p className="text-xs uppercase tracking-[0.3em] text-foreground/60" style={MONO}>
             The work
           </p>
-          <p className="text-xs text-foreground/30" style={MONO}>
+          <p className="text-xs text-foreground/60" style={MONO}>
             {projects.length}
           </p>
         </div>
@@ -253,18 +253,18 @@ export function Home() {
                 >
                   <div className="flex items-baseline justify-between gap-4">
                     <div className="flex items-baseline gap-4 sm:gap-5 min-w-0">
-                      <span className="text-xs text-foreground/30 shrink-0" style={MONO}>
+                      <span className="text-xs text-foreground/60 shrink-0" style={MONO}>
                         {p.id}
                       </span>
                       <h3
-                        className="text-[clamp(26px,3.5vw,40px)] font-bold uppercase leading-none tracking-tight group-hover:text-foreground/50 transition-colors duration-200"
+                        className="text-[clamp(26px,3.5vw,40px)] font-bold uppercase leading-none tracking-tight group-hover:text-foreground/60 transition-colors duration-200"
                         style={BARLOW_CONDENSED}
                       >
                         {p.title}
                       </h3>
                     </div>
                     <span
-                      className="text-foreground/30 shrink-0 text-sm transition-transform duration-200"
+                      className="text-foreground/60 shrink-0 text-sm transition-transform duration-200"
                       aria-hidden="true"
                       style={{
                         display: "inline-block",
@@ -274,7 +274,7 @@ export function Home() {
                       +
                     </span>
                   </div>
-                  <p className="mt-2 ml-8 sm:ml-9 text-sm text-foreground/50" style={{ fontWeight: 300 }}>
+                  <p className="mt-2 ml-8 sm:ml-9 text-sm text-foreground/60" style={{ fontWeight: 300 }}>
                     {p.outcome}
                   </p>
                 </button>
@@ -305,7 +305,7 @@ export function Home() {
 
                     <div className="grid grid-cols-1 md:grid-cols-3 gap-8 border-l border-border pl-6 sm:pl-8">
                       <div className="md:col-span-2">
-                        <p className="text-xs uppercase tracking-[0.2em] text-foreground/40 mb-3" style={MONO}>
+                        <p className="text-xs uppercase tracking-[0.2em] text-foreground/60 mb-3" style={MONO}>
                           {p.company} · {p.year}
                         </p>
                         <p
@@ -317,7 +317,7 @@ export function Home() {
                         {p.to ? (
                           <Link
                             to={p.to}
-                            className="text-xs uppercase tracking-[0.2em] text-foreground hover:text-foreground/50 transition-colors border-b border-foreground/30 pb-1"
+                            className="text-xs uppercase tracking-[0.2em] text-foreground hover:text-foreground/60 transition-colors border-b border-foreground/30 pb-1"
                             style={MONO}
                           >
                             Read the case study →
@@ -327,7 +327,7 @@ export function Home() {
                             href={p.href}
                             target="_blank"
                             rel="noopener noreferrer"
-                            className="text-xs uppercase tracking-[0.2em] text-foreground hover:text-foreground/50 transition-colors border-b border-foreground/30 pb-1"
+                            className="text-xs uppercase tracking-[0.2em] text-foreground hover:text-foreground/60 transition-colors border-b border-foreground/30 pb-1"
                             style={MONO}
                           >
                             View on GitHub ↗
@@ -335,7 +335,7 @@ export function Home() {
                         )}
                       </div>
                       <div>
-                        <p className="text-xs uppercase tracking-[0.2em] text-foreground/40 mb-4" style={MONO}>
+                        <p className="text-xs uppercase tracking-[0.2em] text-foreground/60 mb-4" style={MONO}>
                           Where it stands
                         </p>
                         {p.metrics.map((m) => (
@@ -360,7 +360,7 @@ export function Home() {
       <section className="px-5 sm:px-8 py-20 sm:py-24 border-t border-border">
         <div className="grid grid-cols-1 md:grid-cols-12 gap-8 items-start">
           <div className="md:col-span-2">
-            <p className="text-xs uppercase tracking-[0.3em] text-foreground/50 pt-1" style={MONO}>
+            <p className="text-xs uppercase tracking-[0.3em] text-foreground/60 pt-1" style={MONO}>
               Contact
             </p>
           </div>
@@ -380,9 +380,9 @@ export function Home() {
                 {...(link.href.startsWith("http")
                   ? { target: "_blank", rel: "noopener noreferrer" }
                   : {})}
-                className="py-5 border-t border-border last:border-b flex items-center justify-between gap-4 hover:text-foreground/50 transition-colors"
+                className="py-5 border-t border-border last:border-b flex items-center justify-between gap-4 hover:text-foreground/60 transition-colors"
               >
-                <span className="text-xs uppercase tracking-[0.2em] text-foreground/40" style={MONO}>
+                <span className="text-xs uppercase tracking-[0.2em] text-foreground/60" style={MONO}>
                   {link.label}
                 </span>
                 <span className="text-sm text-right break-all">{link.value}</span>

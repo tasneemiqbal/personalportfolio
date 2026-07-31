@@ -108,7 +108,7 @@ export function About() {
           className="mb-16"
         >
           <h1
-            className="text-[clamp(56px,10vw,130px)] font-black uppercase leading-none tracking-tight text-foreground/10"
+            className="text-[clamp(56px,10vw,130px)] font-black uppercase leading-none tracking-tight text-foreground/50"
             style={BARLOW_CONDENSED}
           >
             About
@@ -134,7 +134,7 @@ export function About() {
               />
               <div className="absolute bottom-4 left-4">
                 <span
-                  className="text-xs uppercase tracking-[0.2em] text-white/80 bg-black/40 px-2 py-1"
+                  className="text-xs uppercase tracking-[0.2em] text-white bg-black/60 px-2 py-1"
                   style={MONO}
                 >
                   Tasneem Iqbal, 2026
@@ -152,7 +152,7 @@ export function About() {
           >
             <motion.p
               variants={stagger.item}
-              className="text-xs uppercase tracking-[0.3em] text-foreground/40 mb-8"
+              className="text-xs uppercase tracking-[0.3em] text-foreground/60 mb-8"
               style={MONO}
             >
               Long Beach, CA · Open to Associate PM roles for Spring 2027
@@ -182,7 +182,7 @@ export function About() {
               {facts.map(([label, value]) => (
                 <div key={label} className="py-4 border-b border-border flex flex-col sm:flex-row sm:gap-8">
                   <dt
-                    className="text-xs uppercase tracking-[0.2em] text-foreground/40 sm:w-32 shrink-0 mb-1 sm:mb-0"
+                    className="text-xs uppercase tracking-[0.2em] text-foreground/60 sm:w-32 shrink-0 mb-1 sm:mb-0"
                     style={MONO}
                   >
                     {label}
@@ -197,7 +197,7 @@ export function About() {
 
       {/* EXPERIENCE */}
       <section className="px-5 sm:px-8 mt-24 pt-16 border-t border-border">
-        <p className="text-xs uppercase tracking-[0.3em] text-foreground/50 mb-12" style={MONO}>
+        <p className="text-xs uppercase tracking-[0.3em] text-foreground/60 mb-12" style={MONO}>
           Where I have worked
         </p>
 
@@ -206,7 +206,7 @@ export function About() {
             <article key={role.title + role.period} className="border-t border-border last:border-b py-10">
               <div className="grid grid-cols-1 md:grid-cols-12 gap-6 md:gap-8">
                 <div className="md:col-span-4">
-                  <p className="text-xs uppercase tracking-[0.2em] text-foreground/40 mb-3" style={MONO}>
+                  <p className="text-xs uppercase tracking-[0.2em] text-foreground/60 mb-3" style={MONO}>
                     {role.period}
                     {role.current && " · Current"}
                   </p>
@@ -216,9 +216,9 @@ export function About() {
                   >
                     {role.title}
                   </h3>
-                  <p className="text-sm text-foreground/50">{role.company}</p>
+                  <p className="text-sm text-foreground/60">{role.company}</p>
                   {role.stat && (
-                    <p className="text-xs text-foreground/40 mt-3" style={MONO}>
+                    <p className="text-xs text-foreground/60 mt-3" style={MONO}>
                       {role.stat}
                     </p>
                   )}
@@ -240,7 +240,7 @@ export function About() {
                     {role.skills.map((s) => (
                       <span
                         key={s}
-                        className="text-xs uppercase tracking-[0.15em] text-foreground/40"
+                        className="text-xs uppercase tracking-[0.15em] text-foreground/60"
                         style={MONO}
                       >
                         {s}
@@ -256,7 +256,7 @@ export function About() {
 
       {/* SKILLS */}
       <section className="px-5 sm:px-8 mt-24 pt-16 border-t border-border">
-        <p className="text-xs uppercase tracking-[0.3em] text-foreground/50 mb-12" style={MONO}>
+        <p className="text-xs uppercase tracking-[0.3em] text-foreground/60 mb-12" style={MONO}>
           Skills &amp; tools
         </p>
         <div className="grid grid-cols-1 md:grid-cols-3 gap-10">
@@ -288,14 +288,14 @@ export function About() {
       <section className="px-5 sm:px-8 mt-24 pt-16 border-t border-border flex flex-wrap items-center gap-6 sm:gap-8">
         <Link
           to="/"
-          className="text-xs uppercase tracking-[0.2em] text-foreground/50 hover:text-foreground transition-colors"
+          className="text-xs uppercase tracking-[0.2em] text-foreground/60 hover:text-foreground transition-colors"
           style={MONO}
         >
           ← See my work
         </Link>
         <a
           href="mailto:tasneemiqbal417@gmail.com"
-          className="text-xs uppercase tracking-[0.2em] text-foreground/50 hover:text-foreground transition-colors"
+          className="text-xs uppercase tracking-[0.2em] text-foreground/60 hover:text-foreground transition-colors"
           style={MONO}
         >
           Get in touch →

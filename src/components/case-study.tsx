@@ -23,7 +23,7 @@ export function CaseStudyHero({
     <header className="px-5 sm:px-8 pt-28 sm:pt-32 pb-16">
       <Link
         to="/"
-        className="text-xs uppercase tracking-[0.2em] text-foreground/40 hover:text-foreground transition-colors"
+        className="text-xs uppercase tracking-[0.2em] text-foreground/60 hover:text-foreground transition-colors"
         style={MONO}
       >
         ← Back to the work
@@ -34,7 +34,7 @@ export function CaseStudyHero({
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.7, ease: [0.23, 1, 0.32, 1] }}
       >
-        <p className="text-xs uppercase tracking-[0.3em] text-foreground/40 mt-12 mb-5" style={MONO}>
+        <p className="text-xs uppercase tracking-[0.3em] text-foreground/60 mt-12 mb-5" style={MONO}>
           {kicker}
         </p>
         <h1
@@ -54,7 +54,7 @@ export function CaseStudyHero({
       <dl className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-px bg-border border-y border-border">
         {meta.map(([label, value]) => (
           <div key={label} className="bg-background py-5 px-4 sm:px-5">
-            <dt className="text-xs uppercase tracking-[0.2em] text-foreground/40 mb-2" style={MONO}>
+            <dt className="text-xs uppercase tracking-[0.2em] text-foreground/60 mb-2" style={MONO}>
               {label}
             </dt>
             <dd className="text-sm text-foreground/80">{value}</dd>
@@ -70,7 +70,7 @@ export function CaseStudyHero({
               href={l.href}
               target="_blank"
               rel="noopener noreferrer"
-              className="text-xs uppercase tracking-[0.2em] text-foreground hover:text-foreground/50 transition-colors border-b border-foreground/30 pb-1"
+              className="text-xs uppercase tracking-[0.2em] text-foreground hover:text-foreground/60 transition-colors border-b border-foreground/30 pb-1"
               style={MONO}
             >
               {l.label} ↗
@@ -94,7 +94,7 @@ export function Section({
   return (
     <section className="px-5 sm:px-8 py-16 border-t border-border">
       {eyebrow && (
-        <p className="text-xs uppercase tracking-[0.3em] text-foreground/40 mb-6" style={MONO}>
+        <p className="text-xs uppercase tracking-[0.3em] text-foreground/60 mb-6" style={MONO}>
           {eyebrow}
         </p>
       )}
@@ -137,7 +137,7 @@ export function CardGrid({ items }: { items: { title: string; text: string }[] }
 export function Callout({ label, children }: { label: string; children: React.ReactNode }) {
   return (
     <div className="border-l-2 border-foreground pl-6 sm:pl-8 py-2 my-8 max-w-3xl">
-      <p className="text-xs uppercase tracking-[0.3em] text-foreground/40 mb-3" style={MONO}>
+      <p className="text-xs uppercase tracking-[0.3em] text-foreground/60 mb-3" style={MONO}>
         {label}
       </p>
       <p className="text-lg sm:text-xl text-foreground leading-relaxed" style={{ fontWeight: 300 }}>
@@ -158,7 +158,7 @@ export function Stats({ items }: { items: { figure: string; label: string }[] })
           >
             {s.figure}
           </div>
-          <div className="text-xs uppercase tracking-[0.2em] text-foreground/40" style={MONO}>
+          <div className="text-xs uppercase tracking-[0.2em] text-foreground/60" style={MONO}>
             {s.label}
           </div>
         </div>
@@ -173,7 +173,7 @@ export function Figure({ src, alt, caption }: { src: string; alt: string; captio
       <div className="overflow-hidden bg-muted border border-border" style={{ borderRadius: "2px" }}>
         <img src={src} alt={alt} loading="lazy" className="w-full h-auto" />
       </div>
-      <figcaption className="text-xs uppercase tracking-[0.2em] text-foreground/40 mt-3" style={MONO}>
+      <figcaption className="text-xs uppercase tracking-[0.2em] text-foreground/60 mt-3" style={MONO}>
         {caption}
       </figcaption>
     </figure>
@@ -191,20 +191,20 @@ export function CaseStudyFoot({
 }) {
   return (
     <section className="px-5 sm:px-8 py-16 border-t border-border flex flex-col sm:flex-row sm:items-center sm:justify-between gap-6">
-      <p className="text-base text-foreground/50 max-w-md" style={{ fontWeight: 300 }}>
+      <p className="text-base text-foreground/60 max-w-md" style={{ fontWeight: 300 }}>
         {text}
       </p>
       <div className="flex flex-wrap gap-x-8 gap-y-4">
         <Link
           to="/"
-          className="text-xs uppercase tracking-[0.2em] text-foreground/50 hover:text-foreground transition-colors"
+          className="text-xs uppercase tracking-[0.2em] text-foreground/60 hover:text-foreground transition-colors"
           style={MONO}
         >
           ← Back to the work
         </Link>
         <Link
           to={nextTo}
-          className="text-xs uppercase tracking-[0.2em] text-foreground hover:text-foreground/50 transition-colors border-b border-foreground/30 pb-1"
+          className="text-xs uppercase tracking-[0.2em] text-foreground hover:text-foreground/60 transition-colors border-b border-foreground/30 pb-1"
           style={MONO}
         >
           {nextLabel} →

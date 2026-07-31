@@ -166,7 +166,7 @@ export function Schedaddle() {
               >
                 {m.title}
               </h3>
-              <p className="text-xs uppercase tracking-[0.2em] text-foreground/40 mb-5" style={MONO}>
+              <p className="text-xs uppercase tracking-[0.2em] text-foreground/60 mb-5" style={MONO}>
                 {m.sub}
               </p>
               <ul className="mb-5">
@@ -205,7 +205,7 @@ export function Schedaddle() {
                 {["Feature", "Current workflow", "Our solution"].map((h) => (
                   <th
                     key={h}
-                    className="p-4 text-xs uppercase tracking-[0.2em] text-foreground/40 font-normal align-bottom"
+                    className="p-4 text-xs uppercase tracking-[0.2em] text-foreground/60 font-normal align-bottom"
                     style={MONO}
                   >
                     {h}
@@ -217,7 +217,7 @@ export function Schedaddle() {
               {comparison.map(([feature, now, solution]) => (
                 <tr key={feature} className="border-b border-border last:border-none align-top">
                   <td className="p-4 text-sm text-foreground whitespace-nowrap">{feature}</td>
-                  <td className="p-4 text-sm text-foreground/50" style={{ fontWeight: 300 }}>
+                  <td className="p-4 text-sm text-foreground/60" style={{ fontWeight: 300 }}>
                     {now}
                   </td>
                   <td className="p-4 text-sm text-foreground/80" style={{ fontWeight: 300 }}>
