@@ -101,7 +101,7 @@ export function Home() {
           Tasneem
         </h1>
         <h1
-          className="text-[clamp(64px,14vw,180px)] font-bold uppercase leading-[0.9] tracking-tight text-brand"
+          className="text-[clamp(64px,14vw,180px)] font-bold uppercase leading-[0.9] tracking-tight text-brand-soft"
           style={BARLOW_CONDENSED}
         >
           Iqbal

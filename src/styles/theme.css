@@ -2,10 +2,14 @@
 
 :root {
   --font-size: 16px;
-  /* The one accent. 5.77:1 on the cream ground, so it clears AA for small text.
-     Marks what is clickable; never used for body copy or headings. Kept separate
-     from --accent, which is near-black and used as a surface elsewhere. */
-  --brand: #1D4ED8;
+  /* Two tones of one dusty blue, split by what WCAG asks of each.
+     --brand      6.06:1 on cream. Small text (12px eyebrows, numbers, links)
+                  needs 4.5, so this is the floor for anything set small.
+     --brand-soft 3.01:1. Display type only needs 3.0, which buys a genuinely
+                  faded tone for the big name without failing the check.
+     Kept separate from --accent, which is near-black and used as a surface. */
+  --brand: #3D5A80;
+  --brand-soft: #6B8CAE;
   --background: #F2EDE4;
   --foreground: #0C0B09;
   --card: #EDE7DD;
@@ -84,6 +88,7 @@
 
 @theme inline {
   --color-brand: var(--brand);
+  --color-brand-soft: var(--brand-soft);
   --color-background: var(--background);
   --color-foreground: var(--foreground);
   --color-card: var(--card);

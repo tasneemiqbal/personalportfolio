@@ -67,7 +67,7 @@ export function About() {
           className="mb-16"
         >
           <h1
-            className="text-[clamp(56px,10vw,130px)] font-bold uppercase leading-none tracking-tight text-brand"
+            className="text-[clamp(56px,10vw,130px)] font-bold uppercase leading-none tracking-tight text-brand-soft"
             style={BARLOW_CONDENSED}
           >
             About
