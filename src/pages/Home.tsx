@@ -2,12 +2,18 @@ import { Link } from "react-router";
 
 import schedaddleImg from "../assets/schedaddle.png";
 import digImg from "../assets/digmag.jpg";
-import pennypalImg from "../assets/pennypal.png";
 
 const BARLOW_CONDENSED: React.CSSProperties = { fontFamily: "'Barlow Condensed', sans-serif" };
 const MONO: React.CSSProperties = { fontFamily: "'DM Mono', monospace" };
 
 const RESUME = `${import.meta.env.BASE_URL}Tasneem_Iqbal_Resume.pdf`;
+
+// Optical alignment for the stacked name, measured rather than eyeballed. In
+// Barlow Condensed 700 the ink of "I" starts 0.044em into its advance width
+// while "T" starts at 0.024em, so IQBAL would otherwise sit 0.020em right of
+// TASNEEM. Pulling it back by exactly that difference squares the left edge,
+// and being em-based it holds at every size the clamp produces.
+const IQBAL_OPTICAL: React.CSSProperties = { ...BARLOW_CONDENSED, marginLeft: "-0.02em" };
 
 const projects = [
   {
@@ -28,15 +34,6 @@ const projects = [
     imageAlt: "DIG Magazine site preview",
     to: "/work/dig",
   },
-  {
-    id: "03",
-    title: "PennyPal",
-    category: "Side project",
-    year: "2025",
-    image: pennypalImg,
-    imageAlt: "PennyPal budgeting app preview",
-    href: "https://github.com/tasneemiqbal/PennyPal/tree/main",
-  },
 ];
 
 const contact = [
@@ -47,8 +44,11 @@ const contact = [
 ];
 
 function ProjectCard({ project }: { project: (typeof projects)[number] }) {
-  const inner = (
-    <>
+  return (
+    <Link
+      to={project.to}
+      className="group block focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-brand"
+    >
       <div className="overflow-hidden bg-muted aspect-[4/3] mb-5" style={{ borderRadius: "2px" }}>
         <img
           src={project.image}
@@ -66,26 +66,12 @@ function ProjectCard({ project }: { project: (typeof projects)[number] }) {
           style={BARLOW_CONDENSED}
         >
           {project.title}
-          {project.href && " ↗"}
         </h3>
       </div>
       <p className="text-xs uppercase tracking-[0.2em] text-foreground/60 mt-2 ml-8" style={MONO}>
         {project.category} · {project.year}
       </p>
-    </>
-  );
-
-  const className =
-    "group block focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-brand";
-
-  return project.to ? (
-    <Link to={project.to} className={className}>
-      {inner}
     </Link>
-  ) : (
-    <a href={project.href} target="_blank" rel="noopener noreferrer" className={className}>
-      {inner}
-    </a>
   );
 }
 
@@ -102,7 +88,7 @@ export function Home() {
         </h1>
         <h1
           className="text-[clamp(64px,14vw,180px)] font-bold uppercase leading-[0.9] tracking-tight text-brand-soft"
-          style={BARLOW_CONDENSED}
+          style={IQBAL_OPTICAL}
         >
           Iqbal
         </h1>

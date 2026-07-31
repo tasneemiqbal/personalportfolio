@@ -20,7 +20,7 @@ const stagger = {
 
 const facts = [
   ["Education", "B.S. Computer Science, CSULB. Graduating Dec 2026."],
-  ["Location", "Long Beach, CA"],
+  ["Location", "Los Angeles, CA"],
 ];
 
 const skills = [
@@ -114,7 +114,7 @@ export function About() {
               className="text-xs uppercase tracking-[0.3em] text-foreground/60 mb-8"
               style={MONO}
             >
-              Long Beach, CA
+              Los Angeles, CA
             </motion.p>
 
             <motion.p

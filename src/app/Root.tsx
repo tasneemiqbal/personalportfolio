@@ -77,7 +77,7 @@ export function Root() {
           © 2026 Tasneem Iqbal
         </p>
         <p className="text-xs text-foreground/60" style={MONO}>
-          {time} Long Beach, CA
+          {time} Los Angeles, CA
         </p>
       </footer>
     </div>
