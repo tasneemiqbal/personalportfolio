@@ -9,14 +9,6 @@ const MONO: React.CSSProperties = { fontFamily: "'DM Mono', monospace" };
 
 const RESUME = `${import.meta.env.BASE_URL}Tasneem_Iqbal_Resume.pdf`;
 
-// The three live publications are the most verifiable thing on the page, so
-// they stay as real links a recruiter can check in one click.
-const publications = [
-  { domain: "lbcurrent.com", href: "https://lbcurrent.com/" },
-  { domain: "digmaglb.com", href: "https://www.digmaglb.com/" },
-  { domain: "enyelb.com", href: "https://www.enyelb.com/" },
-];
-
 const projects = [
   {
     id: "01",
@@ -101,59 +93,22 @@ export function Home() {
   return (
     <>
       {/* HERO */}
-      <section className="min-h-screen flex flex-col justify-between px-5 sm:px-8 pt-28 sm:pt-32 pb-12">
-        <div className="flex-1 flex flex-col justify-center">
-          <h1
-            className="text-[clamp(64px,14vw,180px)] font-bold uppercase leading-[0.9] tracking-tight"
-            style={BARLOW_CONDENSED}
-          >
-            Tasneem
-          </h1>
-          <h1
-            className="text-[clamp(64px,14vw,180px)] font-bold uppercase leading-[0.9] tracking-tight text-foreground/50"
-            style={BARLOW_CONDENSED}
-          >
-            Iqbal
-          </h1>
-
-          <div className="mt-10 flex flex-col sm:flex-row sm:items-end sm:justify-between gap-6">
-            <div>
-              <p className="text-xs uppercase tracking-[0.25em] text-foreground/60 mb-3" style={MONO}>
-                Product Manager. Engineer.
-              </p>
-              <p className="text-base text-foreground/60 max-w-sm leading-relaxed mb-5" style={{ fontWeight: 300 }}>
-                I keep three student publications online and decide what actually ships.
-              </p>
-              <div className="flex flex-wrap items-center gap-x-5 gap-y-2">
-                {publications.map((pub) => (
-                  <a
-                    key={pub.domain}
-                    href={pub.href}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="text-xs tracking-[0.1em] text-brand hover:text-foreground transition-colors"
-                    style={MONO}
-                  >
-                    {pub.domain} ↗
-                  </a>
-                ))}
-              </div>
-            </div>
-            <Link
-              to="/about"
-              className="text-xs uppercase tracking-[0.2em] text-foreground/60 hover:text-brand transition-colors self-start sm:self-end whitespace-nowrap"
-              style={MONO}
-            >
-              About me →
-            </Link>
-          </div>
-        </div>
-
-        <div className="border-t border-border pt-8">
-          <span className="text-xs text-foreground/60" style={MONO} aria-hidden="true">
-            ↓
-          </span>
-        </div>
+      <section className="px-5 sm:px-8 pt-32 sm:pt-40 pb-16 sm:pb-24">
+        <h1
+          className="text-[clamp(64px,14vw,180px)] font-bold uppercase leading-[0.9] tracking-tight"
+          style={BARLOW_CONDENSED}
+        >
+          Tasneem
+        </h1>
+        <h1
+          className="text-[clamp(64px,14vw,180px)] font-bold uppercase leading-[0.9] tracking-tight text-foreground/50"
+          style={BARLOW_CONDENSED}
+        >
+          Iqbal
+        </h1>
+        <p className="text-xs uppercase tracking-[0.25em] text-foreground/60 mt-8" style={MONO}>
+          Product Manager. Engineer.
+        </p>
       </section>
 
       {/* WORK */}
