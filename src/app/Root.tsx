@@ -4,6 +4,13 @@ import { useEffect, useState } from "react";
 const MONO: React.CSSProperties = { fontFamily: "'DM Mono', monospace" };
 const BARLOW: React.CSSProperties = { fontFamily: "'Barlow', sans-serif" };
 
+const RESUME = `${import.meta.env.BASE_URL}Tasneem_Iqbal_Resume.pdf`;
+
+const navLink = ({ isActive }: { isActive: boolean }) =>
+  `text-xs tracking-[0.2em] uppercase transition-colors ${
+    isActive ? "text-foreground" : "text-foreground/50 hover:text-foreground"
+  }`;
+
 export function Root() {
   const location = useLocation();
   const [time, setTime] = useState("");
@@ -23,7 +30,11 @@ export function Root() {
     return () => clearInterval(id);
   }, []);
 
-  const isAbout = location.pathname === "/about";
+  // Every route change should start at the top. Without this, opening a case
+  // study from halfway down the project list drops you into its middle.
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, [location.pathname]);
 
   return (
     <div
@@ -31,35 +42,25 @@ export function Root() {
       style={BARLOW}
     >
       {/* NAV */}
-      <header className="fixed top-0 left-0 right-0 z-50 px-8 py-6 flex items-center justify-between">
+      <header className="fixed top-0 left-0 right-0 z-50 px-5 sm:px-8 py-5 sm:py-6 flex items-center justify-between bg-background/80 backdrop-blur-sm">
         <NavLink
           to="/"
           className="text-xs tracking-[0.2em] uppercase text-foreground/50 hover:text-foreground transition-colors"
           style={MONO}
         >
-          Jordan Lee
+          Tasneem Iqbal
         </NavLink>
-        <nav className="flex items-center gap-8">
-          <NavLink
-            to="/"
-            className={({ isActive }) =>
-              `text-xs tracking-[0.2em] uppercase transition-colors ${isActive && !isAbout ? "text-foreground" : "text-foreground/50 hover:text-foreground"}`
-            }
-            style={MONO}
-          >
+        <nav className="flex items-center gap-5 sm:gap-8">
+          <NavLink to="/" end className={navLink} style={MONO}>
             Work
           </NavLink>
-          <NavLink
-            to="/about"
-            className={({ isActive }) =>
-              `text-xs tracking-[0.2em] uppercase transition-colors ${isActive ? "text-foreground" : "text-foreground/50 hover:text-foreground"}`
-            }
-            style={MONO}
-          >
+          <NavLink to="/about" className={navLink} style={MONO}>
             About
           </NavLink>
           <a
-            href="#"
+            href={RESUME}
+            target="_blank"
+            rel="noopener noreferrer"
             className="text-xs tracking-[0.2em] uppercase text-foreground/50 hover:text-foreground transition-colors"
             style={MONO}
           >
@@ -71,12 +72,12 @@ export function Root() {
       <Outlet />
 
       {/* FOOTER */}
-      <footer className="px-8 py-8 border-t border-border flex items-center justify-between">
+      <footer className="px-5 sm:px-8 py-8 border-t border-border flex items-center justify-between gap-4">
         <p className="text-xs text-foreground/30" style={MONO}>
-          © 2025 Jordan Lee
+          © 2026 Tasneem Iqbal
         </p>
         <p className="text-xs text-foreground/30" style={MONO}>
-          {time} PST
+          {time} Long Beach, CA
         </p>
       </footer>
     </div>

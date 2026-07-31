@@ -1,0 +1,215 @@
+import { motion } from "motion/react";
+import { Link } from "react-router";
+
+export const BARLOW_CONDENSED: React.CSSProperties = { fontFamily: "'Barlow Condensed', sans-serif" };
+export const MONO: React.CSSProperties = { fontFamily: "'DM Mono', monospace" };
+
+/** Shared shell for the case study pages: hero, sections, and the footer nav. */
+
+export function CaseStudyHero({
+  kicker,
+  title,
+  lede,
+  meta,
+  links,
+}: {
+  kicker: string;
+  title: string;
+  lede: string;
+  meta: [string, string][];
+  links: { label: string; href: string }[];
+}) {
+  return (
+    <header className="px-5 sm:px-8 pt-28 sm:pt-32 pb-16">
+      <Link
+        to="/"
+        className="text-xs uppercase tracking-[0.2em] text-foreground/40 hover:text-foreground transition-colors"
+        style={MONO}
+      >
+        ← Back to the work
+      </Link>
+
+      <motion.div
+        initial={{ opacity: 0, y: 28 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.7, ease: [0.23, 1, 0.32, 1] }}
+      >
+        <p className="text-xs uppercase tracking-[0.3em] text-foreground/40 mt-12 mb-5" style={MONO}>
+          {kicker}
+        </p>
+        <h1
+          className="text-[clamp(56px,11vw,150px)] font-black uppercase leading-[0.9] tracking-tight mb-8"
+          style={BARLOW_CONDENSED}
+        >
+          {title}
+        </h1>
+        <p
+          className="text-xl sm:text-2xl leading-snug text-foreground/80 max-w-3xl mb-14"
+          style={{ fontWeight: 300 }}
+        >
+          {lede}
+        </p>
+      </motion.div>
+
+      <dl className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-px bg-border border-y border-border">
+        {meta.map(([label, value]) => (
+          <div key={label} className="bg-background py-5 px-4 sm:px-5">
+            <dt className="text-xs uppercase tracking-[0.2em] text-foreground/40 mb-2" style={MONO}>
+              {label}
+            </dt>
+            <dd className="text-sm text-foreground/80">{value}</dd>
+          </div>
+        ))}
+      </dl>
+
+      {links.length > 0 && (
+        <div className="flex flex-wrap gap-x-8 gap-y-4 mt-10">
+          {links.map((l) => (
+            <a
+              key={l.label}
+              href={l.href}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-xs uppercase tracking-[0.2em] text-foreground hover:text-foreground/50 transition-colors border-b border-foreground/30 pb-1"
+              style={MONO}
+            >
+              {l.label} ↗
+            </a>
+          ))}
+        </div>
+      )}
+    </header>
+  );
+}
+
+export function Section({
+  eyebrow,
+  heading,
+  children,
+}: {
+  eyebrow?: string;
+  heading: string;
+  children: React.ReactNode;
+}) {
+  return (
+    <section className="px-5 sm:px-8 py-16 border-t border-border">
+      {eyebrow && (
+        <p className="text-xs uppercase tracking-[0.3em] text-foreground/40 mb-6" style={MONO}>
+          {eyebrow}
+        </p>
+      )}
+      <h2
+        className="text-[clamp(30px,5vw,58px)] font-bold uppercase leading-[0.95] tracking-tight mb-8 max-w-4xl"
+        style={BARLOW_CONDENSED}
+      >
+        {heading}
+      </h2>
+      {children}
+    </section>
+  );
+}
+
+export function Prose({ children }: { children: React.ReactNode }) {
+  return (
+    <p className="text-base sm:text-lg text-foreground/70 leading-relaxed max-w-3xl mb-5" style={{ fontWeight: 300 }}>
+      {children}
+    </p>
+  );
+}
+
+export function CardGrid({ items }: { items: { title: string; text: string }[] }) {
+  return (
+    <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-px bg-border border border-border mt-8">
+      {items.map((c) => (
+        <div key={c.title} className="bg-background p-6 min-h-[128px]">
+          <h3 className="text-xl font-bold uppercase tracking-tight leading-none mb-3" style={BARLOW_CONDENSED}>
+            {c.title}
+          </h3>
+          <p className="text-sm text-foreground/60 leading-relaxed" style={{ fontWeight: 300 }}>
+            {c.text}
+          </p>
+        </div>
+      ))}
+    </div>
+  );
+}
+
+export function Callout({ label, children }: { label: string; children: React.ReactNode }) {
+  return (
+    <div className="border-l-2 border-foreground pl-6 sm:pl-8 py-2 my-8 max-w-3xl">
+      <p className="text-xs uppercase tracking-[0.3em] text-foreground/40 mb-3" style={MONO}>
+        {label}
+      </p>
+      <p className="text-lg sm:text-xl text-foreground leading-relaxed" style={{ fontWeight: 300 }}>
+        {children}
+      </p>
+    </div>
+  );
+}
+
+export function Stats({ items }: { items: { figure: string; label: string }[] }) {
+  return (
+    <div className="grid grid-cols-1 sm:grid-cols-2 gap-px bg-border border border-border my-8 max-w-2xl">
+      {items.map((s) => (
+        <div key={s.label} className="bg-background p-8">
+          <div
+            className="text-[clamp(44px,7vw,76px)] font-black uppercase leading-none tracking-tight mb-3"
+            style={BARLOW_CONDENSED}
+          >
+            {s.figure}
+          </div>
+          <div className="text-xs uppercase tracking-[0.2em] text-foreground/40" style={MONO}>
+            {s.label}
+          </div>
+        </div>
+      ))}
+    </div>
+  );
+}
+
+export function Figure({ src, alt, caption }: { src: string; alt: string; caption: string }) {
+  return (
+    <figure className="my-8">
+      <div className="overflow-hidden bg-muted border border-border" style={{ borderRadius: "2px" }}>
+        <img src={src} alt={alt} loading="lazy" className="w-full h-auto" />
+      </div>
+      <figcaption className="text-xs uppercase tracking-[0.2em] text-foreground/40 mt-3" style={MONO}>
+        {caption}
+      </figcaption>
+    </figure>
+  );
+}
+
+export function CaseStudyFoot({
+  text,
+  nextLabel,
+  nextTo,
+}: {
+  text: string;
+  nextLabel: string;
+  nextTo: string;
+}) {
+  return (
+    <section className="px-5 sm:px-8 py-16 border-t border-border flex flex-col sm:flex-row sm:items-center sm:justify-between gap-6">
+      <p className="text-base text-foreground/50 max-w-md" style={{ fontWeight: 300 }}>
+        {text}
+      </p>
+      <div className="flex flex-wrap gap-x-8 gap-y-4">
+        <Link
+          to="/"
+          className="text-xs uppercase tracking-[0.2em] text-foreground/50 hover:text-foreground transition-colors"
+          style={MONO}
+        >
+          ← Back to the work
+        </Link>
+        <Link
+          to={nextTo}
+          className="text-xs uppercase tracking-[0.2em] text-foreground hover:text-foreground/50 transition-colors border-b border-foreground/30 pb-1"
+          style={MONO}
+        >
+          {nextLabel} →
+        </Link>
+      </div>
+    </section>
+  );
+}
