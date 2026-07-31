@@ -1,5 +1,4 @@
 import { motion } from "motion/react";
-import { Link } from "react-router";
 
 import portrait from "../assets/portrait.jpg";
 
@@ -175,23 +174,6 @@ export function About() {
         </div>
       </section>
 
-      {/* CTA */}
-      <section className="px-5 sm:px-8 mt-24 pt-16 border-t border-border flex flex-wrap items-center gap-6 sm:gap-8">
-        <Link
-          to="/"
-          className="text-xs uppercase tracking-[0.2em] text-foreground/60 hover:text-foreground transition-colors"
-          style={MONO}
-        >
-          ← See my work
-        </Link>
-        <a
-          href="mailto:tasneemiqbal417@gmail.com"
-          className="text-xs uppercase tracking-[0.2em] text-foreground/60 hover:text-foreground transition-colors"
-          style={MONO}
-        >
-          Get in touch →
-        </a>
-      </section>
     </main>
   );
 }

@@ -11,6 +11,16 @@ const navLink = ({ isActive }: { isActive: boolean }) =>
     isActive ? "text-brand" : "text-foreground/60 hover:text-brand"
   }`;
 
+// The email shows the address itself rather than a verb like "Get in touch".
+// A mailto: does nothing at all on a machine with no mail client registered,
+// so the label has to stay useful when the click fails: readable and copyable.
+const contact = [
+  { label: "tasneemiqbal417@gmail.com", href: "mailto:tasneemiqbal417@gmail.com" },
+  { label: "LinkedIn ↗", href: "https://www.linkedin.com/in/tasneemiqbal89" },
+  { label: "GitHub ↗", href: "https://github.com/tasneemiqbal" },
+  { label: "Resume ↗", href: RESUME },
+];
+
 export function Root() {
   const location = useLocation();
   const [time, setTime] = useState("");
@@ -71,14 +81,31 @@ export function Root() {
 
       <Outlet />
 
-      {/* FOOTER */}
-      <footer className="px-5 sm:px-8 py-8 border-t border-border flex items-center justify-between gap-4">
-        <p className="text-xs text-foreground/60" style={MONO}>
-          © 2026 Tasneem Iqbal
-        </p>
-        <p className="text-xs text-foreground/60" style={MONO}>
-          {time} Los Angeles, CA
-        </p>
+      {/* FOOTER — the only place contact lives, on every page */}
+      <footer className="px-5 sm:px-8 py-10 border-t border-border">
+        <div className="flex flex-col gap-6 sm:flex-row sm:items-center sm:justify-between">
+          <div className="flex flex-wrap items-center gap-x-6 gap-y-2">
+            {contact.map((link) => (
+              <a
+                key={link.label}
+                href={link.href}
+                {...(link.href.startsWith("http") ? { target: "_blank", rel: "noopener noreferrer" } : {})}
+                className="text-xs text-foreground/60 hover:text-brand transition-colors"
+                style={MONO}
+              >
+                {link.label}
+              </a>
+            ))}
+          </div>
+          <div className="flex flex-wrap items-center gap-x-6 gap-y-2">
+            <p className="text-xs text-foreground/60" style={MONO}>
+              © 2026 Tasneem Iqbal
+            </p>
+            <p className="text-xs text-foreground/60" style={MONO}>
+              {time} Los Angeles, CA
+            </p>
+          </div>
+        </div>
       </footer>
     </div>
   );

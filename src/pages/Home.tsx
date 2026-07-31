@@ -6,8 +6,6 @@ import digImg from "../assets/digmag.jpg";
 const BARLOW_CONDENSED: React.CSSProperties = { fontFamily: "'Barlow Condensed', sans-serif" };
 const MONO: React.CSSProperties = { fontFamily: "'DM Mono', monospace" };
 
-const RESUME = `${import.meta.env.BASE_URL}Tasneem_Iqbal_Resume.pdf`;
-
 // Optical alignment for the stacked name, measured rather than eyeballed. In
 // Barlow Condensed 700 the ink of "I" starts 0.044em into its advance width
 // while "T" starts at 0.024em, so IQBAL would otherwise sit 0.020em right of
@@ -34,13 +32,6 @@ const projects = [
     imageAlt: "DIG Magazine site preview",
     to: "/work/dig",
   },
-];
-
-const contact = [
-  { label: "Email", value: "tasneemiqbal417@gmail.com", href: "mailto:tasneemiqbal417@gmail.com" },
-  { label: "LinkedIn", value: "in/tasneemiqbal89 ↗", href: "https://www.linkedin.com/in/tasneemiqbal89" },
-  { label: "GitHub", value: "tasneemiqbal ↗", href: "https://github.com/tasneemiqbal" },
-  { label: "Resume", value: "Download PDF ↗", href: RESUME },
 ];
 
 function ProjectCard({ project }: { project: (typeof projects)[number] }) {
@@ -115,39 +106,6 @@ export function Home() {
         </div>
       </section>
 
-      {/* CONTACT */}
-      <section className="px-5 sm:px-8 py-20 sm:py-24 border-t border-border">
-        <div className="grid grid-cols-1 md:grid-cols-12 gap-8 items-start">
-          <div className="md:col-span-2">
-            <p className="text-xs uppercase tracking-[0.3em] text-brand pt-1" style={MONO}>
-              Contact
-            </p>
-          </div>
-          <div className="md:col-span-4">
-            <h2
-              className="text-[clamp(44px,8vw,96px)] font-bold uppercase leading-none tracking-tight mb-6"
-              style={BARLOW_CONDENSED}
-            >
-              Say hi.
-            </h2>
-          </div>
-          <div className="md:col-span-5 md:col-start-8 flex flex-col">
-            {contact.map((link) => (
-              <a
-                key={link.label}
-                href={link.href}
-                {...(link.href.startsWith("http") ? { target: "_blank", rel: "noopener noreferrer" } : {})}
-                className="py-5 border-t border-border last:border-b flex items-center justify-between gap-4 hover:text-brand transition-colors"
-              >
-                <span className="text-xs uppercase tracking-[0.2em] text-foreground/60" style={MONO}>
-                  {link.label}
-                </span>
-                <span className="text-sm text-right break-all">{link.value}</span>
-              </a>
-            ))}
-          </div>
-        </div>
-      </section>
     </>
   );
 }
