@@ -101,7 +101,7 @@ export function Home() {
           Tasneem
         </h1>
         <h1
-          className="text-[clamp(64px,14vw,180px)] font-bold uppercase leading-[0.9] tracking-tight text-foreground/50"
+          className="text-[clamp(64px,14vw,180px)] font-bold uppercase leading-[0.9] tracking-tight text-brand"
           style={BARLOW_CONDENSED}
         >
           Iqbal
@@ -114,7 +114,7 @@ export function Home() {
       {/* WORK */}
       <section className="px-5 sm:px-8 py-20 sm:py-24 border-t border-border">
         <div className="mb-12 flex items-end justify-between">
-          <p className="text-xs uppercase tracking-[0.3em] text-foreground/60" style={MONO}>
+          <p className="text-xs uppercase tracking-[0.3em] text-brand" style={MONO}>
             Work
           </p>
           <p className="text-xs text-foreground/60" style={MONO}>
@@ -133,7 +133,7 @@ export function Home() {
       <section className="px-5 sm:px-8 py-20 sm:py-24 border-t border-border">
         <div className="grid grid-cols-1 md:grid-cols-12 gap-8 items-start">
           <div className="md:col-span-2">
-            <p className="text-xs uppercase tracking-[0.3em] text-foreground/60 pt-1" style={MONO}>
+            <p className="text-xs uppercase tracking-[0.3em] text-brand pt-1" style={MONO}>
               Contact
             </p>
           </div>

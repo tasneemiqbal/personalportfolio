@@ -67,7 +67,7 @@ export function About() {
           className="mb-16"
         >
           <h1
-            className="text-[clamp(56px,10vw,130px)] font-bold uppercase leading-none tracking-tight text-foreground/50"
+            className="text-[clamp(56px,10vw,130px)] font-bold uppercase leading-none tracking-tight text-brand"
             style={BARLOW_CONDENSED}
           >
             About
@@ -155,7 +155,7 @@ export function About() {
 
       {/* SKILLS */}
       <section className="px-5 sm:px-8 mt-24 pt-16 border-t border-border">
-        <p className="text-xs uppercase tracking-[0.3em] text-foreground/60 mb-12" style={MONO}>
+        <p className="text-xs uppercase tracking-[0.3em] text-brand mb-12" style={MONO}>
           Skills &amp; tools
         </p>
         <div className="grid grid-cols-1 md:grid-cols-3 gap-10">

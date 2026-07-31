@@ -34,7 +34,7 @@ export function CaseStudyHero({
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.7, ease: [0.23, 1, 0.32, 1] }}
       >
-        <p className="text-xs uppercase tracking-[0.3em] text-foreground/60 mt-12 mb-5" style={MONO}>
+        <p className="text-xs uppercase tracking-[0.3em] text-brand mt-12 mb-5" style={MONO}>
           {kicker}
         </p>
         <h1
@@ -94,7 +94,7 @@ export function Section({
   return (
     <section className="px-5 sm:px-8 py-16 border-t border-border">
       {eyebrow && (
-        <p className="text-xs uppercase tracking-[0.3em] text-foreground/60 mb-6" style={MONO}>
+        <p className="text-xs uppercase tracking-[0.3em] text-brand mb-6" style={MONO}>
           {eyebrow}
         </p>
       )}
