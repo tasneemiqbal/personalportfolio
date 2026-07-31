@@ -83,7 +83,7 @@ export function About() {
             className="md:col-span-4"
           >
             <div
-              className="relative overflow-hidden bg-muted max-w-xs md:max-w-none"
+              className="overflow-hidden bg-muted max-w-xs md:max-w-none"
               style={{ borderRadius: "2px" }}
             >
               <img
@@ -91,14 +91,6 @@ export function About() {
                 alt="Tasneem Iqbal"
                 className="w-full aspect-[3/4] object-cover object-top"
               />
-              <div className="absolute bottom-4 left-4">
-                <span
-                  className="text-xs uppercase tracking-[0.2em] text-white bg-black/60 px-2 py-1"
-                  style={MONO}
-                >
-                  Tasneem Iqbal, 2026
-                </span>
-              </div>
             </div>
           </motion.div>
 
