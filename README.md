@@ -1,59 +1,84 @@
-# Tasneem Iqbal - Portfolio
+# Tasneem Iqbal · Portfolio
 
-A Windows XP themed portfolio for a CS senior pivoting into Product Management. Static HTML, CSS, and vanilla JavaScript. No build step, no framework.
+Live at **https://tasneemiqbal.github.io/personalportfolio/**
 
-## Live Demo
+A React + Vite site for a product manager. The design
+brief lives in [PRODUCT.md](PRODUCT.md) and it is the thing to read before
+changing anything visual.
 
-https://tasneemiqbal.github.io/personalportfolio/
+## Running it
 
-## Pages
+```bash
+npm install
+npm run dev          # http://localhost:5173
+```
 
-- `index.html` - home: hero, case studies, about, experience, skills, contact
-- `schedaddle.html` - case study: scheduling tool, user research through Figma prototype
-- `dig.html` - case study: DIG Magazine redesign
+To check something the way production will serve it:
+
+```bash
+npm run build
+npm run preview      # http://localhost:4173/personalportfolio/
+```
+
+Use `preview`, not `dev`, when you want to trust what you see. The site is
+served from the `/personalportfolio/` subpath rather than a domain root, and
+`dev` hides base-path bugs that `preview` surfaces.
 
 ## Structure
 
 ```
-portfolio-website/
-├── index.html
-├── schedaddle.html
-├── dig.html
-├── css/
-│   ├── styles.css        # layout, spacing, base components
-│   ├── xp-theme.css      # the XP skin; loads last and overrides styles.css
-│   └── case-study.css    # case study page styles
-├── js/
-│   ├── script.js         # theme toggle, tabs, scroll state
-│   └── background.js     # three.js hero canvas
-├── images/
-└── PRODUCT.md            # who this is for and what it has to prove
+index.html               Vite entry
+vite.config.ts           base: '/personalportfolio/'  <- load-bearing
+src/
+  main.tsx               mounts the app, restores the 404.html redirect
+  app/
+    routes.ts            router + basename derived from Vite's BASE_URL
+    Root.tsx             nav, footer, scroll-to-top on route change
+  pages/
+    Home.tsx             hero, publications, project rows, contact
+    About.tsx            bio, experience, skills
+    Schedaddle.tsx       case study
+    Dig.tsx              case study
+  components/
+    case-study.tsx       shared case study layout primitives
+  styles/
+    theme.css            design tokens (cream ground, radius 0)
+    tailwind.css         Tailwind v4 entry
+  assets/                images, hashed and base-prefixed by Vite
+public/
+  404.html               SPA fallback, since Pages has no rewrite
+  v1/                    the previous static site, served verbatim
+  *.pdf                  resume and product spec
 ```
 
-`xp-theme.css` is loaded after the others and leans on `!important` to reskin
-them. If a style is not doing what you expect, check there first.
+### Routes
 
-## Type
+| Path | What |
+|---|---|
+| `/` | Home |
+| `/about` | About |
+| `/work/schedaddle` | Schedaddle case study |
+| `/work/dig` | DIG Magazine case study |
+| `/v1/` | The previous site, kept live and unchanged |
 
-Pixelify Sans for display, Tahoma for everything else. Tahoma is a system font,
-so only Pixelify Sans is fetched from Google Fonts.
+## The v1 archive
 
-## Accessibility
+`public/v1/` holds the hand-written static site this replaced: four HTML
+pages, their CSS and JS, and the XP-themed `offline.html`. Vite copies
+`public/` into the build untouched, so every relative link inside v1 keeps
+resolving exactly as it did. Nothing in the new site links to it except this
+README, by design.
 
-Targets WCAG AA: keyboard navigable throughout, visible focus, `prefers-reduced-motion`
-honored, 4.5:1 minimum on body text.
+The pre-redesign state is also tagged `v1-static` if you need it as a working
+tree rather than as served files.
 
-## Running locally
+## Dependencies
 
-No build step. Serve the directory and open it:
+Four runtime packages: `react`, `react-dom`, `react-router`, `motion`. The
+Figma Make export arrived with the full shadcn/ui kit and about 55
+dependencies, none of which anything imported. They were removed. If you want
+a shadcn primitive later, `npx shadcn@latest add <name>` regenerates it.
 
-```
-python3 -m http.server 8000
-```
+## Deploying
 
-## Contact
-
-**Tasneem Iqbal**
-- Email: tasneemiqbal417@gmail.com
-- LinkedIn: https://linkedin.com/in/tasneemiqbal89
-- Location: Long Beach, CA
+Push to `main`. See [DEPLOYMENT.md](DEPLOYMENT.md).
