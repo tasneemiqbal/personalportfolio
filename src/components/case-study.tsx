@@ -51,7 +51,7 @@ export function CaseStudyHero({
         </p>
       </motion.div>
 
-      <dl className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-px bg-border border-y border-border">
+      <dl className="grid grid-cols-1 sm:grid-cols-3 gap-px bg-border border-y border-border">
         {meta.map(([label, value]) => (
           <div key={label} className="bg-background py-5 px-4 sm:px-5">
             <dt className="text-xs uppercase tracking-[0.2em] text-foreground/60 mb-2" style={MONO}>
@@ -183,16 +183,19 @@ export function CaseStudyFoot({
   nextLabel,
   nextTo,
 }: {
-  text: string;
+  text?: string;
   nextLabel: string;
   nextTo: string;
 }) {
   return (
     <section className="px-5 sm:px-8 py-16 border-t border-border flex flex-col sm:flex-row sm:items-center sm:justify-between gap-6">
-      <p className="text-base text-foreground/60 max-w-md" style={{ fontWeight: 300 }}>
-        {text}
-      </p>
-      <div className="flex flex-wrap gap-x-8 gap-y-4">
+      {text && (
+        <p className="text-base text-foreground/60 max-w-md" style={{ fontWeight: 300 }}>
+          {text}
+        </p>
+      )}
+      {/* ml-auto so a foot with no text keeps its nav in the same place as one with text. */}
+      <div className="flex flex-wrap gap-x-8 gap-y-4 sm:ml-auto">
         <Link
           to="/"
           className="text-xs uppercase tracking-[0.2em] text-foreground/60 hover:text-foreground transition-colors"

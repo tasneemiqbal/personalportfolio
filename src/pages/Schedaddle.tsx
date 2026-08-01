@@ -14,8 +14,6 @@ import prototypeImg from "../assets/schedaddle.png";
 import landingImg from "../assets/marketing-landing.png";
 import scheduleImg from "../assets/schedule.png";
 
-const SPEC = `${import.meta.env.BASE_URL}Schedaddle_Product_Spec.pdf`;
-
 const findings = [
   { title: "Constant changes", text: "Every change means another round of manual updates." },
   { title: "Fragmented tools", text: "Availability in When2Meet, schedules in Sheets, updates in Discord." },
@@ -106,17 +104,14 @@ export function Schedaddle() {
         lede="One lightweight platform that unifies availability polling, scheduling, and announcements, so small teams stop juggling three tools to plan one week."
         meta={[
           ["My role", "Product lead"],
-          ["Team", "Team of 5"],
           ["Timeline", "Jan 2026 to present"],
           ["Tools", "Figma, User Interviews"],
-          ["Context", "CS Senior Project"],
         ]}
         links={[
           {
             label: "View Figma prototype",
             href: "https://www.figma.com/design/fGiV23UznJOeMfHrsKR7J2/Schedaddle---Web-App-Design?node-id=1-2&t=vpP9H1s8e4xnplIQ-0",
           },
-          { label: "Read the product spec", href: SPEC },
         ]}
       />
 
@@ -257,11 +252,7 @@ export function Schedaddle() {
         </Prose>
       </Section>
 
-      <CaseStudyFoot
-        text="Want the deeper version? Read the full product spec."
-        nextLabel="Next: DIG Magazine"
-        nextTo="/work/dig"
-      />
+      <CaseStudyFoot nextLabel="Next: DIG Magazine" nextTo="/work/dig" />
     </main>
   );
 }
