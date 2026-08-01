@@ -5,6 +5,7 @@
   "type": "module",
   "scripts": {
     "build": "vite build",
+    "build:cloudflare": "vite build",
     "build:pages": "VITE_BASE=/personalportfolio/ vite build",
     "dev": "vite",
     "preview": "vite preview"
