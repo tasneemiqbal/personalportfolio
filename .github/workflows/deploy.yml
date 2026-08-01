@@ -29,7 +29,11 @@ jobs:
 
       - run: npm ci
 
-      - run: npm run build
+      # Not `npm run build` — that one targets a domain root, for Cloudflare.
+      # Pages serves this repo from the /personalportfolio/ subpath, and a build
+      # with the wrong base renders blank rather than failing, so the two hosts
+      # get named scripts instead of sharing one.
+      - run: npm run build:pages
 
       - uses: actions/upload-pages-artifact@v3
         with:

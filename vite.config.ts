@@ -21,14 +21,20 @@ function figmaAssetResolver() {
 // Pages from a domain root. Every other difference between the builds follows
 // from this one value, so it is the only thing either host has to set:
 //
-//   GitHub Pages   (default)      base = /personalportfolio/
-//   Cloudflare     VITE_BASE=/    base = /
+//   Cloudflare     (default)                        base = /
+//   GitHub Pages   VITE_BASE=/personalportfolio/    base = /personalportfolio/
+//
+// The domain root is the default because Cloudflare autodetects `npm run build`
+// and its build settings live in a dashboard this repo cannot see or verify.
+// GitHub Pages builds from .github/workflows/, which is a file under review, so
+// it is the one that carries the override. Put the odd case where it can be
+// read, not where it has to be remembered.
 //
 // Downstream, the router basename reads import.meta.env.BASE_URL and the 404
 // fallback below is generated from the same value, so neither can drift out of
 // sync with this. Getting it wrong is not a subtle failure: the HTML asks for
 // assets at a prefix that does not exist and the page renders blank.
-const BASE = process.env.VITE_BASE || '/personalportfolio/'
+const BASE = process.env.VITE_BASE || '/'
 
 // GitHub Pages has no SPA rewrite. A direct hit on /about, or a refresh while
 // already there, serves 404.html instead of the app, so that file stashes the
