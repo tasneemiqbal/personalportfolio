@@ -1,6 +1,13 @@
 # Tasneem Iqbal · Portfolio
 
-Live at **https://tasneemiqbal.github.io/personalportfolio/**
+Live at **https://tasneem-iqbal.pages.dev/**, and mirrored on GitHub Pages at
+https://tasneemiqbal.github.io/personalportfolio/.
+
+Two hosts, one difference: the path the site is served from. `npm run build`
+targets a domain root (Cloudflare, which autodetects that command); the Actions
+workflow runs `npm run build:pages` for the `/personalportfolio/` subpath. The
+canonical and `og:*` URLs point at Cloudflare from both builds on purpose — see
+the comment in `index.html`.
 
 A React + Vite site for a product manager. The design
 brief lives in [PRODUCT.md](PRODUCT.md) and it is the thing to read before

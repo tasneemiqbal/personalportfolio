@@ -10,20 +10,31 @@
       content="Web Product Manager at Beach Media, shipping across three student publications. Open to Associate PM roles."
     />
 
-    <!-- Social preview. These URLs are absolute on purpose: Vite rewrites the
-         base path into href and src attributes, but not into meta content, and
-         a scraper following a relative og:image gets nothing. If a custom
-         domain is ever added, these five URLs change with it. -->
-    <link rel="canonical" href="https://tasneemiqbal.github.io/personalportfolio/" />
+    <!-- Social preview. Absolute on purpose: Vite rewrites the base path into
+         href and src attributes but not into meta content, so a scraper
+         following a relative og:image gets nothing.
+
+         Every one of these points at Cloudflare from BOTH builds, and that is
+         the point rather than an oversight. Two hosts serve identical content,
+         so exactly one of them has to be named as the real address or search
+         engines see duplicates and pick for you. LinkedIn is stricter still: it
+         treats og:url as the address of the content, so whatever is written
+         here is the link it features, no matter which URL was pasted in. The
+         GitHub Pages copy therefore points visitors and crawlers at Cloudflare.
+
+         These are host-invariant for that reason — do not make them follow the
+         build's base. If a custom domain is added later, all four change to it,
+         here, once. -->
+    <link rel="canonical" href="https://tasneem-iqbal.pages.dev/" />
     <meta property="og:type" content="website" />
     <meta property="og:site_name" content="Tasneem Iqbal" />
-    <meta property="og:url" content="https://tasneemiqbal.github.io/personalportfolio/" />
+    <meta property="og:url" content="https://tasneem-iqbal.pages.dev/" />
     <meta property="og:title" content="Tasneem Iqbal · Product Manager" />
     <meta
       property="og:description"
       content="Web Product Manager at Beach Media, shipping across three student publications. Open to Associate PM roles."
     />
-    <meta property="og:image" content="https://tasneemiqbal.github.io/personalportfolio/og.png" />
+    <meta property="og:image" content="https://tasneem-iqbal.pages.dev/og.png" />
     <meta property="og:image:width" content="1200" />
     <meta property="og:image:height" content="630" />
     <meta property="og:image:alt" content="Tasneem Iqbal. Product Manager. Engineer." />
@@ -33,7 +44,7 @@
       name="twitter:description"
       content="Web Product Manager at Beach Media, shipping across three student publications. Open to Associate PM roles."
     />
-    <meta name="twitter:image" content="https://tasneemiqbal.github.io/personalportfolio/og.png" />
+    <meta name="twitter:image" content="https://tasneem-iqbal.pages.dev/og.png" />
 
     <link rel="icon" type="image/svg+xml" href="/favicon.svg?v=3" />
     <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32.png?v=3" />
