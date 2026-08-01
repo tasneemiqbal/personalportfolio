@@ -1,0 +1,6 @@
+# Cloudflare Pages SPA rewrite. Existing files win over this rule, so /v1/ and
+# the hashed assets are still served directly; only genuine misses — /about on
+# a cold load, a refresh deep in the app — fall through to the router.
+#
+# GitHub Pages ignores this file and uses the generated 404.html instead.
+/*  /index.html  200
