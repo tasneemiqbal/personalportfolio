@@ -25,27 +25,27 @@ export function Dig() {
       <CaseStudyHero
         kicker="Case study · Web redesign"
         title="DIG Magazine"
-        lede="Leading the redesign of CSULB's student magazine site, making content faster to reach and giving it a bold, color-forward identity that matches how its readers actually want to read."
+        lede="Leading the redesign of the student magazine site, making content faster to reach and giving it a bold, color-forward identity that matches how its readers actually want to read."
         meta={[
           ["My role", "Product & engineering lead"],
           ["Team", "4-person design & faculty advisory"],
           ["Timeline", "Jun 2026 to present"],
           ["Tools", "Figma, HTML, CSS"],
-          ["Context", "Beach Media, CSULB"],
+          ["Context", "Beach Media"],
         ]}
         links={[{ label: "Visit the live site", href: "https://www.digmaglb.com/" }]}
       />
 
-      <Section eyebrow="Overview" heading="The stories were good. Getting to them wasn't.">
+      <Section heading="The stories were good. Getting to them wasn't.">
         <Figure src={digImg} alt="DIG Magazine site preview" caption="The DIG Magazine site" />
         <Prose>
-          DIG is CSULB's student-run arts and culture magazine. As product and engineering lead on the redesign, I
+          DIG is a student-run arts and culture magazine. As product and engineering lead on the redesign, I
           reworked how readers move through the site, and I'm now building the approved Figma design into a
           responsive one.
         </Prose>
       </Section>
 
-      <Section eyebrow="Problem" heading="What was wrong with the old site">
+      <Section heading="What was wrong with the old site">
         <Prose>
           I clicked through the existing navigation the way a reader would, counting steps to the things people
           actually come for. It took too many.
@@ -53,7 +53,7 @@ export function Dig() {
         <CardGrid items={problems} />
       </Section>
 
-      <Section eyebrow="Approach" heading="What I changed">
+      <Section heading="What I changed">
         <Prose>
           I led the navigation rework, cutting key content from three clicks to one across six of eight sections. The
           argument I made to the team was simple: our readers are students, they are reading on a phone between
@@ -66,7 +66,7 @@ export function Dig() {
         </Prose>
       </Section>
 
-      <Section eyebrow="Outcome" heading="Where it stands">
+      <Section heading="Where it stands">
         <Stats
           items={[
             { figure: "3 → 1", label: "Clicks to reach key content" },

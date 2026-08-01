@@ -48,7 +48,14 @@ export function Root() {
 
   return (
     <div
-      className="min-h-screen bg-background text-foreground selection:bg-foreground selection:text-background"
+      // No bg-background here on purpose: the cream lives on html so the
+      // ambient field in theme.css can show through. An opaque background on
+      // this wrapper would cover the whole thing.
+      //
+      // flex column so the footer is pinned to the bottom of the viewport on a
+      // page too short to fill it. Cream showing underneath a dark footer would
+      // read as a rendering bug; it did not matter while the footer was cream.
+      className="min-h-screen flex flex-col text-foreground selection:bg-foreground selection:text-background"
       style={BARLOW}
     >
       {/* NAV */}
@@ -79,10 +86,25 @@ export function Root() {
         </nav>
       </header>
 
-      <Outlet />
+      <div className="flex-1">
+        <Outlet />
+      </div>
 
-      {/* FOOTER — the only place contact lives, on every page */}
-      <footer className="px-5 sm:px-8 py-10 border-t border-border">
+      {/* FOOTER — the only place contact lives, on every page, and the one
+          committed surface on the site. The ink is a colour the site already
+          owns; using it as a field rather than only as type gives the pages a
+          second visual world and a definite end.
+
+          The two blues swap roles here. --brand measures 2.78:1 on this ground
+          and fails small text outright; --brand-soft measures 5.61:1 and
+          passes. So the tone that is display-only on cream is the one that
+          carries small text on ink, and vice versa. Cream at 60% is 6.42:1. */}
+      <footer className="bg-accent text-background px-5 sm:px-8 py-14 sm:py-16">
+        {/* Set in the accent rather than at /60, so the nudge reads before the
+            links it is nudging you toward. */}
+        <p className="text-xs text-brand-soft mb-6" style={MONO}>
+          don't leave too soon, say hi!
+        </p>
         <div className="flex flex-col gap-6 sm:flex-row sm:items-center sm:justify-between">
           <div className="flex flex-wrap items-center gap-x-6 gap-y-2">
             {contact.map((link) => (
@@ -90,7 +112,7 @@ export function Root() {
                 key={link.label}
                 href={link.href}
                 {...(link.href.startsWith("http") ? { target: "_blank", rel: "noopener noreferrer" } : {})}
-                className="text-xs text-foreground/60 hover:text-brand transition-colors"
+                className="text-xs text-background/60 hover:text-background transition-colors"
                 style={MONO}
               >
                 {link.label}
@@ -98,10 +120,10 @@ export function Root() {
             ))}
           </div>
           <div className="flex flex-wrap items-center gap-x-6 gap-y-2">
-            <p className="text-xs text-foreground/60" style={MONO}>
+            <p className="text-xs text-background/60" style={MONO}>
               © 2026 Tasneem Iqbal
             </p>
-            <p className="text-xs text-foreground/60" style={MONO}>
+            <p className="text-xs text-background/60" style={MONO}>
               {time} Los Angeles, CA
             </p>
           </div>

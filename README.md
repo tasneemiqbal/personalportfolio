@@ -2,7 +2,7 @@
 
 Live at **https://tasneemiqbal.github.io/personalportfolio/**
 
-A React + Vite site for a product manager and CS senior at CSULB. The design
+A React + Vite site for a product manager. The design
 brief lives in [PRODUCT.md](PRODUCT.md) and it is the thing to read before
 changing anything visual.
 

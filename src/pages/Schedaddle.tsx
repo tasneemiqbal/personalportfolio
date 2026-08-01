@@ -109,7 +109,7 @@ export function Schedaddle() {
           ["Team", "Team of 5"],
           ["Timeline", "Jan 2026 to present"],
           ["Tools", "Figma, User Interviews"],
-          ["Context", "CS Senior Project, CSULB"],
+          ["Context", "CS Senior Project"],
         ]}
         links={[
           {
@@ -120,7 +120,7 @@ export function Schedaddle() {
         ]}
       />
 
-      <Section eyebrow="Overview" heading="Coordination shouldn't take three apps">
+      <Section heading="Coordination shouldn't take three apps">
         <Figure
           src={prototypeImg}
           alt="Schedaddle Figma prototype screens"
@@ -135,7 +135,7 @@ export function Schedaddle() {
         </Prose>
       </Section>
 
-      <Section eyebrow="Research" heading="What the interviews told us">
+      <Section heading="What the interviews told us">
         <Prose>
           We talked to three people who run recurring schedules for small teams. The tools they needed all existed.
           None of them talked to each other.
@@ -155,7 +155,7 @@ export function Schedaddle() {
         </div>
       </Section>
 
-      <Section eyebrow="Solution" heading="Five core modules, one source of truth">
+      <Section heading="Five core modules, one source of truth">
         <Prose>Each module maps back to a research insight.</Prose>
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-px bg-border border border-border mt-8">
           {modules.map((m) => (
@@ -189,14 +189,14 @@ export function Schedaddle() {
         </div>
       </Section>
 
-      <Section eyebrow="Prototype" heading="A look at the prototype">
+      <Section heading="A look at the prototype">
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
           <Figure src={landingImg} alt="Marketing landing page" caption="Marketing landing page" />
           <Figure src={scheduleImg} alt="Shift schedule screen" caption="Shift schedule view" />
         </div>
       </Section>
 
-      <Section eyebrow="Comparison" heading="Consolidating the workflow">
+      <Section heading="Consolidating the workflow">
         <Prose>Schedaddle pulls every job into one system.</Prose>
         <div className="overflow-x-auto border border-border mt-8">
           <table className="w-full min-w-[720px] border-collapse text-left">
@@ -230,7 +230,7 @@ export function Schedaddle() {
         </div>
       </Section>
 
-      <Section eyebrow="Key decision" heading="We cut the chat feature we came in wanting to build">
+      <Section heading="We cut the chat feature we came in wanting to build">
         <Callout label="The decision">
           Real-time messaging was in our original plan. The interviews killed it: people were happy with their group
           text and had no interest in moving it. We shipped one-way announcements instead: Partiful-style,
@@ -244,7 +244,7 @@ export function Schedaddle() {
         </Prose>
       </Section>
 
-      <Section eyebrow="Outcome" heading="Where it actually stands">
+      <Section heading="Where it actually stands">
         <Prose>
           There is a 15-screen clickable prototype and a spec covering five modules. Our professor has walked it end
           to end and didn't get stuck.

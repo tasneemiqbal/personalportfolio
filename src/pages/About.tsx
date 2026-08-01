@@ -4,7 +4,6 @@ import portrait from "../assets/portrait.jpg";
 
 const BARLOW_CONDENSED: React.CSSProperties = { fontFamily: "'Barlow Condensed', sans-serif" };
 const BARLOW: React.CSSProperties = { fontFamily: "'Barlow', sans-serif" };
-const MONO: React.CSSProperties = { fontFamily: "'DM Mono', monospace" };
 
 const stagger = {
   container: {
@@ -16,11 +15,6 @@ const stagger = {
     show: { opacity: 1, y: 0, transition: { duration: 0.6, ease: [0.23, 1, 0.32, 1] } },
   },
 };
-
-const facts = [
-  ["Education", "B.S. Computer Science, CSULB. Graduating Dec 2026."],
-  ["Location", "Los Angeles, CA"],
-];
 
 const skills = [
   [
@@ -102,14 +96,6 @@ export function About() {
           >
             <motion.p
               variants={stagger.item}
-              className="text-xs uppercase tracking-[0.3em] text-foreground/60 mb-8"
-              style={MONO}
-            >
-              Los Angeles, CA
-            </motion.p>
-
-            <motion.p
-              variants={stagger.item}
               className="text-2xl leading-snug text-foreground mb-6"
               style={{ fontWeight: 300 }}
             >
@@ -119,36 +105,21 @@ export function About() {
 
             <motion.p
               variants={stagger.item}
-              className="text-base text-foreground/60 leading-relaxed mb-10"
+              className="text-base text-foreground/60 leading-relaxed"
               style={{ fontWeight: 300 }}
             >
-              I am a CS senior at CSULB and the Web Product Manager at Beach Media, where I own the sites behind
+              I am the Web Product Manager at Beach Media, where I own the sites behind
               Long Beach Current, DIG Magazine, and ENYE. Part product, part engineering: I find out what is
               slowing editors down, decide what is worth building, then build it.
             </motion.p>
-
-            <motion.dl variants={stagger.item} className="border-t border-border">
-              {facts.map(([label, value]) => (
-                <div key={label} className="py-4 border-b border-border flex flex-col sm:flex-row sm:gap-8">
-                  <dt
-                    className="text-xs uppercase tracking-[0.2em] text-foreground/60 sm:w-32 shrink-0 mb-1 sm:mb-0"
-                    style={MONO}
-                  >
-                    {label}
-                  </dt>
-                  <dd className="text-sm text-foreground/80">{value}</dd>
-                </div>
-              ))}
-            </motion.dl>
           </motion.div>
         </div>
       </div>
 
-      {/* SKILLS */}
+      {/* SKILLS — unlabelled on purpose. Three columns headed PRODUCT,
+          PROGRAMMING and TOOLS do not need a fourth label above them saying
+          skills and tools. */}
       <section className="px-5 sm:px-8 mt-24 pt-16 border-t border-border">
-        <p className="text-xs uppercase tracking-[0.3em] text-brand mb-12" style={MONO}>
-          Skills &amp; tools
-        </p>
         <div className="grid grid-cols-1 md:grid-cols-3 gap-10">
           {skills.map(([category, items]) => (
             <div key={category}>

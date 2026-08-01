@@ -82,24 +82,22 @@ export function CaseStudyHero({
   );
 }
 
+// No eyebrow. A tracked uppercase label above every section is the scaffolding
+// PRODUCT.md names as the thing not to be, and these headings are already
+// written as claims ("The stories were good. Getting to them wasn't."). Left
+// alone they carry the hierarchy themselves. The one kicker in CaseStudyHero
+// stays: once per page, naming what the page is, is a system rather than a tic.
 export function Section({
-  eyebrow,
   heading,
   children,
 }: {
-  eyebrow?: string;
   heading: string;
   children: React.ReactNode;
 }) {
   return (
     <section className="px-5 sm:px-8 py-16 border-t border-border">
-      {eyebrow && (
-        <p className="text-xs uppercase tracking-[0.3em] text-brand mb-6" style={MONO}>
-          {eyebrow}
-        </p>
-      )}
       <h2
-        className="text-[clamp(30px,5vw,58px)] font-bold uppercase leading-[0.95] tracking-tight mb-8 max-w-4xl"
+        className="text-[clamp(30px,5vw,58px)] font-bold uppercase leading-[0.95] tracking-tight mb-8 max-w-4xl text-balance"
         style={BARLOW_CONDENSED}
       >
         {heading}
