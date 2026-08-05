@@ -165,6 +165,71 @@ export function Stats({ items }: { items: { figure: string; label: string }[] })
   );
 }
 
+/**
+ * Both case studies argue by putting the old way next to the new one, so the
+ * table is shared rather than inlined twice. The first column is the label and
+ * the last is the outcome; anything between them is the state being replaced,
+ * which is why the middle columns sit at a lower contrast than the last.
+ */
+export function ComparisonTable({
+  headings,
+  rows,
+}: {
+  headings: string[];
+  rows: string[][];
+}) {
+  return (
+    <div className="overflow-x-auto border border-border mt-8">
+      <table className="w-full min-w-[720px] border-collapse text-left">
+        <thead>
+          <tr className="border-b border-border">
+            {headings.map((h) => (
+              <th
+                key={h}
+                className="p-4 text-xs uppercase tracking-[0.2em] text-foreground/60 font-normal align-bottom"
+                style={MONO}
+              >
+                {h}
+              </th>
+            ))}
+          </tr>
+        </thead>
+        <tbody>
+          {rows.map((cells) => (
+            <tr key={cells[0]} className="border-b border-border last:border-none align-top">
+              {cells.map((cell, i) => {
+                if (i === 0) {
+                  return (
+                    <td key={i} className="p-4 text-sm text-foreground whitespace-nowrap">
+                      {cell}
+                    </td>
+                  );
+                }
+                const last = i === cells.length - 1;
+                return (
+                  <td
+                    key={i}
+                    className={`p-4 text-sm ${last ? "text-foreground/80" : "text-foreground/60"}`}
+                    style={{ fontWeight: 300 }}
+                  >
+                    {cell}
+                  </td>
+                );
+              })}
+            </tr>
+          ))}
+        </tbody>
+      </table>
+    </div>
+  );
+}
+
+export function Gallery({ columns = 2, children }: { columns?: 2 | 3; children: React.ReactNode }) {
+  // Written out rather than interpolated so Tailwind's scanner sees both classes.
+  const cols = columns === 3 ? "md:grid-cols-3" : "md:grid-cols-2";
+  return <div className={`grid grid-cols-1 ${cols} gap-8`}>{children}</div>;
+}
+
 export function Figure({ src, alt, caption }: { src: string; alt: string; caption: string }) {
   return (
     <figure className="my-8">

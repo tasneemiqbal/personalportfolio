@@ -5,7 +5,9 @@ import {
   Callout,
   CaseStudyFoot,
   CaseStudyHero,
+  ComparisonTable,
   Figure,
+  Gallery,
   Prose,
   Section,
 } from "../components/case-study";
@@ -13,6 +15,10 @@ import {
 import prototypeImg from "../assets/schedaddle.png";
 import landingImg from "../assets/marketing-landing.png";
 import scheduleImg from "../assets/schedule.png";
+
+// BASE_URL is '/personalportfolio/' on the GitHub Pages build and '/' elsewhere,
+// so a bare path would resolve locally and 404 there.
+const SPEC = `${import.meta.env.BASE_URL}Schedaddle_Product_Spec.pdf`;
 
 const findings = [
   { title: "Constant changes", text: "Every change means another round of manual updates." },
@@ -112,6 +118,7 @@ export function Schedaddle() {
             label: "View Figma prototype",
             href: "https://www.figma.com/design/fGiV23UznJOeMfHrsKR7J2/Schedaddle---Web-App-Design?node-id=1-2&t=vpP9H1s8e4xnplIQ-0",
           },
+          { label: "Read the product spec", href: SPEC },
         ]}
       />
 
@@ -122,11 +129,14 @@ export function Schedaddle() {
           caption="Selected screens from the interactive Figma prototype"
         />
         <Prose>
-          A lightweight scheduling tool for small teams. It combines availability polling, shift scheduling, and
-          announcements in one place, replacing the patchwork of When2Meet, Sheets, and group chats.
+          Schedaddle is a lightweight scheduling tool for small teams. It combines availability polling, shift
+          scheduling, and announcements in one place, replacing the patchwork of When2Meet, Sheets, and group chats
+          that most clubs and student orgs run on.
         </Prose>
         <Prose>
-          On a team of 5, I ran user interviews, co-authored the spec, and drove the Figma prototype.
+          It started as a CS senior project on a team of five. I was the product lead: I ran the user interviews,
+          co-authored the spec, and drove the Figma prototype. The work below is the reasoning that got us from a
+          vague complaint about scheduling to five modules we could defend.
         </Prose>
       </Section>
 
@@ -185,44 +195,20 @@ export function Schedaddle() {
       </Section>
 
       <Section heading="A look at the prototype">
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+        <Prose>
+          Fifteen screens, clickable end to end. The landing page had to explain the product to someone who had never
+          heard of it, and the schedule view had to survive the thing our interviews kept describing: a week that
+          changes after it has already been posted.
+        </Prose>
+        <Gallery>
           <Figure src={landingImg} alt="Marketing landing page" caption="Marketing landing page" />
           <Figure src={scheduleImg} alt="Shift schedule screen" caption="Shift schedule view" />
-        </div>
+        </Gallery>
       </Section>
 
       <Section heading="Consolidating the workflow">
         <Prose>Schedaddle pulls every job into one system.</Prose>
-        <div className="overflow-x-auto border border-border mt-8">
-          <table className="w-full min-w-[720px] border-collapse text-left">
-            <thead>
-              <tr className="border-b border-border">
-                {["Feature", "Current workflow", "Our solution"].map((h) => (
-                  <th
-                    key={h}
-                    className="p-4 text-xs uppercase tracking-[0.2em] text-foreground/60 font-normal align-bottom"
-                    style={MONO}
-                  >
-                    {h}
-                  </th>
-                ))}
-              </tr>
-            </thead>
-            <tbody>
-              {comparison.map(([feature, now, solution]) => (
-                <tr key={feature} className="border-b border-border last:border-none align-top">
-                  <td className="p-4 text-sm text-foreground whitespace-nowrap">{feature}</td>
-                  <td className="p-4 text-sm text-foreground/60" style={{ fontWeight: 300 }}>
-                    {now}
-                  </td>
-                  <td className="p-4 text-sm text-foreground/80" style={{ fontWeight: 300 }}>
-                    {solution}
-                  </td>
-                </tr>
-              ))}
-            </tbody>
-          </table>
-        </div>
+        <ComparisonTable headings={["Feature", "Current workflow", "Our solution"]} rows={comparison} />
       </Section>
 
       <Section heading="We cut the chat feature we came in wanting to build">
