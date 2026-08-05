@@ -2,7 +2,7 @@ import { Link } from "react-router";
 import { motion, useReducedMotion } from "motion/react";
 
 import schedaddleImg from "../assets/schedaddle.png";
-import digImg from "../assets/digmag.jpg";
+import digImg from "../assets/dig-home.jpg";
 
 const BARLOW_CONDENSED: React.CSSProperties = { fontFamily: "'Barlow Condensed', sans-serif" };
 const MONO: React.CSSProperties = { fontFamily: "'DM Mono', monospace" };
@@ -28,9 +28,9 @@ const projects = [
   },
   {
     title: "DIG Magazine",
-    outcome: "Key content from 3 clicks to 1",
+    outcome: "Category nav from two levels to one",
     image: digImg,
-    imageAlt: "DIG Magazine site preview",
+    imageAlt: "The redesigned DIG Magazine homepage",
     to: "/work/dig",
   },
 ];

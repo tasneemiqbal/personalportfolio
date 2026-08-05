@@ -47,3 +47,7 @@ Product Spec for Schedaddle.pdf
 RESUME - Tasneem Iqbal (DoorDash).pdf
 public/v1/images/Marketing Landing.png
 public/v1/images/Schedaddle image.png
+
+# Walkthrough recording of the pre-redesign DIG site, 99MB. The frames the case
+# study uses are extracted from it as src/assets/dig-old-*.jpg.
+src/assets/*.mov
