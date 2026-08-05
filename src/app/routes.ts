@@ -4,6 +4,7 @@ import { Home } from "../pages/Home";
 import { About } from "../pages/About";
 import { Schedaddle } from "../pages/Schedaddle";
 import { Dig } from "../pages/Dig";
+import { NotFound } from "../pages/NotFound";
 
 export const router = createBrowserRouter(
   [
@@ -15,6 +16,8 @@ export const router = createBrowserRouter(
         { path: "about", Component: About },
         { path: "work/schedaddle", Component: Schedaddle },
         { path: "work/dig", Component: Dig },
+        // Inside Root so a wrong URL still gets the nav and the footer.
+        { path: "*", Component: NotFound },
       ],
     },
   ],
