@@ -60,9 +60,15 @@ export function Root() {
     >
       {/* NAV */}
       <header className="fixed top-0 left-0 right-0 z-50 px-5 sm:px-8 py-5 sm:py-6 flex items-center justify-between bg-background/80 backdrop-blur-sm">
+        {/* Hidden below sm. The wordmark plus three tracked mono items needs
+            about 490px, so on a phone it pushed Resume off the right edge and
+            gave every page a horizontal scroll. Resume is the primary CTA and
+            the reader is usually on a phone, so the wordmark is what gives way:
+            Work goes to the same place, and the name is already in the hero and
+            the footer. */}
         <NavLink
           to="/"
-          className="text-xs tracking-[0.2em] uppercase text-foreground/60 hover:text-brand transition-colors"
+          className="hidden sm:block text-xs tracking-[0.2em] uppercase text-foreground/60 hover:text-brand transition-colors"
           style={MONO}
         >
           Tasneem Iqbal
