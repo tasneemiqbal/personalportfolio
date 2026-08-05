@@ -4,6 +4,26 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
+    <!-- Restore the path stashed by the generated 404.html. This has to be a
+         classic inline script rather than part of the entry module: routes.ts
+         calls createBrowserRouter at module scope, and imports are evaluated
+         before the importing module's body, so anything in main.tsx runs after
+         the router has already snapshotted location and resolved to "/". A
+         parser-blocking script in head runs before any deferred module. -->
+    <script>
+      (function () {
+        try {
+          var p = sessionStorage.getItem("spa:redirect");
+          if (p) {
+            sessionStorage.removeItem("spa:redirect");
+            history.replaceState(null, "", p);
+          }
+        } catch (e) {
+          /* private mode with storage disabled: fall through to the root */
+        }
+      })();
+    </script>
+
     <title>Tasneem Iqbal · Product Manager</title>
     <meta
       name="description"

@@ -38,12 +38,15 @@ const BASE = process.env.VITE_BASE || '/'
 
 // GitHub Pages has no SPA rewrite. A direct hit on /about, or a refresh while
 // already there, serves 404.html instead of the app, so that file stashes the
-// requested path and bounces to the root for main.tsx to restore.
+// requested path and bounces to the root for the restore in index.html.
 //
-// Cloudflare does have a rewrite (public/_redirects), so this file is dead
-// weight there — but it is emitted for both rather than only for Pages,
-// because a fallback that exists and is never reached costs nothing, while one
-// that is missing on the host that needs it costs the whole route.
+// Emitted ONLY for a sub-path build, which means only for Pages. It used to be
+// emitted for both on the theory that an unreachable fallback costs nothing.
+// That was wrong and it cost every deep link on Cloudflare: Pages serves a
+// root 404.html for unmatched routes and that shadows the /* rewrite in
+// public/_redirects, so https://<site>/work/dig answered 404 and bounced to the
+// homepage instead of rewriting to index.html with a 200. A crawler indexing a
+// 404 is the expensive half of that.
 //
 // It is generated rather than kept in public/ because Vite copies public/
 // verbatim: a hardcoded base in there would silently be the wrong base on one
@@ -85,7 +88,9 @@ export default defineConfig({
 
   plugins: [
     figmaAssetResolver(),
-    spaFallback(BASE),
+    // Falsy entries are ignored by Vite, so the root-base build simply has no
+    // 404.html and lets _redirects do the work.
+    BASE !== '/' && spaFallback(BASE),
     // The React and Tailwind plugins are both required for Make, even if
     // Tailwind is not being actively used – do not remove them
     react(),
