@@ -396,8 +396,8 @@ export function Dig() {
 
       <CaseStudyFoot
         text="More product thinking next door."
-        nextLabel="Next: Schedaddle"
-        nextTo="/work/schedaddle"
+        nextLabel="Next: PennyPal"
+        nextTo="/work/pennypal"
       />
     </main>
   );

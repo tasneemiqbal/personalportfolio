@@ -96,7 +96,7 @@ export function Root() {
         <Outlet />
       </div>
 
-      {/* FOOTER — the only place contact lives, on every page, and the one
+      {/* FOOTER, the only place contact lives, on every page, and the one
           committed surface on the site. The ink is a colour the site already
           owns; using it as a field rather than only as type gives the pages a
           second visual world and a definite end.

@@ -116,7 +116,7 @@ export function About() {
         </div>
       </div>
 
-      {/* SKILLS — unlabelled on purpose. Three columns headed PRODUCT,
+      {/* SKILLS, unlabelled on purpose. Three columns headed PRODUCT,
           PROGRAMMING and TOOLS do not need a fourth label above them saying
           skills and tools. */}
       <section className="px-5 sm:px-8 mt-24 pt-16 border-t border-border">

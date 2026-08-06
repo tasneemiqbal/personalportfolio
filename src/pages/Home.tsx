@@ -3,6 +3,9 @@ import { motion, useReducedMotion } from "motion/react";
 
 import schedaddleImg from "../assets/schedaddle.png";
 import digImg from "../assets/dig-home.jpg";
+// Cropped to the card's own 4:3 rather than reusing the case study's 16:10
+// screenshot, which object-cover would trim through the middle of the sidebar.
+import pennypalImg from "../assets/pennypal-card.jpg";
 
 const BARLOW_CONDENSED: React.CSSProperties = { fontFamily: "'Barlow Condensed', sans-serif" };
 const MONO: React.CSSProperties = { fontFamily: "'DM Mono', monospace" };
@@ -32,6 +35,13 @@ const projects = [
     image: digImg,
     imageAlt: "The redesigned DIG Magazine homepage",
     to: "/work/dig",
+  },
+  {
+    title: "PennyPal",
+    outcome: "Four of five brief features cut to ship",
+    image: pennypalImg,
+    imageAlt: "The PennyPal budgeting dashboard",
+    to: "/work/pennypal",
   },
 ];
 
@@ -124,7 +134,7 @@ export function Home() {
         </motion.p>
       </section>
 
-      {/* WORK — no "Work" label. Two project cards under a rule are legible as
+      {/* WORK, with no "Work" label. Project cards under a rule are legible as
           work without being told, and the label was the same tracked-eyebrow
           scaffolding that came off every other section. */}
       <section className="px-5 sm:px-8 py-20 sm:py-24 border-t border-border">
