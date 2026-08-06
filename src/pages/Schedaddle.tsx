@@ -1,24 +1,29 @@
 import {
-  BARLOW_CONDENSED,
-  MONO,
   CardGrid,
   Callout,
   CaseStudyFoot,
   CaseStudyHero,
   ComparisonTable,
+  Embed,
   Figure,
   Gallery,
   Prose,
   Section,
 } from "../components/case-study";
 
-import prototypeImg from "../assets/schedaddle.png";
-import landingImg from "../assets/marketing-landing.png";
-import scheduleImg from "../assets/schedule.png";
-
-// BASE_URL is '/personalportfolio/' on the GitHub Pages build and '/' elsewhere,
-// so a bare path would resolve locally and 404 there.
-const SPEC = `${import.meta.env.BASE_URL}Schedaddle_Product_Spec.pdf`;
+import flowImg from "../assets/sched-flow.png";
+import landingImg from "../assets/sched-landing.png";
+import dashboardImg from "../assets/sched-dashboard.png";
+import availabilityInputImg from "../assets/sched-availability-input.png";
+import resultsImg from "../assets/sched-results.png";
+import availabilityOverviewImg from "../assets/sched-availability-overview.png";
+import scheduleImg from "../assets/sched-schedule.png";
+import swapImg from "../assets/sched-swap.png";
+import announcementsImg from "../assets/sched-announcements.png";
+import composeImg from "../assets/sched-compose.png";
+import teamsImg from "../assets/sched-teams.png";
+import createTeamImg from "../assets/sched-create-team.png";
+import joinTeamImg from "../assets/sched-join-team.png";
 
 const findings = [
   { title: "Constant changes", text: "Every change means another round of manual updates." },
@@ -27,49 +32,6 @@ const findings = [
   {
     title: "Priced for teams of five",
     text: "Every option they'd tried was built for a company, not a club.",
-  },
-];
-
-const modules = [
-  {
-    title: "Dashboard",
-    sub: "Central hub for all activity",
-    features: ["Announcements", "Polls", "Schedule updates"],
-    why: "Key info gets lost in chats; the dashboard keeps it visible.",
-  },
-  {
-    title: "Availability Poll",
-    sub: "Collect team availability efficiently",
-    features: [
-      "Click or drag selection",
-      "Prioritize specific people",
-      "Remove participants",
-      "Highlight best times visually",
-    ],
-    why: "Fixes When2Meet's poor contrast, clumsy selection, and lack of prioritization.",
-  },
-  {
-    title: "Announcements",
-    sub: "Structured communication channel",
-    features: ["Group-specific messages", "Persistent, organized posts", "Reaches everyone on the team"],
-    why: "A schedule change needs to stay findable next week. A group text doesn't. Announcements hold the things you have to look up again.",
-  },
-  {
-    title: "Shift Schedule",
-    sub: "Real-time scheduling system",
-    features: [
-      "Live calendar updates",
-      "Notifications for changes",
-      "Shift swap functionality",
-      "Auto-fill for call-outs",
-    ],
-    why: "Addresses schedule volatility and manual coordination.",
-  },
-  {
-    title: "Create Team",
-    sub: "Manage team structure",
-    features: ["Group organization", "Targeted communication"],
-    why: "Polls and announcements need an audience. The team is that audience.",
   },
 ];
 
@@ -118,15 +80,14 @@ export function Schedaddle() {
             label: "View Figma prototype",
             href: "https://www.figma.com/design/fGiV23UznJOeMfHrsKR7J2/Schedaddle---Web-App-Design?node-id=1-2&t=vpP9H1s8e4xnplIQ-0",
           },
-          { label: "Read the product spec", href: SPEC },
         ]}
       />
 
       <Section heading="Coordination shouldn't take three apps">
         <Figure
-          src={prototypeImg}
-          alt="Schedaddle Figma prototype screens"
-          caption="Selected screens from the interactive Figma prototype"
+          src={dashboardImg}
+          alt="The Schedaddle dashboard with a to-do list, a calendar, and pending responses from teammates"
+          caption="The dashboard: what you owe people, what's coming, and who hasn't replied"
         />
         <Prose>
           Schedaddle is a lightweight scheduling tool for small teams. It combines availability polling, shift
@@ -134,9 +95,9 @@ export function Schedaddle() {
           that most clubs and student orgs run on.
         </Prose>
         <Prose>
-          It started as a CS senior project on a team of five. I was the product lead: I ran the user interviews,
-          co-authored the spec, and drove the Figma prototype. The work below is the reasoning that got us from a
-          vague complaint about scheduling to five modules we could defend.
+          I was the product lead: I ran the user interviews, co-authored the spec, and drove the Figma prototype. The
+          work below is the reasoning that got us from a vague complaint about scheduling to a prototype we could put
+          in front of someone.
         </Prose>
       </Section>
 
@@ -160,55 +121,120 @@ export function Schedaddle() {
         </div>
       </Section>
 
-      <Section heading="Five core modules, one source of truth">
-        <Prose>Each module maps back to a research insight.</Prose>
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-px bg-border border border-border mt-8">
-          {modules.map((m) => (
-            <article key={m.title} className="bg-background p-6 flex flex-col">
-              <h3
-                className="text-2xl font-bold uppercase tracking-tight leading-none mb-2"
-                style={BARLOW_CONDENSED}
-              >
-                {m.title}
-              </h3>
-              <p className="text-xs uppercase tracking-[0.2em] text-foreground/60 mb-5" style={MONO}>
-                {m.sub}
-              </p>
-              <ul className="mb-5">
-                {m.features.map((f) => (
-                  <li
-                    key={f}
-                    className="py-2 border-b border-border text-sm text-foreground/70"
-                    style={{ fontWeight: 300 }}
-                  >
-                    {f}
-                  </li>
-                ))}
-              </ul>
-              <p className="text-sm text-foreground/60 leading-relaxed mt-auto" style={{ fontWeight: 300 }}>
-                <span className="text-foreground">Why: </span>
-                {m.why}
-              </p>
-            </article>
-          ))}
+      <Section heading="Fifteen screens, wired end to end">
+        <Embed
+          src="https://embed.figma.com/design/fGiV23UznJOeMfHrsKR7J2/Schedaddle---Web-App-Design?node-id=1-3&embed-host=share"
+          title="Schedaddle interactive Figma prototype"
+          caption="The prototype itself. Click through it"
+        />
+        <Prose>
+          Fifteen screens, clickable end to end, split into two flows so it could be walked two ways. The public flow
+          runs a stranger from the landing page through sign-up. The logged-in flow drops you into a populated
+          account and lets you reach every feature from anywhere, which is the only way to find out whether the
+          navigation actually holds.
+        </Prose>
+        <Figure
+          src={flowImg}
+          alt="The Figma prototype flow view, showing fifteen connected screens across two flows"
+          caption="The wiring behind it: two flows, fifteen screens, every connection drawn"
+        />
+        <Prose>
+          Building it as one connected prototype rather than fifteen separate mockups is what made it testable.
+          Loose frames let you defend any screen individually. A wired prototype makes you answer where a person goes
+          next, and that is where the gaps show up.
+        </Prose>
+        <div className="mt-10">
+          <Figure
+            src={landingImg}
+            alt="The Schedaddle marketing landing page with the headline Stop texting your team, start scheduling smarter"
+            caption="The landing page had to explain the product to someone who had never heard of it"
+          />
         </div>
       </Section>
 
-      <Section heading="A look at the prototype">
+      <Section heading="The availability poll is the screen everything else depends on">
         <Prose>
-          Fifteen screens, clickable end to end. The landing page had to explain the product to someone who had never
-          heard of it, and the schedule view had to survive the thing our interviews kept describing: a week that
-          changes after it has already been posted.
+          If this screen fails, nothing downstream has data to work with. It is also the screen our interviews
+          complained about most, because it is the one everybody has already used somewhere else and disliked.
         </Prose>
         <Gallery>
-          <Figure src={landingImg} alt="Marketing landing page" caption="Marketing landing page" />
-          <Figure src={scheduleImg} alt="Shift schedule screen" caption="Shift schedule view" />
+          <Figure
+            src={availabilityInputImg}
+            alt="The Add Availability screen with a drag-selectable week grid and a manual add-time panel"
+            caption="Filling in your own week"
+          />
+          <Figure
+            src={resultsImg}
+            alt="The group availability results screen with a green density grid and a stated best time"
+            caption="Reading the group's"
+          />
         </Gallery>
+        <div className="mt-10">
+          <Prose>
+            Three decisions carry this pair. Drag selection is the primary input, but there is a manual add-time
+            panel next to it, because drag-select is exactly the interaction that fails on a trackpad or a touch
+            screen and leaves someone stuck with no other way in.
+          </Prose>
+          <Prose>
+            The results grid uses green density for how many people are free, and then says the answer in words at
+            the bottom rather than leaving you to squint at shades: best time Tue 8a or Wed 12p, all four responders
+            available. When2Meet's contrast problem was the single most repeated complaint in our interviews, and
+            reading a heat map is not the job. Knowing when to meet is.
+          </Prose>
+          <Prose>
+            It also shows four of six responded, and names all six. A poll where you cannot see who is missing is a
+            poll you have to chase in a group chat, which is the thing we were trying to stop.
+          </Prose>
+        </div>
       </Section>
 
-      <Section heading="Consolidating the workflow">
-        <Prose>Schedaddle pulls every job into one system.</Prose>
-        <ComparisonTable headings={["Feature", "Current workflow", "Our solution"]} rows={comparison} />
+      <Section heading="Chasing people is the actual job">
+        <Figure
+          src={availabilityOverviewImg}
+          alt="The availability overview with a select-people reminder panel and a response tracker"
+          caption="Select who to nudge, rather than messaging everyone again"
+        />
+        <Prose>
+          Our interviews described the work as constant follow-up, not scheduling. So the overview is built around
+          the follow-up: tick the people who haven't answered, send them a reminder, and watch the tracker move
+          between pending, confirmed and scheduled. Nobody who already replied gets nudged again.
+        </Prose>
+        <Prose>
+          This is where "prioritize specific people" from the research turns into something concrete. In When2Meet
+          everyone counts the same and you chase in a group chat. Here the person organizing can act on the four who
+          are holding things up without messaging the eleven who aren't.
+        </Prose>
+      </Section>
+
+      <Section heading="A week that changes after it's already posted">
+        <Prose>
+          This was the thing the interviews kept returning to, and it is the case the schedule view had to survive.
+        </Prose>
+        <Gallery>
+          <Figure
+            src={scheduleImg}
+            alt="The weekly team schedule with a four-state colour legend"
+            caption="Four states, each labelled, not colour alone"
+          />
+          <Figure
+            src={swapImg}
+            alt="The shift swap screen with a numbered three-step flow and a note to the manager"
+            caption="A swap is three steps and two confirmations"
+          />
+        </Gallery>
+        <div className="mt-10">
+          <Prose>
+            The schedule carries four states, scheduled, available, limited and unavailable, and every one is named
+            in the legend rather than left to colour. Green and red carrying meaning on their own would have made the
+            most important screen in the product unreadable to anyone with a colour vision deficiency.
+          </Prose>
+          <Prose>
+            Swapping is numbered in three steps down the right side, and it ends in approval rather than in a change.
+            Both the manager and the person you're swapping with have to confirm, and there's a note field for the
+            reason. The interviews were clear that the hard part of a swap is not the calendar edit, it's getting
+            everyone to agree to it and having a record that they did.
+          </Prose>
+        </div>
       </Section>
 
       <Section heading="We cut the chat feature we came in wanting to build">
@@ -223,6 +249,62 @@ export function Schedaddle() {
           was expensive. We cut it because nobody asked for it, and I'd have argued for cutting it even if it had
           been free.
         </Prose>
+        <Gallery>
+          <Figure
+            src={announcementsImg}
+            alt="The announcements feed with three persistent posts, each showing a reply count"
+            caption="Posts stay findable, replies attached"
+          />
+          <Figure
+            src={composeImg}
+            alt="The new announcement composer with title, message and a pin to top of feed option"
+            caption="Composing one, with a pin for what gets looked up again"
+          />
+        </Gallery>
+        <div className="mt-10">
+          <Prose>
+            The difference that matters is that a schedule change stays findable next week. Replies attach to the
+            post instead of pushing it up a feed, and anything people need to look up repeatedly can be pinned. A
+            group text does the opposite of all three.
+          </Prose>
+        </div>
+      </Section>
+
+      <Section heading="Polls and announcements need an audience">
+        <Prose>
+          Every other feature assumes a group already exists, so teams had to be cheap to make and cheap to join. One
+          person is usually in several: a work team, a project, a class.
+        </Prose>
+        <Gallery columns={3}>
+          <Figure
+            src={teamsImg}
+            alt="The teams screen showing three teams, a member list and team-specific activity"
+            caption="Several teams per person, each with its own activity"
+          />
+          <Figure
+            src={createTeamImg}
+            alt="The create a team modal, with only the team name required"
+            caption="Only the name is required"
+          />
+          <Figure
+            src={joinTeamImg}
+            alt="The join a team modal, which takes an invite code"
+            caption="Joining takes a code, not an account hunt"
+          />
+        </Gallery>
+        <div className="mt-10">
+          <Prose>
+            Creating a team asks for a name and nothing else. Description and invites are both marked optional,
+            because a setup form is the first thing a new user meets and the fastest way to lose them. Joining takes
+            an invite code that expires after seven days, so a code leaked into a group chat doesn't stay a way in
+            forever.
+          </Prose>
+        </div>
+      </Section>
+
+      <Section heading="Consolidating the workflow">
+        <Prose>Schedaddle pulls every job into one system.</Prose>
+        <ComparisonTable headings={["Feature", "Current workflow", "Our solution"]} rows={comparison} />
       </Section>
 
       <Section heading="Where it actually stands">

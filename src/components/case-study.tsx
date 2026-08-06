@@ -230,6 +230,33 @@ export function Gallery({ columns = 2, children }: { columns?: 2 | 3; children: 
   return <div className={`grid grid-cols-1 ${cols} gap-8`}>{children}</div>;
 }
 
+/**
+ * Third-party embed, sized by aspect ratio rather than the fixed width and
+ * height an embed provider hands you, so it survives a phone. Everything else
+ * on this site is self-contained; this is the one component that depends on
+ * another origin being up, which is why the screens it sits with are also
+ * shown as static figures.
+ */
+export function Embed({ src, title, caption }: { src: string; title: string; caption: string }) {
+  return (
+    <figure className="my-8">
+      <div className="overflow-hidden bg-muted border border-border" style={{ borderRadius: "2px" }}>
+        <iframe
+          src={src}
+          title={title}
+          loading="lazy"
+          allowFullScreen
+          className="w-full block"
+          style={{ aspectRatio: "16 / 9", border: 0 }}
+        />
+      </div>
+      <figcaption className="text-xs uppercase tracking-[0.2em] text-foreground/60 mt-3" style={MONO}>
+        {caption}
+      </figcaption>
+    </figure>
+  );
+}
+
 export function Figure({ src, alt, caption }: { src: string; alt: string; caption: string }) {
   return (
     <figure className="my-8">
