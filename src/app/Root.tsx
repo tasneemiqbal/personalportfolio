@@ -4,7 +4,13 @@ import { useEffect, useState } from "react";
 const MONO: React.CSSProperties = { fontFamily: "'DM Mono', monospace" };
 const BARLOW: React.CSSProperties = { fontFamily: "'Barlow', sans-serif" };
 
-const RESUME = `${import.meta.env.BASE_URL}Tasneem_Iqbal_Resume.pdf`;
+// The resume is the Google Doc, not a checked-in PDF, so an edit there is
+// live on the site without a redeploy. /preview rather than the /edit URL:
+// it renders the page read-only with no Docs toolbar or suggest-edits
+// affordance. The doc still has to be shared as anyone-with-the-link, or a
+// visitor lands on a request-access screen.
+const RESUME =
+  "https://docs.google.com/document/d/1Yt98gMOn5hr2s3F1kX1_mwFwGNyAaUIO5dAYOyUAEio/preview";
 
 const navLink = ({ isActive }: { isActive: boolean }) =>
   `text-xs tracking-[0.2em] uppercase transition-colors ${
