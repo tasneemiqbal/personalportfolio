@@ -99,19 +99,32 @@ export function About() {
               className="text-2xl leading-snug text-foreground mb-6"
               style={{ fontWeight: 300 }}
             >
-              I keep three student publications online, decide what actually ships, and sweat the details most
-              people scroll past.
+              Hi! I'm Tasneem
             </motion.p>
 
-            <motion.p
-              variants={stagger.item}
-              className="text-base text-foreground/60 leading-relaxed"
-              style={{ fontWeight: 300 }}
-            >
-              I am the Web Product Manager at Beach Media, where I own the sites behind
-              Long Beach Current, DIG Magazine, and ENYE. Part product, part engineering: I find out what is
-              slowing editors down, decide what is worth building, then build it.
-            </motion.p>
+            <div className="space-y-5 text-base text-foreground/60 leading-relaxed">
+              <motion.p variants={stagger.item} style={{ fontWeight: 300 }}>
+                I'm currently an extern at BeReal. Before that I was the Web Product Manager at Beach
+                Media, where I owned the three sites behind Long Beach Current, DIG Magazine, and
+                ENYE: figuring out what was slowing editors down, deciding what was worth building,
+                then building it. I specialize in shipping with very small teams and zero to one
+                specs.
+              </motion.p>
+
+              {/* The lowercase i in "why am i building this" is hers and deliberate.
+                  It is the one place her voice breaks the site's formality. */}
+              <motion.p variants={stagger.item} style={{ fontWeight: 300 }}>
+                I grew up fixing hardware for people. Fixing turned into coding, and coding kept
+                running into the same question. Why am i building this, who is it for, what is it
+                going to do. That question turned out to be the job. I work best at the intersection
+                of people and technology, where what gets built is my call to make.
+              </motion.p>
+
+              <motion.p variants={stagger.item} style={{ fontWeight: 300 }}>
+                On the side I also DJ! Building my personal radio station right now, stay tuned for
+                the drop. You see it here first folks!
+              </motion.p>
+            </div>
           </motion.div>
         </div>
       </div>
