@@ -36,18 +36,37 @@ const skills = [
       "Claude Code",
       "Codex",
       "Cursor",
-      "Git / GitHub",
-      "Firebase",
-      "Chart.js",
-      "WordPress",
-      "Squarespace",
+      "Git",
+      "Replit",
+      "Vercel",
+      "Lovable",
+      "Claude Design",
+      "Visual Studio Code",
+      "GitHub",
       "Microsoft Excel",
-      "Slack",
-      "VS Code",
-      "Android Studio",
+      "Jira",
+      "Miro",
+      "FigJam",
+      "Confluence",
     ],
   ],
 ] as const;
+
+// Matches the inline body link in Dig.tsx. --brand is 6.06:1 on the cream and
+// is the tone theme.css designates for small text and links, so the underline
+// is a hairline at 40% rather than the full weight.
+function PubLink({ href, children }: { href: string; children: React.ReactNode }) {
+  return (
+    <a
+      href={href}
+      target="_blank"
+      rel="noopener noreferrer"
+      className="text-brand border-b border-brand/40 hover:border-brand transition-colors"
+    >
+      {children}
+    </a>
+  );
+}
 
 export function About() {
   return (
@@ -105,10 +124,12 @@ export function About() {
             <div className="space-y-5 text-base text-foreground/60 leading-relaxed">
               <motion.p variants={stagger.item} style={{ fontWeight: 300 }}>
                 I'm currently an extern at BeReal. Before that I was the Web Product Manager at Beach
-                Media, where I owned the three sites behind Long Beach Current, DIG Magazine, and
-                ENYE: figuring out what was slowing editors down, deciding what was worth building,
-                then building it. I specialize in shipping with very small teams and zero to one
-                specs.
+                Media, where I owned the three sites behind{" "}
+                <PubLink href="https://lbcurrent.com/">Long Beach Current</PubLink>,{" "}
+                <PubLink href="https://www.digmaglb.com/">DIG Magazine</PubLink>, and{" "}
+                <PubLink href="https://www.enyelb.com/">ENYE</PubLink>: figuring out what was slowing
+                editors down, deciding what was worth building, then building it. I specialize in
+                shipping with very small teams and zero to one specs.
               </motion.p>
 
               {/* The lowercase i in "why am i building this" is hers and deliberate.
