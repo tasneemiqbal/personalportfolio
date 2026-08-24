@@ -72,7 +72,7 @@ export function Schedaddle() {
         lede="One lightweight platform that unifies availability polling, scheduling, and announcements, so small teams stop juggling three tools to plan one week."
         meta={[
           ["My role", "Product lead"],
-          ["Timeline", "Jan 2026 to present"],
+          ["Timeline", "January 2026 to present"],
           ["Tools", "Figma, User Interviews"],
         ]}
         links={[

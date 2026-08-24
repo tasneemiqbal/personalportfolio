@@ -218,7 +218,7 @@ export function Dig() {
         lede="Leading the redesign of the student magazine site, making content faster to reach and giving it a bold, color-forward identity that matches how its readers actually want to read."
         meta={[
           ["My role", "Product & engineering lead"],
-          ["Timeline", "Jun 2026 to present"],
+          ["Timeline", "June 2026 to August 2026"],
           ["Tools", "Figma, HTML, CSS"],
         ]}
         links={[{ label: "Visit the current site", href: "https://www.digmaglb.com/" }]}

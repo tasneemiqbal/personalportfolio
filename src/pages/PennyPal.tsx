@@ -103,7 +103,7 @@ export function PennyPal() {
         lede="A class brief asked for per-category budgets, receipt scanning, resettable budget periods and threshold alerts, on a timeline of about seven weeks. I cut four of the five and shipped a budgeting app that works."
         meta={[
           ["My role", "Product lead"],
-          ["Timeline", "Mar to May 2025"],
+          ["Timeline", "March to May 2025"],
           ["Tools", "React, Flask, Firebase, Chart.js"],
         ]}
         links={[{ label: "Try the live demo", href: DEMO }]}
