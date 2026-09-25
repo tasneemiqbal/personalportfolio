@@ -227,7 +227,9 @@ export function ComparisonTable({
 export function Gallery({ columns = 2, children }: { columns?: 2 | 3; children: React.ReactNode }) {
   // Written out rather than interpolated so Tailwind's scanner sees both classes.
   const cols = columns === 3 ? "md:grid-cols-3" : "md:grid-cols-2";
-  return <div className={`grid grid-cols-1 ${cols} gap-8`}>{children}</div>;
+  return (
+    <div className={`grid grid-cols-1 ${cols} gap-8 max-w-5xl [&>figure]:max-w-none [&>figure]:my-0`}>{children}</div>
+  );
 }
 
 /**
@@ -239,7 +241,7 @@ export function Gallery({ columns = 2, children }: { columns?: 2 | 3; children: 
  */
 export function Embed({ src, title, caption }: { src: string; title: string; caption: string }) {
   return (
-    <figure className="my-8">
+    <figure className="my-6 max-w-2xl">
       <div className="overflow-hidden bg-muted border border-border" style={{ borderRadius: "2px" }}>
         <iframe
           src={src}
@@ -259,7 +261,7 @@ export function Embed({ src, title, caption }: { src: string; title: string; cap
 
 export function Figure({ src, alt, caption }: { src: string; alt: string; caption: string }) {
   return (
-    <figure className="my-8">
+    <figure className="my-6 max-w-2xl">
       <div className="overflow-hidden bg-muted border border-border" style={{ borderRadius: "2px" }}>
         <img src={src} alt={alt} loading="lazy" className="w-full h-auto" />
       </div>

@@ -225,11 +225,6 @@ export function Dig() {
       />
 
       <Section heading="The stories were good. Getting to them wasn't.">
-        <Figure
-          src={homeImg}
-          alt="The redesigned DIG Magazine homepage"
-          caption="The redesigned homepage, currently being built"
-        />
         <Prose>
           DIG is a student-run arts and culture magazine at Cal State Long Beach, part of the university's student
           media group. It publishes across six categories, and the writing is genuinely good. The site was not the
@@ -242,11 +237,18 @@ export function Dig() {
       </Section>
 
       <Section heading="What was wrong with the old site">
-        <Figure
-          src={oldHomeImg}
-          alt="The old DIG Magazine homepage"
-          caption="The old homepage. A photo, an issue label, and a hamburger where the navigation should be"
-        />
+        <Gallery>
+          <Figure
+            src={oldHomeImg}
+            alt="The old DIG Magazine homepage"
+            caption="The old homepage. A photo, an issue label, and a hamburger where the navigation should be"
+          />
+          <Figure
+            src={homeImg}
+            alt="The redesigned DIG Magazine homepage"
+            caption="The redesigned homepage, currently being built"
+          />
+        </Gallery>
         <Prose>
           I clicked through the existing navigation the way a reader would, on a phone, counting taps to the things
           people actually come for. It took too many.

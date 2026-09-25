@@ -133,22 +133,24 @@ export function Schedaddle() {
           account and lets you reach every feature from anywhere, which is the only way to find out whether the
           navigation actually holds.
         </Prose>
-        <Figure
-          src={flowImg}
-          alt="The Figma prototype flow view, showing fifteen connected screens across two flows"
-          caption="The wiring behind it: two flows, fifteen screens, every connection drawn"
-        />
-        <Prose>
-          Building it as one connected prototype rather than fifteen separate mockups is what made it testable.
-          Loose frames let you defend any screen individually. A wired prototype makes you answer where a person goes
-          next, and that is where the gaps show up.
-        </Prose>
-        <div className="mt-10">
+        <Gallery>
+          <Figure
+            src={flowImg}
+            alt="The Figma prototype flow view, showing fifteen connected screens across two flows"
+            caption="The wiring behind it: two flows, fifteen screens, every connection drawn"
+          />
           <Figure
             src={landingImg}
             alt="The Schedaddle marketing landing page with the headline Stop texting your team, start scheduling smarter"
             caption="The landing page had to explain the product to someone who had never heard of it"
           />
+        </Gallery>
+        <div className="mt-10">
+          <Prose>
+            Building it as one connected prototype rather than fifteen separate mockups is what made it testable.
+            Loose frames let you defend any screen individually. A wired prototype makes you answer where a person goes
+            next, and that is where the gaps show up.
+          </Prose>
         </div>
       </Section>
 

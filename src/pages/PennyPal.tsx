@@ -110,11 +110,6 @@ export function PennyPal() {
       />
 
       <Section heading="The brief was five features long. The timeline wasn't.">
-        <Figure
-          src={dashboardImg}
-          alt="The PennyPal dashboard showing available balance, a budget bar, a spending chart and recent transactions"
-          caption="The shipped Overview: what is left, what it went on, and what you logged"
-        />
         <Prose>
           PennyPal is a personal budget manager. You tell it what you earn and what you want to cap yourself at, you
           log expenses as they happen, and it tells you what is left and where the rest went. I led it end to end:
@@ -182,11 +177,18 @@ export function PennyPal() {
           tally: people did not struggle with budgeting, they struggled to work out where to start. I did not keep
           counts against each stumble, so I am not going to quote any.
         </Prose>
-        <Figure
-          src={emptyImg}
-          alt="The PennyPal dashboard on a new account, every figure reading zero dollars and all three panels empty"
-          caption="What a new account landed on: same route, same layout, nothing in it"
-        />
+        <Gallery>
+          <Figure
+            src={dashboardImg}
+            alt="The PennyPal dashboard showing available balance, a budget bar, a spending chart and recent transactions"
+            caption="The shipped Overview: what is left, what it went on, and what you logged"
+          />
+          <Figure
+            src={emptyImg}
+            alt="The PennyPal dashboard on a new account, every figure reading zero dollars and all three panels empty"
+            caption="What a new account landed on: same route, same layout, nothing in it"
+          />
+        </Gallery>
         <Prose>
           A new account arrived at the same Overview page a returning user sees. Every figure read zero and all three
           panels sat in their empty state. Four things were wrong with it.
