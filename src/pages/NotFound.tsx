@@ -22,7 +22,7 @@ export function NotFound() {
         Nothing here
       </h1>
       <p
-        className="text-xl sm:text-2xl leading-snug text-foreground/80 max-w-3xl mb-14"
+        className="text-xl sm:text-2xl leading-snug text-foreground max-w-3xl mb-14"
         style={{ fontWeight: 300 }}
       >
         This page doesn't exist. The work does, though.
@@ -37,7 +37,7 @@ export function NotFound() {
         </Link>
         <Link
           to="/about"
-          className="text-xs uppercase tracking-[0.2em] text-foreground/60 hover:text-foreground transition-colors"
+          className="text-xs uppercase tracking-[0.2em] text-foreground/80 hover:text-foreground transition-colors"
           style={MONO}
         >
           About

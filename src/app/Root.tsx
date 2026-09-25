@@ -14,7 +14,7 @@ const RESUME =
 
 const navLink = ({ isActive }: { isActive: boolean }) =>
   `text-xs tracking-[0.2em] uppercase transition-colors ${
-    isActive ? "text-brand" : "text-foreground/60 hover:text-brand"
+    isActive ? "text-brand" : "text-foreground/80 hover:text-brand"
   }`;
 
 // The email shows the address itself rather than a verb like "Get in touch".
@@ -74,7 +74,7 @@ export function Root() {
             the footer. */}
         <NavLink
           to="/"
-          className="hidden sm:block text-xs tracking-[0.2em] uppercase text-foreground/60 hover:text-brand transition-colors"
+          className="hidden sm:block text-xs tracking-[0.2em] uppercase text-foreground/80 hover:text-brand transition-colors"
           style={MONO}
         >
           Tasneem Iqbal
@@ -90,7 +90,7 @@ export function Root() {
             href={RESUME}
             target="_blank"
             rel="noopener noreferrer"
-            className="text-xs tracking-[0.2em] uppercase text-foreground/60 hover:text-brand transition-colors"
+            className="text-xs tracking-[0.2em] uppercase text-foreground/80 hover:text-brand transition-colors"
             style={MONO}
           >
             Resume ↗

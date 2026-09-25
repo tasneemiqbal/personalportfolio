@@ -67,7 +67,7 @@ function ProjectCard({ project }: { project: (typeof projects)[number] }) {
       >
         {project.title}
       </h3>
-      <p className="text-xs text-foreground/60 mt-2" style={MONO}>
+      <p className="text-xs text-foreground mt-2" style={MONO}>
         {project.outcome}
       </p>
     </Link>
@@ -126,7 +126,7 @@ export function Home() {
         </div>
 
         <motion.p
-          className="text-xs uppercase tracking-[0.25em] text-foreground/60 mt-8"
+          className="text-xs uppercase tracking-[0.25em] text-foreground/80 mt-8"
           style={MONO}
           {...rise(0.5)}
         >

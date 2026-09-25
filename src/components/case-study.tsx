@@ -23,7 +23,7 @@ export function CaseStudyHero({
     <header className="px-5 sm:px-8 pt-28 sm:pt-32 pb-16">
       <Link
         to="/"
-        className="text-xs uppercase tracking-[0.2em] text-foreground/60 hover:text-foreground transition-colors"
+        className="text-xs uppercase tracking-[0.2em] text-foreground/80 hover:text-foreground transition-colors"
         style={MONO}
       >
         ← Back to the work
@@ -44,7 +44,7 @@ export function CaseStudyHero({
           {title}
         </h1>
         <p
-          className="text-xl sm:text-2xl leading-snug text-foreground/80 max-w-3xl mb-14"
+          className="text-xl sm:text-2xl leading-snug text-foreground max-w-3xl mb-14"
           style={{ fontWeight: 300 }}
         >
           {lede}
@@ -54,10 +54,10 @@ export function CaseStudyHero({
       <dl className="grid grid-cols-1 sm:grid-cols-3 gap-px bg-border border-y border-border">
         {meta.map(([label, value]) => (
           <div key={label} className="bg-background py-5 px-4 sm:px-5">
-            <dt className="text-xs uppercase tracking-[0.2em] text-foreground/60 mb-2" style={MONO}>
+            <dt className="text-xs uppercase tracking-[0.2em] text-foreground/80 mb-2" style={MONO}>
               {label}
             </dt>
-            <dd className="text-sm text-foreground/80">{value}</dd>
+            <dd className="text-sm text-foreground">{value}</dd>
           </div>
         ))}
       </dl>
@@ -109,7 +109,7 @@ export function Section({
 
 export function Prose({ children }: { children: React.ReactNode }) {
   return (
-    <p className="text-base sm:text-lg text-foreground/70 leading-relaxed max-w-3xl mb-5" style={{ fontWeight: 300 }}>
+    <p className="text-base sm:text-lg text-foreground leading-relaxed max-w-3xl mb-5" style={{ fontWeight: 300 }}>
       {children}
     </p>
   );
@@ -123,7 +123,7 @@ export function CardGrid({ items }: { items: { title: string; text: string }[] }
           <h3 className="text-xl font-bold uppercase tracking-tight leading-none mb-3" style={BARLOW_CONDENSED}>
             {c.title}
           </h3>
-          <p className="text-sm text-foreground/60 leading-relaxed" style={{ fontWeight: 300 }}>
+          <p className="text-sm text-foreground leading-relaxed" style={{ fontWeight: 300 }}>
             {c.text}
           </p>
         </div>
@@ -135,7 +135,7 @@ export function CardGrid({ items }: { items: { title: string; text: string }[] }
 export function Callout({ label, children }: { label: string; children: React.ReactNode }) {
   return (
     <div className="border-l-2 border-foreground pl-6 sm:pl-8 py-2 my-8 max-w-3xl">
-      <p className="text-xs uppercase tracking-[0.3em] text-foreground/60 mb-3" style={MONO}>
+      <p className="text-xs uppercase tracking-[0.3em] text-foreground/80 mb-3" style={MONO}>
         {label}
       </p>
       <p className="text-lg sm:text-xl text-foreground leading-relaxed" style={{ fontWeight: 300 }}>
@@ -156,7 +156,7 @@ export function Stats({ items }: { items: { figure: string; label: string }[] })
           >
             {s.figure}
           </div>
-          <div className="text-xs uppercase tracking-[0.2em] text-foreground/60" style={MONO}>
+          <div className="text-xs uppercase tracking-[0.2em] text-foreground/80" style={MONO}>
             {s.label}
           </div>
         </div>
@@ -186,7 +186,7 @@ export function ComparisonTable({
             {headings.map((h) => (
               <th
                 key={h}
-                className="p-4 text-xs uppercase tracking-[0.2em] text-foreground/60 font-normal align-bottom"
+                className="p-4 text-xs uppercase tracking-[0.2em] text-foreground/80 font-normal align-bottom"
                 style={MONO}
               >
                 {h}
@@ -209,7 +209,7 @@ export function ComparisonTable({
                 return (
                   <td
                     key={i}
-                    className={`p-4 text-sm ${last ? "text-foreground/80" : "text-foreground/60"}`}
+                    className={`p-4 text-sm ${last ? "text-foreground" : "text-foreground/80"}`}
                     style={{ fontWeight: 300 }}
                   >
                     {cell}
@@ -252,7 +252,7 @@ export function Embed({ src, title, caption }: { src: string; title: string; cap
           style={{ aspectRatio: "16 / 9", border: 0 }}
         />
       </div>
-      <figcaption className="text-xs uppercase tracking-[0.2em] text-foreground/60 mt-3" style={MONO}>
+      <figcaption className="text-xs uppercase tracking-[0.2em] text-foreground/80 mt-3" style={MONO}>
         {caption}
       </figcaption>
     </figure>
@@ -265,7 +265,7 @@ export function Figure({ src, alt, caption }: { src: string; alt: string; captio
       <div className="overflow-hidden bg-muted border border-border" style={{ borderRadius: "2px" }}>
         <img src={src} alt={alt} loading="lazy" className="w-full h-auto" />
       </div>
-      <figcaption className="text-xs uppercase tracking-[0.2em] text-foreground/60 mt-3" style={MONO}>
+      <figcaption className="text-xs uppercase tracking-[0.2em] text-foreground/80 mt-3" style={MONO}>
         {caption}
       </figcaption>
     </figure>
@@ -284,7 +284,7 @@ export function CaseStudyFoot({
   return (
     <section className="px-5 sm:px-8 py-16 border-t border-border flex flex-col sm:flex-row sm:items-center sm:justify-between gap-6">
       {text && (
-        <p className="text-base text-foreground/60 max-w-md" style={{ fontWeight: 300 }}>
+        <p className="text-base text-foreground max-w-md" style={{ fontWeight: 300 }}>
           {text}
         </p>
       )}
@@ -292,7 +292,7 @@ export function CaseStudyFoot({
       <div className="flex flex-wrap gap-x-8 gap-y-4 sm:ml-auto">
         <Link
           to="/"
-          className="text-xs uppercase tracking-[0.2em] text-foreground/60 hover:text-foreground transition-colors"
+          className="text-xs uppercase tracking-[0.2em] text-foreground/80 hover:text-foreground transition-colors"
           style={MONO}
         >
           ← Back to the work

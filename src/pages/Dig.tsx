@@ -73,10 +73,10 @@ function NavTree({
 }) {
   return (
     <div className="bg-background p-6 sm:p-8 h-full flex flex-col">
-      <p className="text-xs uppercase tracking-[0.2em] text-foreground/60" style={MONO}>
+      <p className="text-xs uppercase tracking-[0.2em] text-foreground/80" style={MONO}>
         {label}
       </p>
-      <p className="text-sm text-foreground/60 mt-2 mb-7" style={{ fontWeight: 300 }}>
+      <p className="text-sm text-foreground mt-2 mb-7" style={{ fontWeight: 300 }}>
         {sublabel}
       </p>
 
@@ -90,12 +90,12 @@ function NavTree({
             className={r.depth > 0 ? "border-l border-border" : undefined}
           >
             <span
-              className={`block py-1.5 ${r.depth === 0 ? "text-base text-foreground" : "text-sm text-foreground/60"}`}
+              className={`block py-1.5 ${r.depth === 0 ? "text-base text-foreground" : "text-sm text-foreground/80"}`}
               style={{ fontWeight: 300 }}
             >
               {r.text}
               {r.note && (
-                <span className="text-xs uppercase tracking-[0.15em] text-foreground/40 ml-3" style={MONO}>
+                <span className="text-xs uppercase tracking-[0.15em] text-foreground/70 ml-3" style={MONO}>
                   {r.note}
                 </span>
               )}
@@ -153,7 +153,7 @@ function ColorSystem({
 }) {
   return (
     <div className="bg-background p-6 sm:p-8">
-      <p className="text-xs uppercase tracking-[0.2em] text-foreground/60 mb-6" style={MONO}>
+      <p className="text-xs uppercase tracking-[0.2em] text-foreground/80 mb-6" style={MONO}>
         {label}
       </p>
       <ul className="flex flex-col gap-px">
@@ -173,11 +173,11 @@ function ColorSystem({
                     }
               }
             />
-            <span className="text-sm text-foreground/80" style={{ fontWeight: 300 }}>
+            <span className="text-sm text-foreground" style={{ fontWeight: 300 }}>
               {s.name}
             </span>
             {!s.color && (
-              <span className="text-xs uppercase tracking-[0.2em] text-foreground/40 ml-auto" style={MONO}>
+              <span className="text-xs uppercase tracking-[0.2em] text-foreground/70 ml-auto" style={MONO}>
                 none
               </span>
             )}

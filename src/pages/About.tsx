@@ -121,7 +121,7 @@ export function About() {
               Hi! I'm Tasneem
             </motion.p>
 
-            <div className="space-y-5 text-base text-foreground/60 leading-relaxed">
+            <div className="space-y-5 text-base text-foreground leading-relaxed">
               <motion.p variants={stagger.item} style={{ fontWeight: 300 }}>
                 I'm currently an extern at BeReal. Before that I was a Technical Web Product
                 Management Intern @ Beach Media, where I owned the three sites behind{" "}
@@ -167,7 +167,7 @@ export function About() {
                 {items.map((item) => (
                   <li
                     key={item}
-                    className="py-2.5 border-b border-border text-sm text-foreground/70"
+                    className="py-2.5 border-b border-border text-sm text-foreground"
                     style={{ fontWeight: 300 }}
                   >
                     {item}
