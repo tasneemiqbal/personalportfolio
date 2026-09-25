@@ -67,7 +67,7 @@ export function Schedaddle() {
   return (
     <main>
       <CaseStudyHero
-        kicker="Case study · Senior project"
+        kicker="Case study"
         title="Schedaddle"
         lede="One lightweight platform that unifies availability polling, scheduling, and announcements, so small teams stop juggling three tools to plan one week."
         meta={[

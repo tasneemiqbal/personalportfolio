@@ -130,7 +130,7 @@ export function Home() {
           style={MONO}
           {...rise(0.5)}
         >
-          Product Manager. Engineer.
+          Product Management @ BeReal
         </motion.p>
       </section>
 

@@ -123,8 +123,8 @@ export function About() {
 
             <div className="space-y-5 text-base text-foreground/60 leading-relaxed">
               <motion.p variants={stagger.item} style={{ fontWeight: 300 }}>
-                I'm currently an extern at BeReal. Before that I was the Web Product Manager at Beach
-                Media, where I owned the three sites behind{" "}
+                I'm currently an extern at BeReal. Before that I was a Technical Web Product
+                Management Intern @ Beach Media, where I owned the three sites behind{" "}
                 <PubLink href="https://lbcurrent.com/">Long Beach Current</PubLink>,{" "}
                 <PubLink href="https://www.digmaglb.com/">DIG Magazine</PubLink>, and{" "}
                 <PubLink href="https://www.enyelb.com/">ENYE</PubLink>: figuring out what was slowing
