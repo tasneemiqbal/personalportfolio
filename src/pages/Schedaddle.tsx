@@ -90,14 +90,13 @@ export function Schedaddle() {
           caption="The dashboard: what you owe people, what's coming, and who hasn't replied"
         />
         <Prose>
-          Schedaddle is a lightweight scheduling tool for small teams. It combines availability polling, shift
-          scheduling, and announcements in one place, replacing the patchwork of When2Meet, Sheets, and group chats
-          that most clubs and student orgs run on.
+          Schedaddle is a lightweight scheduling tool for small teams. Availability polling, shift scheduling and
+          announcements in one place, instead of the patchwork of When2Meet, Sheets and group chats most clubs run on.
         </Prose>
         <Prose>
-          I was the product lead: I ran the user interviews, co-authored the spec, and drove the Figma prototype. The
-          work below is the reasoning that got us from a vague complaint about scheduling to a prototype we could put
-          in front of someone.
+          I was the product lead: I ran the interviews, co-authored the spec, and drove the Figma prototype. What
+          follows is the reasoning that got us from a vague complaint about scheduling to something we could put in
+          front of someone.
         </Prose>
       </Section>
 
@@ -110,13 +109,13 @@ export function Schedaddle() {
         <div className="mt-10">
           <Prose>
             Two things surprised us. First, people cared how it <em>looked</em>. "Cute" came up unprompted, and it
-            wasn't a throwaway. A tool you open every week has to be pleasant to open. We had assumed design was the
+            wasn't a throwaway. A tool you open every week has to be pleasant to open. We'd assumed design was the
             part nobody would notice.
           </Prose>
           <Prose>
             Second, they wanted their calendar and their availability poll in one place, and their group text left
-            exactly where it was. That second half is the finding that shaped the product, and it's the opposite of
-            what we were planning to build.
+            exactly where it was. That second half shaped the product, and it's the opposite of what we were planning
+            to build.
           </Prose>
         </div>
       </Section>
@@ -128,10 +127,10 @@ export function Schedaddle() {
           caption="The prototype itself. Click through it"
         />
         <Prose>
-          Fifteen screens, clickable end to end, split into two flows so it could be walked two ways. The public flow
-          runs a stranger from the landing page through sign-up. The logged-in flow drops you into a populated
-          account and lets you reach every feature from anywhere, which is the only way to find out whether the
-          navigation actually holds.
+          Fifteen screens, clickable end to end, split into two flows so it can be walked two ways. The public flow
+          runs a stranger from the landing page through sign-up. The logged-in flow drops you into a populated account
+          and lets you reach every feature from anywhere, which is the only way to find out whether the navigation
+          holds.
         </Prose>
         <Gallery>
           <Figure
@@ -148,16 +147,16 @@ export function Schedaddle() {
         <div className="mt-10">
           <Prose>
             Building it as one connected prototype rather than fifteen separate mockups is what made it testable.
-            Loose frames let you defend any screen individually. A wired prototype makes you answer where a person goes
-            next, and that is where the gaps show up.
+            Loose frames let you defend any screen on its own. A wired prototype makes you answer where a person goes
+            next, and that's where the gaps show up.
           </Prose>
         </div>
       </Section>
 
       <Section heading="The availability poll is the screen everything else depends on">
         <Prose>
-          If this screen fails, nothing downstream has data to work with. It is also the screen our interviews
-          complained about most, because it is the one everybody has already used somewhere else and disliked.
+          If this screen fails, nothing downstream has data to work with. It's also the screen our interviews
+          complained about most, because it's the one everybody has already used somewhere else and disliked.
         </Prose>
         <Gallery>
           <Figure
@@ -173,19 +172,19 @@ export function Schedaddle() {
         </Gallery>
         <div className="mt-10">
           <Prose>
-            Three decisions carry this pair. Drag selection is the primary input, but there is a manual add-time
-            panel next to it, because drag-select is exactly the interaction that fails on a trackpad or a touch
-            screen and leaves someone stuck with no other way in.
+            Three decisions carry this pair. Drag selection is the primary input, but there's a manual add-time panel
+            next to it, because drag-select is exactly the interaction that fails on a trackpad or a touch screen and
+            leaves someone stuck with no other way in.
           </Prose>
           <Prose>
-            The results grid uses green density for how many people are free, and then says the answer in words at
-            the bottom rather than leaving you to squint at shades: best time Tue 8a or Wed 12p, all four responders
-            available. When2Meet's contrast problem was the single most repeated complaint in our interviews, and
-            reading a heat map is not the job. Knowing when to meet is.
+            The results grid uses green density for how many people are free, then says the answer in words at the
+            bottom rather than leaving you to squint at shades: best time Tue 8a or Wed 12p, all four responders
+            available. When2Meet's contrast problem was the most repeated complaint in our interviews, and reading a
+            heat map isn't the job. Knowing when to meet is.
           </Prose>
           <Prose>
-            It also shows four of six responded, and names all six. A poll where you cannot see who is missing is a
-            poll you have to chase in a group chat, which is the thing we were trying to stop.
+            It also shows four of six responded, and names all six. A poll where you can't see who's missing is a poll
+            you have to chase in a group chat, which is the thing we were trying to stop.
           </Prose>
         </div>
       </Section>
@@ -197,20 +196,20 @@ export function Schedaddle() {
           caption="Select who to nudge, rather than messaging everyone again"
         />
         <Prose>
-          Our interviews described the work as constant follow-up, not scheduling. So the overview is built around
-          the follow-up: tick the people who haven't answered, send them a reminder, and watch the tracker move
-          between pending, confirmed and scheduled. Nobody who already replied gets nudged again.
+          Our interviews described the work as constant follow-up, not scheduling. So the overview is built around the
+          follow-up: tick the people who haven't answered, send a reminder, watch the tracker move between pending,
+          confirmed and scheduled. Nobody who already replied gets nudged again.
         </Prose>
         <Prose>
           This is where "prioritize specific people" from the research turns into something concrete. In When2Meet
-          everyone counts the same and you chase in a group chat. Here the person organizing can act on the four who
-          are holding things up without messaging the eleven who aren't.
+          everyone counts the same and you chase in a group chat. Here the organizer can act on the four holding
+          things up without messaging the eleven who aren't.
         </Prose>
       </Section>
 
       <Section heading="A week that changes after it's already posted">
         <Prose>
-          This was the thing the interviews kept returning to, and it is the case the schedule view had to survive.
+          This was the thing the interviews kept returning to, and it's the case the schedule view had to survive.
         </Prose>
         <Gallery>
           <Figure
@@ -233,8 +232,8 @@ export function Schedaddle() {
           <Prose>
             Swapping is numbered in three steps down the right side, and it ends in approval rather than in a change.
             Both the manager and the person you're swapping with have to confirm, and there's a note field for the
-            reason. The interviews were clear that the hard part of a swap is not the calendar edit, it's getting
-            everyone to agree to it and having a record that they did.
+            reason. The interviews were clear that the hard part of a swap isn't the calendar edit, it's getting
+            everyone to agree and having a record that they did.
           </Prose>
         </div>
       </Section>
@@ -246,10 +245,9 @@ export function Schedaddle() {
           persistent, searchable.
         </Callout>
         <Prose>
-          It was also the cheap decision, which is worth being honest about: building chat would have meant
-          encryption, moderation, and notification infrastructure we had no time for. But we didn't cut it because it
-          was expensive. We cut it because nobody asked for it, and I'd have argued for cutting it even if it had
-          been free.
+          It was also the cheap decision, which is worth being honest about: chat would have meant encryption,
+          moderation and notification infrastructure we had no time for. But we didn't cut it because it was
+          expensive. We cut it because nobody asked for it, and I'd have argued for cutting it even if it were free.
         </Prose>
         <Gallery>
           <Figure
@@ -265,9 +263,9 @@ export function Schedaddle() {
         </Gallery>
         <div className="mt-10">
           <Prose>
-            The difference that matters is that a schedule change stays findable next week. Replies attach to the
-            post instead of pushing it up a feed, and anything people need to look up repeatedly can be pinned. A
-            group text does the opposite of all three.
+            The difference that matters is that a schedule change stays findable next week. Replies attach to the post
+            instead of pushing it up a feed, and anything people look up repeatedly can be pinned. A group text does
+            the opposite of all three.
           </Prose>
         </div>
       </Section>
@@ -296,10 +294,9 @@ export function Schedaddle() {
         </Gallery>
         <div className="mt-10">
           <Prose>
-            Creating a team asks for a name and nothing else. Description and invites are both marked optional,
-            because a setup form is the first thing a new user meets and the fastest way to lose them. Joining takes
-            an invite code that expires after seven days, so a code leaked into a group chat doesn't stay a way in
-            forever.
+            Creating a team asks for a name and nothing else. Description and invites are both optional, because a
+            setup form is the first thing a new user meets and the fastest way to lose them. Joining takes an invite
+            code that expires after seven days, so a code leaked into a group chat doesn't stay a way in forever.
           </Prose>
         </div>
       </Section>
@@ -311,14 +308,14 @@ export function Schedaddle() {
 
       <Section heading="Where it actually stands">
         <Prose>
-          There is a 15-screen clickable prototype and a spec covering five modules. Our professor has walked it end
-          to end and didn't get stuck.
+          There's a 15-screen clickable prototype and a spec covering five modules. Our professor walked it end to end
+          and didn't get stuck.
         </Prose>
         <Prose>
-          That is not validation and I'm not going to call it that. No one outside the team has used it yet. The next
-          thing that matters is putting it in front of the people we interviewed. The availability poll is the one
-          screen everything else depends on, and we don't yet know whether it survives contact with a real team
-          trying to plan a real week.
+          That isn't validation and I won't call it that. Nobody outside the team has used it yet. The next thing that
+          matters is putting it in front of the people we interviewed. The availability poll is the one screen
+          everything else depends on, and we don't know yet whether it survives contact with a real team trying to
+          plan a real week.
         </Prose>
       </Section>
 

@@ -227,12 +227,12 @@ export function Dig() {
       <Section heading="The stories were good. Getting to them wasn't.">
         <Prose>
           DIG is a student-run arts and culture magazine at Cal State Long Beach, part of the university's student
-          media group. It publishes across six categories, and the writing is genuinely good. The site was not the
-          problem people complained about, which is usually a sign that it is the problem nobody has looked at.
+          media group. It publishes across six categories, and the writing is genuinely good. The site wasn't the
+          thing people complained about, which is usually a sign it's the thing nobody has looked at.
         </Prose>
         <Prose>
-          I came in as product and engineering lead on the redesign. My job was to decide what was actually wrong
-          before anyone opened Figma, then to build the approved design into a responsive site.
+          I came in as product and engineering lead. My job was to work out what was actually wrong before anyone
+          opened Figma, then build the approved design into a responsive site.
         </Prose>
       </Section>
 
@@ -250,17 +250,16 @@ export function Dig() {
           />
         </Gallery>
         <Prose>
-          I clicked through the existing navigation the way a reader would, on a phone, counting taps to the things
-          people actually come for. It took too many.
+          I clicked through the old navigation the way a reader would, on a phone, counting taps to the things people
+          actually come for. It took too many.
         </Prose>
         <CardGrid items={problems} />
       </Section>
 
       <Section heading="Three taps to get to Fashion">
         <Prose>
-          Every category on the old site sat behind the same nested path: open the menu, open Categories, then pick
-          one. Magazine and Podcasts were already top level, so the nesting only punished the sections people
-          actually browse for.
+          Every category sat behind the same nested path: open the menu, open Categories, pick one. Magazine and
+          Podcasts were already top level, so the nesting only punished the sections people browse for.
         </Prose>
         <Gallery columns={3}>
           <Figure src={oldNav1} alt="The old DIG site with the menu closed" caption="One. Open the menu" />
@@ -277,8 +276,8 @@ export function Dig() {
         </Gallery>
         <div className="mt-10">
           <Prose>
-            The argument I made to the team was simple: our readers are students, they are reading on a phone between
-            classes, and every click is a chance for them to leave. Nobody browses a student magazine patiently.
+            The argument I made to the team was simple. Our readers are students, they're on a phone between classes,
+            and every click is a chance to leave. Nobody browses a student magazine patiently.
           </Prose>
         </div>
         <div className="grid grid-cols-1 md:grid-cols-2 gap-px bg-border border border-border mt-10">
@@ -298,9 +297,9 @@ export function Dig() {
 
         <div className="mt-10">
           <Prose>
-            The new menu opens on hover, so looking inside Categories costs nothing on a desktop. But hover does not
-            exist on a phone, and a phone is the whole reason I made the argument. So the number I would actually
-            defend is the one that holds on any device: every category is one level from the top now instead of two.
+            The new menu opens on hover, so looking inside Categories costs nothing on a desktop. But hover doesn't
+            exist on a phone, and a phone is the whole reason I made the argument. So the number I'd actually defend
+            is the one that holds anywhere: every category is one level from the top instead of two.
           </Prose>
         </div>
         <ComparisonTable headings={["Destination", "Old path", "New path"]} rows={nav} />
@@ -315,10 +314,10 @@ export function Dig() {
 
       <Section heading="The old site had color. It just didn't mean anything.">
         <Prose>
-          The word everyone reached for was dull, and that is how it felt, but it is not quite what was wrong. There
-          was color on the old site. Art sat on a coral field, Fashion on olive, Music on orange. Community, Food,
-          and Sponsored Content got nothing. Three sections out of seven carried a color, and not one of those
-          colors told a reader anything they could use.
+          The word everyone reached for was dull. That's how it felt, but it's not quite what was wrong. There was
+          color on the old site. Art sat on coral, Fashion on olive, Music on orange. Community, Food and Sponsored
+          Content got nothing. Three sections out of seven carried a color, and not one of them told a reader anything
+          they could use.
         </Prose>
         <div className="grid grid-cols-1 md:grid-cols-2 gap-px bg-border border border-border mt-8">
           <ColorSystem label="Before, 3 of 7" items={OLD_COLORS} />
@@ -326,26 +325,26 @@ export function Dig() {
         </div>
         <div className="mt-10">
           <Prose>
-            That is the failure mode of a half-measure: enough color to look decorated, not enough to look decided,
-            and no relationship between a color and the thing sitting on it. It reads as dull because nothing was
+            That's the failure mode of a half-measure: enough color to look decorated, not enough to look decided, and
+            no relationship between a color and the thing sitting on it. It reads as dull because nothing was
             committed, not because nothing was bright.
           </Prose>
         </div>
         <Prose>
-          The pushback was that it would be too loud for a publication doing real journalism. That is a fair worry
-          and I did not dismiss it, but I think it mistakes seriousness for restraint. DIG is not a paper of record.
-          It is an arts and culture magazine read by students who found it through Instagram, and the writing inside
-          it is already loud. A website that undersells the work is not more serious, it is just quieter.
+          The pushback was that it would be too loud for a publication doing real journalism. That's a fair worry and
+          I didn't dismiss it, but I think it mistakes seriousness for restraint. DIG isn't a paper of record. It's an
+          arts and culture magazine read by students who found it on Instagram, and the writing inside it is already
+          loud. A website that undersells the work isn't more serious, it's just quieter.
         </Prose>
         <Callout label="The argument">
           A magazine whose whole appeal is that it isn't safe should not have a website that is. But the answer was
           never more color. It was making the color mean something.
         </Callout>
         <Prose>
-          I won that argument, and the version we landed on is maximalism with a rule attached: every category owns a
-          hue and keeps it everywhere, from the menu tile to the homepage band to the landing page. A reader learns
-          where they are before they read the label. The identity work and the navigation work turn out to be the
-          same work, which is the part of this I would defend hardest.
+          I won that argument. What we landed on is maximalism with a rule attached: every category owns a hue and
+          keeps it everywhere, from the menu tile to the homepage band to the landing page. A reader learns where they
+          are before they read the label. The identity work and the navigation work turn out to be the same work, and
+          that's the part I'd defend hardest.
         </Prose>
         <Gallery>
           <Figure
@@ -369,7 +368,7 @@ export function Dig() {
           caption="A category landing page, carrying the same hue as its tile in the menu"
         />
         <Prose>
-          Design by Jennifer Salceda. I set the direction and the structure, and I am building it.
+          Design by Jennifer Salceda. I set the direction and the structure, and I'm building it.
         </Prose>
       </Section>
 

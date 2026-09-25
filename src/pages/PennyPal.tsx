@@ -111,59 +111,58 @@ export function PennyPal() {
 
       <Section heading="The brief was five features long. The timeline wasn't.">
         <Prose>
-          PennyPal is a personal budget manager. You tell it what you earn and what you want to cap yourself at, you
-          log expenses as they happen, and it tells you what is left and where the rest went. I led it end to end:
-          scope, design, and the build.
+          PennyPal is a budget app. You tell it what you earn and what you want to cap yourself at, you log expenses
+          as they happen, and it tells you what's left and where the rest went. I led the whole thing: scope, design,
+          build.
         </Prose>
         <Prose>
-          The brief that started it was specific and long. Budgets set per category, receipts photographed and read
-          automatically, budget periods the user could configure to reset on whatever day they liked, and alerts that
-          fired at a percentage threshold. Reading that list against the calendar, the useful question was not how to
-          build all of it. It was which of these was the product and which was decoration nobody would finish.
+          The brief asked for per-category budgets, receipts photographed and read automatically, budget periods you
+          could reset on whatever day you liked, and alerts at a percentage threshold. Seven weeks. So the question
+          was never how to build all of it. It was which parts were the product and which were decoration nobody
+          would finish.
         </Prose>
       </Section>
 
       <Section heading="I cut four of the five features in the brief">
         <Prose>
-          The reasoning came from looking hard at the apps that already do this. What they have in common is that they
-          ask for a lot of setup before they give anything back, and that is where they lose people. That is desk
-          research, not a study, and I am not going to dress it up as one. But it pointed at the same conclusion the
-          timeline did, which is what turned the cut from a schedule concession into a product decision.
+          I looked hard at the apps that already do this. They all ask for a pile of setup before they give you
+          anything back, and that's where they lose people. That's desk research, not a study, and I won't dress it up
+          as one. But it pointed the same way the calendar did, and that's what made the cut a product decision rather
+          than a schedule concession.
         </Prose>
         <ComparisonTable headings={["From the brief", "Shipped", "Why"]} rows={cuts} />
         <div className="mt-10">
           <Prose>
-            What the cut bought: the entire first-run setup is one income figure and one budget figure. Everything
-            else in the brief added cost before the app returned anything.
+            What the cut bought: first-run setup is one income figure and one budget figure. Everything else added
+            cost before the app gave anything back.
           </Prose>
           <Prose>
-            What it cost: someone genuinely budgeting across categories cannot do it in PennyPal. That is a real user
-            I chose not to serve. Given a second month it is the first thing I would build, and I would build it on
-            top of the global budget rather than in place of it, so the simple path survives.
+            What it cost: someone genuinely budgeting across categories can't do it in PennyPal. That's a real person
+            I chose not to serve. Give me a second month and it's the first thing I build, on top of the global budget
+            rather than in place of it, so the simple path survives.
           </Prose>
         </div>
       </Section>
 
       <Section heading="The cuts are in the paperwork, not the retelling">
         <Prose>
-          It is easy to narrate a scope cut after the fact as though it were deliberate. In this case the
-          documentation settles it. The user stories were written in March and revised in May, both versions are on
-          file, and four of the ten changed. The first row is the one that matters.
+          It's easy to narrate a scope cut afterwards as though you meant it all along. Here the paperwork settles it.
+          The user stories were written in March and revised in May, both versions are on file, and four of the ten
+          changed. The first row is the one that matters.
         </Prose>
         <ComparisonTable headings={["User story", "March", "May"]} rows={stories} />
       </Section>
 
       <Section heading="Financial data was the one place I wouldn't improvise">
         <Callout label="The argument">
-          Password storage, session handling, token expiry and account recovery are all easy to get almost right and
-          genuinely damaging to get wrong. On this timeline, with no security review available, writing our own auth
-          meant shipping something I could not honestly call secure. So I argued for Firebase.
+          Password storage, sessions, token expiry, account recovery. All easy to get almost right and genuinely
+          damaging to get wrong. On this timeline, with no security review available, writing our own auth meant
+          shipping something I couldn't honestly call secure. So I argued for Firebase.
         </Callout>
         <Prose>
-          The trade-off I accepted was a vendor dependency and an external service that has to be reachable before
-          anyone can sign in. Against the alternative that was cheap. It also brought Google sign-in for close to
-          nothing, which took a password out of the signup flow entirely, so it was a setup-burden win as well as a
-          security one.
+          The trade was a vendor dependency and a service that has to be reachable before anyone can sign in. Cheap,
+          against the alternative. It also brought Google sign-in for almost nothing, which took a password out of
+          signup entirely: a setup-burden win as well as a security one.
         </Prose>
         <Prose>
           The backend verifies every request's token server side rather than trusting the client, so the property
@@ -173,9 +172,9 @@ export function PennyPal() {
 
       <Section heading="Then I watched people open it for the first time">
         <Prose>
-          I sat with fifteen people and gave them the app. What I remember clearly is the shape of it rather than a
-          tally: people did not struggle with budgeting, they struggled to work out where to start. I did not keep
-          counts against each stumble, so I am not going to quote any.
+          I sat with fifteen people and handed them the app. What I remember is the shape of it rather than a tally:
+          nobody struggled with budgeting, they struggled to work out where to start. I didn't count stumbles, so I
+          won't quote numbers.
         </Prose>
         <Gallery>
           <Figure
@@ -190,31 +189,30 @@ export function PennyPal() {
           />
         </Gallery>
         <Prose>
-          A new account arrived at the same Overview page a returning user sees. Every figure read zero and all three
-          panels sat in their empty state. Four things were wrong with it.
+          A new account landed on the same Overview a returning user sees. Every figure read zero, all three panels
+          sat empty. Four things were wrong with it.
         </Prose>
         <CardGrid items={failures} />
         <div className="mt-10">
           <Prose>
-            I had built a dashboard that only makes sense once it has data, and then left getting data into it as the
-            thing the user had to work out alone. I cut the setup burden successfully and never asked what replaced
-            it.
+            I'd built a dashboard that only makes sense once it has data, then left getting data into it as the thing
+            you had to work out alone. I cut the setup burden and never asked what replaced it.
           </Prose>
           <Prose>
-            That is an activation problem rather than an acquisition or a retention one. The person has already signed
-            up, so I have their attention and their intent. They leave before the product produces anything, and not
-            because the work is hard. It is that reaching the first useful number takes three non-obvious steps in a
-            specific order, and the interface said so nowhere.
+            That's an activation problem, not acquisition or retention. They've already signed up, so I have their
+            attention and their intent, and they leave before the product produces anything. Not because the work is
+            hard. Reaching the first useful number takes three non-obvious steps in a specific order, and nothing in
+            the interface said so.
           </Prose>
         </div>
       </Section>
 
       <Section heading="Sixty seconds, six steps, an exit at every one">
         <Prose>
-          I built a spotlight tour rather than rewriting the empty copy or forcing a setup wizard. The observed
-          failure was spatial: people did not misunderstand budgeting, they did not know where things were or which
-          to touch first. A tour is the only one of those options that teaches against the real interface, so you are
-          looking at the actual sidebar while being told what it does.
+          I built a spotlight tour instead of rewriting the empty copy or forcing a setup wizard. The failure I
+          watched was spatial: people didn't misunderstand budgeting, they didn't know where anything was or what to
+          touch first. A tour is the only one of those options that teaches against the real interface, so you're
+          looking at your actual sidebar while being told what it does.
         </Prose>
         <Gallery columns={3}>
           <Figure
@@ -235,17 +233,16 @@ export function PennyPal() {
         </Gallery>
         <div className="mt-10">
           <Prose>
-            The constraint I set was that it had to be seamless rather than loud. A tour that feels like an obstacle
-            is worse than no tour, because it delays the product at the one moment the user is most willing to leave.
-            So skipping is available at every step and never buried, the flag is set on skip as well as on
-            completion, and a replay button sits in the sidebar so skipping stays low-stakes. Escape exits, arrows
-            navigate, and focus follows the card.
+            It had to be seamless rather than loud. A tour that feels like an obstacle is worse than no tour, because
+            it stalls the product at the moment someone is most willing to leave. So skip is on every step and never
+            buried, the flag is set on skip as well as completion, and a replay button sits in the sidebar so skipping
+            stays low-stakes. Escape exits, arrows navigate, focus follows the card.
           </Prose>
           <Prose>
-            Two decisions I would defend. Step four says outright that the number reads zero because there is nothing
-            in the account yet, because narrating an empty dashboard as though it were full is how an interface loses
-            trust in its first thirty seconds. And step six is not a congratulations. The user is not set up, they
-            have an empty account, so the primary button goes straight to the income screen.
+            Two decisions I'd defend. Step four says outright that the number reads zero because there's nothing in
+            the account yet, because narrating an empty dashboard as though it were full is how an interface loses
+            trust in its first thirty seconds. And step six isn't a congratulations. You're not set up, you have an
+            empty account, so the primary button goes straight to the income screen.
           </Prose>
         </div>
       </Section>
@@ -258,20 +255,20 @@ export function PennyPal() {
           ]}
         />
         <Prose>
-          I have not measured whether the tour works. PennyPal is not running with live users and has no analytics, so
-          I could put a number here and nobody could check it. What exists is the instrumentation: the funnel events
-          are in the code ahead of the traffic rather than retrofitted after it.
+          I haven't measured whether the tour works. No live users, no analytics, so I could put a number here and
+          nobody could check it. What exists is the instrumentation: the funnel events are in the code ahead of the
+          traffic, not retrofitted after it.
         </Prose>
         <Prose>
-          The number I would read is activation, the share of new signups with an income, a budget and one expense
-          inside 24 hours. The one I would watch hardest is whether people who skip activate anyway. If they do, the
-          tour is theatre and should be cut. A guided tour is exactly the kind of feature that survives because it
-          looks like care.
+          The number I'd read is activation, the share of new signups with an income, a budget and one expense inside
+          24 hours. The one I'd watch hardest is whether people who skip activate anyway. If they do, the tour is
+          theatre and should be cut. A guided tour is exactly the kind of feature that survives because it looks like
+          care.
         </Prose>
         <Prose>
-          The thing I would do differently is smaller and worse than either half of this. I designed every screen
-          against realistic data, which is precisely why the zero state was the weakest part of the product. I would
-          design the empty state first now. It is the only screen every single user sees.
+          What I'd do differently is smaller than either half of this. I designed every screen against realistic
+          data, which is exactly why the zero state was the weakest part of the product. I'd design the empty state
+          first now. It's the only screen every single user sees.
         </Prose>
       </Section>
 
