@@ -306,19 +306,6 @@ export function Schedaddle() {
         <ComparisonTable headings={["Feature", "Current workflow", "Our solution"]} rows={comparison} />
       </Section>
 
-      <Section heading="Where it actually stands">
-        <Prose>
-          There's a 15-screen clickable prototype and a spec covering five modules. Our professor walked it end to end
-          and didn't get stuck.
-        </Prose>
-        <Prose>
-          That isn't validation and I won't call it that. Nobody outside the team has used it yet. The next thing that
-          matters is putting it in front of the people we interviewed. The availability poll is the one screen
-          everything else depends on, and we don't know yet whether it survives contact with a real team trying to
-          plan a real week.
-        </Prose>
-      </Section>
-
       <CaseStudyFoot nextLabel="Next: DIG Magazine" nextTo="/work/dig" />
     </main>
   );

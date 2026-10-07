@@ -215,13 +215,13 @@ export function Dig() {
       <CaseStudyHero
         kicker="Case study · Web redesign"
         title="DIG Magazine"
-        lede="Leading the redesign of the student magazine site, making content faster to reach and giving it a bold, color-forward identity that matches how its readers actually want to read."
+        lede="Led the redesign of the student magazine site, making content faster to reach and giving it a bold, color-forward identity that matches how its readers actually want to read."
         meta={[
           ["My role", "Product & engineering lead"],
           ["Timeline", "June 2026 to August 2026"],
           ["Tools", "Figma, HTML, CSS"],
         ]}
-        links={[{ label: "Visit the current site", href: "https://www.digmaglb.com/" }]}
+        links={[{ label: "Visit the live site", href: "https://www.digmaglb.com/" }]}
       />
 
       <Section heading="The stories were good. Getting to them wasn't.">
@@ -246,7 +246,7 @@ export function Dig() {
           <Figure
             src={homeImg}
             alt="The redesigned DIG Magazine homepage"
-            caption="The redesigned homepage, currently being built"
+            caption="The redesigned homepage"
           />
         </Gallery>
         <Prose>
@@ -341,9 +341,9 @@ export function Dig() {
           never more color. It was making the color mean something.
         </Callout>
         <Prose>
-          I won that argument. What we landed on is maximalism with a rule attached: every category owns a hue and
+          I won that argument. What we landed on was maximalism with a rule attached: every category owns a hue and
           keeps it everywhere, from the menu tile to the homepage band to the landing page. A reader learns where they
-          are before they read the label. The identity work and the navigation work turn out to be the same work, and
+          are before they read the label. The identity work and the navigation work turned out to be the same work, and
           that's the part I'd defend hardest.
         </Prose>
         <Gallery>
@@ -368,7 +368,7 @@ export function Dig() {
           caption="A category landing page, carrying the same hue as its tile in the menu"
         />
         <Prose>
-          Design by Jennifer Salceda. I set the direction and the structure, and I'm building it.
+          Design by Jennifer Salceda. I set the direction and the structure, and I built it.
         </Prose>
       </Section>
 
@@ -381,8 +381,7 @@ export function Dig() {
         />
         <Prose>
           The navigation numbers come from walking the old site and counting, not from a usability study with
-          readers. That study is the thing I'd do next if I had the time. Build is in progress; the current site is
-          at{" "}
+          readers. That study is the thing I'd do next if I had the time. The redesign is built and live at{" "}
           <a
             href="https://www.digmaglb.com/"
             target="_blank"
